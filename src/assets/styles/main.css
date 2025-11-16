@@ -1,0 +1,73 @@
+/* Import Google Fonts - Must come first */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply font-sans bg-base-100;
+  }
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Button Styles */
+  .btn-edu {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md;
+  }
+
+  .btn-edu-primary {
+    @apply btn-edu bg-edu-primary hover:bg-indigo-700;
+  }
+
+  .btn-edu-secondary {
+    @apply btn-edu bg-edu-secondary hover:bg-amber-600;
+  }
+
+  .btn-edu-success {
+    @apply btn-edu bg-edu-success hover:bg-emerald-600;
+  }
+
+  /* Card Styles */
+  .card-edu {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .card-edu-bordered {
+    @apply card-edu border-2 border-edu-primary;
+  }
+
+  .card-edu-game {
+    @apply card-edu cursor-pointer hover:-translate-y-2;
+  }
+
+  /* Text Styles */
+  .text-edu-title {
+    @apply font-display text-3xl font-bold text-edu-primary;
+  }
+
+  .text-edu-subtitle {
+    @apply font-display text-xl font-semibold text-gray-700;
+  }
+
+  /* Container Styles */
+  .container-edu {
+    @apply container mx-auto px-4 py-8;
+  }
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  .gradient-edu {
+    background: linear-gradient(135deg, #4F46E5 0%, #F59E0B 100%);
+  }
+
+  .text-shadow-edu {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
