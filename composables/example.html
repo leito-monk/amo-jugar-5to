@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Composables - Yo Amo Aprender</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    button.wrong {
+      background: #f44336;
+    }
+    button.wrong:hover {
+      background: #da190b;
+    }
+    button.complete {
+      background: #2196F3;
+    }
+    button.complete:hover {
+      background: #0b7dda;
+    }
+    .stats {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .stat-item {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .controls {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>🎮 Demo de Composables</h1>
+      
+      <div class="stats">
+        <div class="stat-item">📊 Puntuación: <strong>{{ score }}</strong></div>
+        <div class="stat-item">✅ Respuestas correctas: <strong>{{ correctAnswers }} / {{ totalQuestions }}</strong></div>
+        <div class="stat-item">🎯 Precisión: <strong>{{ accuracy }}%</strong></div>
+        <div class="stat-item">⏱️ Tiempo: <strong>{{ formattedTime }}</strong></div>
+        <div class="stat-item">🎮 Intentos: <strong>{{ attemptsCount }}</strong></div>
+        <div class="stat-item">📈 Nivel: <strong>{{ currentLevel }}</strong></div>
+        <div class="stat-item">🏆 Logros: <strong>{{ achievements.length }}</strong></div>
+      </div>
+
+      <div class="controls">
+        <button @click="handleStart" v-if="!gameStarted">🚀 Iniciar Juego</button>
+        <template v-else>
+          <button @click="handleCorrect">✅ Respuesta Correcta</button>
+          <button class="wrong" @click="handleWrong">❌ Respuesta Incorrecta</button>
+          <button class="complete" @click="handleComplete">🎉 Completar Nivel</button>
+          <button @click="handleLevelUp">⬆️ Subir Nivel</button>
+          <button @click="handleReset">🔄 Reiniciar</button>
+        </template>
+        <br><br>
+        <button @click="handleToggleMute">{{ isMuted ? '🔇 Activar Sonido' : '🔊 Silenciar' }}</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import * as localStorage from './useLocalStorage.js';
+    import * as gameState from './useGameState.js';
+    import * as sound from './useSound.js';
+
+    const { createApp, ref, computed, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        const gameStarted = ref(false);
+        const isMuted = ref(false);
+
+        // Estado del juego (reactivo desde el composable)
+        const state = computed(() => gameState.getState());
+        const score = computed(() => state.value.score);
+        const correctAnswers = computed(() => state.value.correctAnswers);
+        const totalQuestions = computed(() => state.value.totalQuestions);
+        const attemptsCount = computed(() => state.value.attemptsCount);
+        const currentLevel = computed(() => state.value.currentLevel);
+        const achievements = computed(() => state.value.achievements);
+
+        // Computed properties del composable
+        const accuracy = gameState.accuracy;
+        const formattedTime = gameState.formattedTime;
+
+        // Cargar estado al montar
+        onMounted(() => {
+          gameState.loadState('demo-game');
+          gameStarted.value = gameState.hasPlayed.value;
+        });
+
+        // Handlers
+        const handleStart = () => {
+          gameState.startGame();
+          gameStarted.value = true;
+          sound.playCorrect();
+        };
+
+        const handleCorrect = () => {
+          gameState.recordAnswer(true);
+          gameState.addScore(10);
+          sound.playCorrect();
+        };
+
+        const handleWrong = () => {
+          gameState.recordAnswer(false);
+          sound.playWrong();
+        };
+
+        const handleComplete = () => {
+          gameState.markCompleted();
+          gameState.unlockAchievement('level-completed');
+          sound.playComplete();
+        };
+
+        const handleLevelUp = () => {
+          gameState.levelUp();
+          sound.playComplete();
+        };
+
+        const handleReset = () => {
+          gameState.resetGame();
+          gameStarted.value = false;
+        };
+
+        const handleToggleMute = () => {
+          sound.toggleMute();
+          isMuted.value = sound.getMuteState();
+        };
+
+        return {
+          gameStarted,
+          isMuted,
+          score,
+          correctAnswers,
+          totalQuestions,
+          attemptsCount,
+          currentLevel,
+          achievements,
+          accuracy,
+          formattedTime,
+          handleStart,
+          handleCorrect,
+          handleWrong,
+          handleComplete,
+          handleLevelUp,
+          handleReset,
+          handleToggleMute
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
