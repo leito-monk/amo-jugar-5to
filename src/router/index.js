@@ -1,7 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-  // Routes will be added here as the application grows
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('../views/HomeView.vue')
+  },
+  {
+    path: '/detectivismo-poetico',
+    name: 'detectivismo-poetico',
+    component: () => import('../games/detectivismo-poetico/DetectiveGame.vue')
+  }
 ]
 
 const router = createRouter({
