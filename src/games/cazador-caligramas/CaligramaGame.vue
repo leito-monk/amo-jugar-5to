@@ -321,7 +321,7 @@ onUnmounted(() => {
           class="caligrama-grid w-full max-w-md"
           :style="gridStyle"
         >
-          <div
+          <template
             v-for="(row, rowIndex) in currentCaligrama.silueta"
             :key="`row-${rowIndex}`"
           >
@@ -345,7 +345,7 @@ onUnmounted(() => {
                 {{ getVerseAt(rowIndex, colIndex) }}
               </span>
             </div>
-          </div>
+          </template>
         </div>
 
         <!-- Botón de pistas -->
