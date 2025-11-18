@@ -41,6 +41,9 @@ const routes = [
     path: '/transformador-calculadora',
     name: 'transformador-calculadora',
     component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
+    path: '/ciclo-agua',
+    name: 'ciclo-agua',
+    component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
   }
   // More routes will be added here as the application grows
 ]

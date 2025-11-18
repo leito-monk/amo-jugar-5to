@@ -36,6 +36,13 @@ const games = ref<Game[]>([
     icono: '🔢',
     dificultad: 'Medio',
     duracion: '30 min',
+    id: 'ciclo-agua',
+    titulo: 'Ciclo del Agua: La Gran Aventura',
+    materia: 'Ciencias Naturales',
+    descripcion: 'Viaja como una gota de agua a través del ciclo del agua',
+    icono: '🌊',
+    dificultad: 'Medio',
+    duracion: '20 min',
     activo: true,
     completado: false,
     progreso: 0
@@ -119,6 +126,7 @@ const handleGameClick = (game: Game) => {
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
   } else if (game.activo && game.id === 'transformador-calculadora') {
+  } else if (game.activo && game.id === 'ciclo-agua') {
     router.push(`/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)

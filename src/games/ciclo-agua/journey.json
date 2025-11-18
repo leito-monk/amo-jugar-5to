@@ -1,0 +1,260 @@
+{
+  "etapas": [
+    {
+      "id": "inicio",
+      "titulo": "¡Tu aventura comienza!",
+      "descripcion": "Eres una gota de agua flotando tranquilamente en el vasto océano. El sol brilla intensamente sobre ti, calentando tu superficie. Sientes que algo está cambiando...",
+      "imagen": "🌊",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🌤️ Evaporarte y subir al cielo",
+          "siguienteEtapa": "atmosfera",
+          "proceso": "evaporacion",
+          "pregunta": {
+            "texto": "¿Qué hace que el agua se evapore?",
+            "opciones": ["El calor del sol", "El viento fuerte", "El frío"],
+            "correcta": 0,
+            "explicacion": "El calor del sol proporciona energía a las moléculas de agua, haciendo que se muevan más rápido y pasen del estado líquido al gaseoso (vapor)."
+          }
+        },
+        {
+          "texto": "🌊 Quedarte en el océano",
+          "siguienteEtapa": "oceano_profundo",
+          "proceso": null
+        }
+      ]
+    },
+    {
+      "id": "oceano_profundo",
+      "titulo": "En las profundidades",
+      "descripcion": "Decides quedarte en el océano. Las corrientes te llevan a las profundidades donde hace más frío. Aquí podrías quedarte por mucho tiempo...",
+      "imagen": "🌊",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🌤️ Volver a la superficie y evaporarte",
+          "siguienteEtapa": "atmosfera",
+          "proceso": "evaporacion"
+        }
+      ]
+    },
+    {
+      "id": "atmosfera",
+      "titulo": "¡Flotando en el cielo!",
+      "descripcion": "Ahora eres vapor de agua invisible flotando en la atmósfera. Te sientes ligero y libre, subiendo cada vez más alto en el aire. Hace frío aquí arriba...",
+      "imagen": "☁️",
+      "proceso": "evaporacion",
+      "animacion": "evaporation",
+      "opciones": [
+        {
+          "texto": "☁️ Enfriarte y formar una nube",
+          "siguienteEtapa": "nube",
+          "proceso": "condensacion",
+          "pregunta": {
+            "texto": "¿Qué sucede cuando el vapor de agua se enfría?",
+            "opciones": ["Se condensa en gotitas", "Se evapora más rápido", "Se congela instantáneamente"],
+            "correcta": 0,
+            "explicacion": "Cuando el vapor de agua se enfría en la atmósfera, pierde energía y las moléculas se juntan formando pequeñas gotitas de agua líquida. Muchas gotitas juntas forman las nubes."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nube",
+      "titulo": "Dentro de una nube esponjosa",
+      "descripcion": "Te unes con millones de otras gotitas y forman juntos una hermosa nube blanca. Desde aquí puedes ver toda la tierra abajo. Las gotitas se hacen cada vez más grandes y pesadas...",
+      "imagen": "☁️",
+      "proceso": "condensacion",
+      "animacion": "condensation",
+      "opciones": [
+        {
+          "texto": "🌧️ Caer como lluvia",
+          "siguienteEtapa": "lluvia",
+          "proceso": "precipitacion",
+          "pregunta": {
+            "texto": "¿Por qué cae la lluvia desde las nubes?",
+            "opciones": ["Las gotas se hacen muy pesadas", "El viento las empuja", "Las nubes se rompen"],
+            "correcta": 0,
+            "explicacion": "Cuando las gotitas en las nubes se juntan y crecen, se vuelven demasiado pesadas para flotar en el aire. La gravedad las atrae hacia abajo y caen como lluvia."
+          }
+        },
+        {
+          "texto": "❄️ Caer como nieve (hace mucho frío)",
+          "siguienteEtapa": "nieve",
+          "proceso": "precipitacion"
+        }
+      ]
+    },
+    {
+      "id": "lluvia",
+      "titulo": "¡Cayendo como lluvia!",
+      "descripcion": "Caes desde la nube a gran velocidad, junto con miles de otras gotas. El viento te mece mientras desciendes. Finalmente, ves el suelo acercándose...",
+      "imagen": "🌧️",
+      "proceso": "precipitacion",
+      "animacion": "precipitation",
+      "opciones": [
+        {
+          "texto": "🌱 Caer en la tierra y filtrarte al suelo",
+          "siguienteEtapa": "infiltracion",
+          "proceso": "infiltracion"
+        },
+        {
+          "texto": "🏞️ Caer en un río y fluir",
+          "siguienteEtapa": "rio",
+          "proceso": "escorrentia"
+        },
+        {
+          "texto": "🌊 Caer directamente al océano",
+          "siguienteEtapa": "regreso_oceano",
+          "proceso": null
+        }
+      ]
+    },
+    {
+      "id": "nieve",
+      "titulo": "Congelada en un copo de nieve",
+      "descripcion": "El frío intenso te ha congelado formando un hermoso cristal de hielo de seis puntas. Caes lentamente, flotando en el aire como una pluma blanca...",
+      "imagen": "❄️",
+      "proceso": "precipitacion",
+      "opciones": [
+        {
+          "texto": "🏔️ Acumularte en una montaña",
+          "siguienteEtapa": "montana",
+          "proceso": null
+        }
+      ]
+    },
+    {
+      "id": "montana",
+      "titulo": "En la cima nevada",
+      "descripcion": "Te acumulas con millones de otros copos formando una gran capa de nieve en la montaña. Aquí puedes quedarte congelada por mucho tiempo...",
+      "imagen": "🏔️",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🌞 Derretirte con el calor del sol",
+          "siguienteEtapa": "derretimiento",
+          "proceso": null
+        }
+      ]
+    },
+    {
+      "id": "derretimiento",
+      "titulo": "Derritiéndose",
+      "descripcion": "El sol de primavera te calienta y te conviertes nuevamente en agua líquida. Ahora fluyes montaña abajo...",
+      "imagen": "💧",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🏞️ Formar un arroyo",
+          "siguienteEtapa": "rio",
+          "proceso": "escorrentia"
+        }
+      ]
+    },
+    {
+      "id": "infiltracion",
+      "titulo": "Bajo tierra",
+      "descripcion": "Te filtras a través del suelo, pasando entre las rocas y la tierra. Es oscuro aquí abajo, pero te encuentras con raíces de plantas que te necesitan. Te conviertes en agua subterránea.",
+      "imagen": "🌍",
+      "proceso": "infiltracion",
+      "animacion": "infiltration",
+      "opciones": [
+        {
+          "texto": "💧 Salir como manantial",
+          "siguienteEtapa": "manantial",
+          "proceso": null,
+          "pregunta": {
+            "texto": "¿Qué es la infiltración?",
+            "opciones": ["El agua que entra al suelo", "El agua que evapora", "El agua que corre por la superficie"],
+            "correcta": 0,
+            "explicacion": "La infiltración es el proceso por el cual el agua de lluvia penetra en el suelo y las rocas, convirtiéndose en agua subterránea que alimenta acuíferos y manantiales."
+          }
+        },
+        {
+          "texto": "🌱 Ser absorbida por plantas",
+          "siguienteEtapa": "plantas",
+          "proceso": null
+        }
+      ]
+    },
+    {
+      "id": "manantial",
+      "titulo": "Brotando como manantial",
+      "descripcion": "Después de viajar bajo tierra, encuentras una salida y brota como agua fresca de manantial. ¡Qué refrescante!",
+      "imagen": "💧",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🏞️ Fluir hacia un río",
+          "siguienteEtapa": "rio",
+          "proceso": "escorrentia"
+        }
+      ]
+    },
+    {
+      "id": "plantas",
+      "titulo": "Dentro de una planta",
+      "descripcion": "Las raíces te absorben y viajas por el interior de la planta, ayudándola a crecer. Subes hasta las hojas donde...",
+      "imagen": "🌱",
+      "proceso": null,
+      "opciones": [
+        {
+          "texto": "🍃 Evaporarte desde las hojas (transpiración)",
+          "siguienteEtapa": "atmosfera",
+          "proceso": "evaporacion"
+        }
+      ]
+    },
+    {
+      "id": "rio",
+      "titulo": "Fluyendo por el río",
+      "descripcion": "Corres alegremente por el río, pasando por bosques y pueblos. El agua fluye constantemente hacia abajo, siguiendo la gravedad. Este es el proceso de escorrentía.",
+      "imagen": "🏞️",
+      "proceso": "escorrentia",
+      "opciones": [
+        {
+          "texto": "🌊 Llegar al océano",
+          "siguienteEtapa": "regreso_oceano",
+          "proceso": null,
+          "pregunta": {
+            "texto": "¿Qué es la escorrentía?",
+            "opciones": ["El agua que fluye sobre la superficie", "El agua que se congela", "El agua que se evapora"],
+            "correcta": 0,
+            "explicacion": "La escorrentía es el agua que fluye sobre la superficie de la tierra, formando arroyos y ríos que eventualmente llevan el agua de regreso a los océanos, lagos o mares."
+          }
+        }
+      ]
+    },
+    {
+      "id": "regreso_oceano",
+      "titulo": "¡De regreso al océano!",
+      "descripcion": "Has completado un ciclo completo del agua. Regresas al océano donde comenzaste tu viaje. Desde aquí, el ciclo puede comenzar de nuevo en cualquier momento. ¡El agua nunca se detiene!",
+      "imagen": "🌊",
+      "proceso": null,
+      "esFinal": true,
+      "opciones": []
+    }
+  ],
+  "experimentos": [
+    {
+      "id": "exp_evaporacion",
+      "titulo": "Experimento: Evaporación",
+      "descripcion": "Observa cómo cambia la velocidad de evaporación según la temperatura",
+      "tipo": "slider",
+      "minTemp": 0,
+      "maxTemp": 100,
+      "observacion": "A mayor temperatura, más rápida es la evaporación. El agua necesita energía (calor) para convertirse en vapor."
+    },
+    {
+      "id": "exp_condensacion",
+      "titulo": "Experimento: Condensación",
+      "descripcion": "Observa cómo el vapor se convierte en gotitas cuando se enfría",
+      "tipo": "slider",
+      "minTemp": -10,
+      "maxTemp": 40,
+      "observacion": "Cuando el vapor se enfría por debajo del punto de rocío, se condensa formando gotitas de agua."
+    }
+  ]
+}
