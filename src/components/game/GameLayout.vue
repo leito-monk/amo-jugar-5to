@@ -116,6 +116,28 @@ onMounted(() => {
           @click.self="toggleInstructions"
         >
           <div class="modal-box relative max-w-2xl bg-gradient-to-br from-base-100 to-base-200">
+            <!-- Back Button -->
+            <button
+              @click="toggleInstructions"
+              class="btn btn-sm btn-circle btn-ghost absolute left-2 top-2"
+              title="Atrás"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
             <button
               @click="toggleInstructions"
               class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"

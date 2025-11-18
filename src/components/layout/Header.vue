@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 
 const menuOpen = ref(false)
+const router = useRouter()
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -11,11 +12,35 @@ const toggleMenu = () => {
 const closeMenu = () => {
   menuOpen.value = false
 }
+
+const goBack = () => {
+  router.back()
+}
 </script>
 
 <template>
   <header class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto">
+      <!-- Back Button -->
+      <div class="flex-none">
+        <button @click="goBack" class="btn btn-ghost btn-circle" title="Atrás">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+      </div>
+
       <div class="flex-1">
         <RouterLink to="/" class="btn btn-ghost text-xl gap-2" @click="closeMenu">
           <span class="text-2xl">🎮</span>
