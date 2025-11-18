@@ -1,0 +1,110 @@
+{
+  "invasiones": [
+    {
+      "id": "primera_invasion",
+      "año": 1806,
+      "titulo": "Primera Invasión Inglesa",
+      "comandante_ingles": "William Carr Beresford",
+      "defensor": "Santiago de Liniers",
+      "contexto": "Inglaterra buscaba nuevos mercados para sus productos industriales debido al bloqueo continental de Napoleón.",
+      "eventos": [
+        {
+          "fecha": "25 de junio de 1806",
+          "descripcion": "Desembarco inglés en Quilmes",
+          "pregunta": {
+            "texto": "¿Dónde desembarcaron los ingleses?",
+            "opciones": [
+              {"texto": "Quilmes", "correcto": true},
+              {"texto": "La Boca", "correcto": false},
+              {"texto": "San Telmo", "correcto": false}
+            ]
+          }
+        },
+        {
+          "fecha": "27 de junio de 1806",
+          "descripcion": "Los británicos toman el fuerte y Beresford asume el gobierno",
+          "pregunta": {
+            "texto": "¿Qué hizo el virrey Sobremonte?",
+            "opciones": [
+              {"texto": "Huyó a Córdoba con el tesoro", "correcto": true},
+              {"texto": "Organizó la defensa", "correcto": false},
+              {"texto": "Se rindió inmediatamente", "correcto": false}
+            ],
+            "explicacion": "Sobremonte tomó el tesoro real y huyó, lo que causó gran descontento"
+          }
+        },
+        {
+          "fecha": "12 de agosto de 1806",
+          "descripcion": "Reconquista: Liniers derrota a los ingleses",
+          "pregunta": {
+            "texto": "¿Quién lideró la reconquista?",
+            "opciones": [
+              {"texto": "Santiago de Liniers", "correcto": true},
+              {"texto": "Manuel Belgrano", "correcto": false},
+              {"texto": "José de San Martín", "correcto": false}
+            ]
+          }
+        }
+      ],
+      "resultado": "Victoria de las fuerzas locales. Reconquista de Buenos Aires.",
+      "consecuencias": [
+        "Formación de milicias criollas",
+        "Aumento de la confianza criolla",
+        "Descrédito del virrey Sobremonte"
+      ]
+    },
+    {
+      "id": "segunda_invasion",
+      "año": 1807,
+      "titulo": "Segunda Invasión Inglesa",
+      "comandante_ingles": "John Whitelocke",
+      "defensor": "Milicias de Buenos Aires",
+      "eventos": [
+        {
+          "fecha": "28 de junio de 1807",
+          "descripcion": "Los ingleses desembarcan con fuerzas mayores",
+          "pregunta": {
+            "texto": "¿Por qué Inglaterra volvió a intentar tomar Buenos Aires?",
+            "opciones": [
+              {"texto": "Querían el puerto y romper el monopolio español", "correcto": true},
+              {"texto": "Por venganza personal", "correcto": false},
+              {"texto": "Para ayudar a los criollos", "correcto": false}
+            ]
+          }
+        },
+        {
+          "fecha": "5 de julio de 1807",
+          "descripcion": "Defensa de Buenos Aires: barricadas y azoteas",
+          "pregunta": {
+            "texto": "¿Cómo se defendió Buenos Aires?",
+            "opciones": [
+              {"texto": "Con barricadas y desde las azoteas", "correcto": true},
+              {"texto": "Solo con el ejército español", "correcto": false},
+              {"texto": "Pidiendo ayuda a Francia", "correcto": false}
+            ],
+            "explicacion": "El pueblo organizó la defensa con barricadas, agua hirviendo y disparos desde azoteas"
+          }
+        },
+        {
+          "fecha": "7 de julio de 1807",
+          "descripcion": "Whitelocke firma la rendición",
+          "pregunta": {
+            "texto": "¿Quién fue Martina Céspedes?",
+            "opciones": [
+              {"texto": "Pulpera que capturó soldados ingleses", "correcto": true},
+              {"texto": "Esposa de Liniers", "correcto": false},
+              {"texto": "Una espía inglesa", "correcto": false}
+            ],
+            "explicacion": "Martina y sus hijas emborracharon a soldados ingleses y los capturaron. Liniers la nombró Sargento Mayor."
+          }
+        }
+      ],
+      "resultado": "Victoria definitiva. Los ingleses se retiran.",
+      "consecuencias": [
+        "Milicias criollas se convierten en poder militar",
+        "Crecimiento del sentimiento independentista",
+        "Protagonismo político de los criollos"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "personajes": [
+    {
+      "id": "liniers",
+      "nombre": "Santiago de Liniers",
+      "rol": "Defensor de Buenos Aires",
+      "origen": "Francés al servicio de España",
+      "descripcion": "Oficial experimentado que lideró la Reconquista y organizó las milicias",
+      "logros": [
+        "Reconquista de Buenos Aires (1806)",
+        "Organización de milicias",
+        "Defensa exitosa en 1807"
+      ],
+      "imagen": "/assets/personajes/liniers.jpg"
+    },
+    {
+      "id": "beresford",
+      "nombre": "William Carr Beresford",
+      "rol": "Comandante inglés (1806)",
+      "descripcion": "Lideró la primera invasión, tomó Buenos Aires brevemente",
+      "resultado": "Capturado y enviado prisionero"
+    },
+    {
+      "id": "whitelocke",
+      "nombre": "John Whitelocke",
+      "rol": "Comandante inglés (1807)",
+      "descripcion": "Lideró la segunda invasión con fuerzas superiores",
+      "resultado": "Derrotado, firmó la rendición. Fue juzgado en Inglaterra por su fracaso"
+    },
+    {
+      "id": "martina",
+      "nombre": "Martina Céspedes",
+      "rol": "Heroína popular",
+      "descripcion": "Pulpera que capturó soldados ingleses con astucia",
+      "reconocimiento": "Liniers la nombró Sargento Mayor del Ejército",
+      "legado": "Símbolo de la participación popular en la defensa"
+    },
+    {
+      "id": "sobremonte",
+      "nombre": "Rafael de Sobremonte",
+      "rol": "Virrey del Río de la Plata",
+      "descripcion": "Virrey durante la primera invasión",
+      "accion": "Huyó a Córdoba con el tesoro",
+      "consecuencia": "Perdió autoridad y fue reemplazado"
+    }
+  ]
+}

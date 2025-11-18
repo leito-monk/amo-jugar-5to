@@ -87,6 +87,18 @@ const games = ref<Game[]>([
     activo: true,
     completado: false,
     progreso: 0
+  },
+  {
+    id: 'defensa-buenosaires',
+    titulo: 'Defensa de Buenos Aires',
+    materia: 'Ciencias Sociales',
+    descripcion: 'Defiende Buenos Aires de las Invasiones Inglesas 1806-1807',
+    icono: '⚔️',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
   }
 ])
 
@@ -106,7 +118,8 @@ const handleGameClick = (game: Game) => {
     'autopista-numerica': '/juegos/autopista-numerica',
     'transformador-calculadora': '/juegos/transformador-calculadora',
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
-    'ciclo-agua': '/ciclo-agua'
+    'ciclo-agua': '/ciclo-agua',
+    'defensa-buenosaires': '/juegos/defensa-buenosaires'
   }
 
   const route = routeMap[game.id]
