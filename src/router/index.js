@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import CaligramaGame from '../games/cazador-caligramas/CaligramaGame.vue'
+import AutopistaGame from '../games/autopista-numerica/AutopistaGame.vue'
 
 const routes = [
   {
@@ -41,6 +42,15 @@ const routes = [
     path: '/laboratorio-acentuacion',
     name: 'laboratorio-acentuacion',
     component: () => import('../games/laboratorio-acentuacion/AcentuacionGame.vue')
+    path: '/juegos/autopista-numerica',
+    name: 'autopista-numerica',
+    component: AutopistaGame
+    path: '/transformador-calculadora',
+    name: 'transformador-calculadora',
+    component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
+    path: '/ciclo-agua',
+    name: 'ciclo-agua',
+    component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
   }
   // More routes will be added here as the application grows
 ]
