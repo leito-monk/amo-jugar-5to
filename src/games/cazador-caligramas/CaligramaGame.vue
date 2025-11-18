@@ -64,6 +64,12 @@ const totalVerses = computed(() => currentCaligrama.value.versos.length);
 function initLevel() {
   const caligrama = currentCaligrama.value;
   
+  // Verificar que el caligrama existe
+  if (!caligrama || !caligrama.versos) {
+    console.error('Error: No se pudo cargar el caligrama', caligrama);
+    return;
+  }
+  
   // Reset estado
   placedVerses.value = [];
   errorCount.value = 0;
@@ -73,11 +79,15 @@ function initLevel() {
   motivationalMessage.value = '';
   showCompletionModal.value = false;
   
-  // Mezclar versos
+  // Mezclar versos - asegurar que cada verso tenga todas las propiedades necesarias
   availableVerses.value = shuffleArray(caligrama.versos.map(v => ({
-    ...v,
+    id: v.id,
+    texto: v.texto || 'Verso sin texto',
+    posicion: v.posicion,
     placed: false
   })));
+  
+  console.log('Versos cargados:', availableVerses.value);
   
   // Iniciar timer
   startTime.value = Date.now();
@@ -370,7 +380,7 @@ onUnmounted(() => {
 
       <!-- Banco de versos (derecha) -->
       <div class="flex flex-col">
-        <h3 class="text-xl font-bold mb-4">📝 Banco de Versos</h3>
+        <h3 class="text-xl font-bold mb-4">📝 Banco de Versos ({{ availableVerses.length }} versos)</h3>
         <div class="space-y-3">
           <div
             v-for="verse in availableVerses"
@@ -385,8 +395,13 @@ onUnmounted(() => {
             @touchmove="handleTouchMove"
             @touchend="handleTouchEnd"
           >
-            {{ verse.texto }}
+            <span class="verse-content">{{ verse.texto }}</span>
           </div>
+        </div>
+
+        <!-- Debug info (temporal) -->
+        <div v-if="availableVerses.length === 0" class="alert alert-warning mt-4">
+          <span>⚠️ No se han cargado los versos. Recargando...</span>
         </div>
 
         <!-- Stats del nivel actual -->
@@ -516,6 +531,17 @@ onUnmounted(() => {
   cursor: move;
   transition: all 0.3s ease;
   user-select: none;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verse-content {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .verse-card:hover:not(.verse-placed) {
