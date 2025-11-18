@@ -1,0 +1,222 @@
+{
+  "mundos": [
+    {
+      "id": "oz",
+      "nombre": "El Mágico Mundo de Oz",
+      "personaje": "Dorothy",
+      "escenas": [
+        {
+          "id": "oz_inicio",
+          "titulo": "El Remolino",
+          "descripcion": "Dorothy y su perro Totó son atrapados por un poderoso tornado que los lleva lejos de Kansas. La casa gira y gira en el aire durante horas. Cuando finalmente aterriza, Dorothy abre la puerta y se encuentra en un lugar completamente diferente: un mundo lleno de colores brillantes y flores extrañas.",
+          "imagen": "🌪️",
+          "pregunta": {
+            "texto": "¿Qué fenómeno natural lleva a Dorothy a Oz?",
+            "opciones": [
+              {"texto": "Un tornado", "correcto": true},
+              {"texto": "Un terremoto", "correcto": false},
+              {"texto": "Una inundación", "correcto": false}
+            ],
+            "explicacion": "Un tornado es un remolino de viento muy poderoso que puede levantar casas y objetos."
+          },
+          "palabrasNuevas": ["tornado", "remolino", "fenómeno"],
+          "siguienteEscena": "oz_buenos"
+        },
+        {
+          "id": "oz_buenos",
+          "titulo": "El País de los Buenos",
+          "descripcion": "Dorothy conoce a los Munchkins, un pueblo pequeño pero alegre, y a la Bruja Buena del Norte. La bruja le cuenta que está en el País de Oz y que su casa cayó sobre la Bruja Mala del Este, liberando a los Munchkins. Le regala los zapatos mágicos de plata que pertenecían a la bruja.",
+          "imagen": "✨",
+          "pregunta": {
+            "texto": "¿Qué recibe Dorothy de la Bruja Buena?",
+            "opciones": [
+              {"texto": "Zapatos mágicos de plata", "correcto": true},
+              {"texto": "Una varita mágica", "correcto": false},
+              {"texto": "Un sombrero encantado", "correcto": false}
+            ],
+            "explicacion": "Los zapatos de plata son mágicos y la protegerán en su viaje."
+          },
+          "palabrasNuevas": ["liberando", "pertenecían", "mágicos"],
+          "siguienteEscena": "oz_encuentro"
+        },
+        {
+          "id": "oz_encuentro",
+          "titulo": "Los Compañeros del Camino",
+          "descripcion": "En su viaje por el camino de baldosas amarillas hacia la Ciudad Esmeralda, Dorothy conoce al Espantapájaros que desea un cerebro, al Hombre de Hojalata que anhela un corazón, y al León Cobarde que busca valentía. Todos deciden acompañarla para pedirle al Mago de Oz que les conceda sus deseos.",
+          "imagen": "🛤️",
+          "pregunta": {
+            "texto": "¿Qué busca cada compañero de Dorothy?",
+            "tipo": "emparejamiento",
+            "pares": [
+              {"personaje": "Espantapájaros", "deseo": "Un cerebro"},
+              {"personaje": "Hombre de Hojalata", "deseo": "Un corazón"},
+              {"personaje": "León", "deseo": "Valentía"}
+            ]
+          },
+          "palabrasNuevas": ["anhela", "valentía", "cobarde"],
+          "siguienteEscena": "oz_ciudad"
+        },
+        {
+          "id": "oz_ciudad",
+          "titulo": "La Ciudad Esmeralda",
+          "descripcion": "Después de muchas aventuras, finalmente llegan a la brillante Ciudad Esmeralda. Todo es verde: las casas, las calles, incluso la ropa de la gente. Un guardián les da gafas verdes para proteger sus ojos del resplandor. El Mago les pide que primero derroten a la Bruja Mala del Oeste.",
+          "imagen": "🏰",
+          "pregunta": {
+            "texto": "¿De qué color es todo en la Ciudad Esmeralda?",
+            "opciones": [
+              {"texto": "Verde", "correcto": true},
+              {"texto": "Amarillo", "correcto": false},
+              {"texto": "Azul", "correcto": false}
+            ],
+            "explicacion": "La ciudad brilla con un color esmeralda, que es un verde intenso y brillante."
+          },
+          "palabrasNuevas": ["esmeralda", "resplandor", "guardián"],
+          "siguienteEscena": "oz_bruja"
+        },
+        {
+          "id": "oz_bruja",
+          "titulo": "El Enfrentamiento con la Bruja",
+          "descripcion": "La Bruja Mala del Oeste envía monos voladores y lobos feroces para detener a Dorothy y sus amigos. En una confrontación final, Dorothy accidentalmente derrama agua sobre la bruja, haciéndola derretirse. Los amigos regresan victoriosos a la Ciudad Esmeralda.",
+          "imagen": "🧙‍♀️",
+          "pregunta": {
+            "texto": "¿Cómo derrota Dorothy a la Bruja Mala del Oeste?",
+            "opciones": [
+              {"texto": "Derramando agua sobre ella", "correcto": true},
+              {"texto": "Con un hechizo mágico", "correcto": false},
+              {"texto": "El león la asusta", "correcto": false}
+            ],
+            "explicacion": "El agua derrite a la bruja porque ella es vulnerable al agua."
+          },
+          "palabrasNuevas": ["confrontación", "derretirse", "victoriosos"],
+          "siguienteEscena": "oz_final"
+        },
+        {
+          "id": "oz_final",
+          "titulo": "El Descubrimiento del Mago",
+          "descripcion": "Al regresar, descubren que el Mago es solo un hombre común detrás de una cortina, usando trucos para parecer poderoso. Sin embargo, les hace ver que el Espantapájaros siempre fue inteligente, el Hombre de Hojalata siempre fue bondadoso, y el León siempre fue valiente. Dorothy descubre que sus zapatos mágicos pueden llevarla a casa.",
+          "imagen": "🎭",
+          "pregunta": {
+            "texto": "¿Qué aprenden los personajes al final?",
+            "opciones": [
+              {"texto": "Que ya tenían lo que buscaban dentro de ellos", "correcto": true},
+              {"texto": "Que el Mago es realmente poderoso", "correcto": false},
+              {"texto": "Que deben buscar otro mago", "correcto": false}
+            ],
+            "explicacion": "La lección principal es que todos ya poseían las cualidades que buscaban."
+          },
+          "palabrasNuevas": ["descubrimiento", "cualidades", "poseían"],
+          "siguienteEscena": null
+        }
+      ]
+    },
+    {
+      "id": "narnia",
+      "nombre": "El Reino de Narnia",
+      "personaje": "Lucy",
+      "escenas": [
+        {
+          "id": "narnia_armario",
+          "titulo": "El Armario Mágico",
+          "descripcion": "Lucy explora una casa grande durante una tarde lluviosa. Jugando al escondite, descubre un viejo armario de madera. Al entrar entre los abrigos de piel, siente ramas de árboles y nieve bajo sus pies. Ha atravesado el armario hacia otro mundo.",
+          "imagen": "🚪",
+          "pregunta": {
+            "texto": "¿Qué descubre Lucy al fondo del armario?",
+            "opciones": [
+              {"texto": "Un mundo nevado con árboles", "correcto": true},
+              {"texto": "Más ropa y zapatos", "correcto": false},
+              {"texto": "Un espejo mágico", "correcto": false}
+            ],
+            "explicacion": "El armario es un portal mágico hacia el reino de Narnia."
+          },
+          "palabrasNuevas": ["explorar", "armario", "atravesado"],
+          "siguienteEscena": "narnia_fauno"
+        },
+        {
+          "id": "narnia_fauno",
+          "titulo": "El Señor Tumnus",
+          "descripcion": "Lucy conoce a Tumnus, un fauno con patas de cabra y cuernos. Él lleva una bufanda roja y paraguas, y toca una flauta bellamente. Tumnus le cuenta sobre Narnia y la Bruja Blanca que ha congelado el reino en un invierno eterno, donde siempre es invierno pero nunca es Navidad.",
+          "imagen": "🎵",
+          "pregunta": {
+            "texto": "¿Qué es un fauno?",
+            "opciones": [
+              {"texto": "Una criatura mitad humano, mitad cabra", "correcto": true},
+              {"texto": "Un tipo de árbol mágico", "correcto": false},
+              {"texto": "Un hechizo de hielo", "correcto": false}
+            ],
+            "explicacion": "Los faunos son criaturas de la mitología con torso de humano y piernas de cabra."
+          },
+          "palabrasNuevas": ["fauno", "eterno", "congelado"],
+          "siguienteEscena": "narnia_hermanos"
+        },
+        {
+          "id": "narnia_hermanos",
+          "titulo": "Los Cuatro Hermanos",
+          "descripcion": "Lucy regresa y cuenta a sus hermanos Peter, Susan y Edmund sobre Narnia. Al principio no le creen, pero Edmund también encuentra el camino al armario y conoce a la Bruja Blanca, quien lo engaña con delicias turcas encantadas. Finalmente, los cuatro hermanos entran juntos a Narnia.",
+          "imagen": "👨‍👩‍👧‍👦",
+          "pregunta": {
+            "texto": "¿Cuántos hermanos entran finalmente a Narnia?",
+            "opciones": [
+              {"texto": "Cuatro hermanos", "correcto": true},
+              {"texto": "Dos hermanos", "correcto": false},
+              {"texto": "Tres hermanos", "correcto": false}
+            ],
+            "explicacion": "Lucy, Peter, Susan y Edmund son los cuatro hermanos Pevensie."
+          },
+          "palabrasNuevas": ["engaña", "delicias", "encantadas"],
+          "siguienteEscena": "narnia_aslan"
+        },
+        {
+          "id": "narnia_aslan",
+          "titulo": "Aslan el León",
+          "descripcion": "Los hermanos conocen a Aslan, el gran león dorado que es el verdadero rey de Narnia. Aslan es sabio, poderoso y bondadoso. Él les explica una antigua profecía que dice que cuando dos Hijos de Adán y dos Hijas de Eva se sienten en los cuatro tronos del Castillo de Cair Paravel, el reinado de la Bruja Blanca terminará.",
+          "imagen": "🦁",
+          "pregunta": {
+            "texto": "¿Quién es Aslan?",
+            "opciones": [
+              {"texto": "El verdadero rey de Narnia, un león sabio", "correcto": true},
+              {"texto": "Un mago poderoso", "correcto": false},
+              {"texto": "Un príncipe humano", "correcto": false}
+            ],
+            "explicacion": "Aslan es el león dorado, creador y verdadero gobernante de Narnia."
+          },
+          "palabrasNuevas": ["profecía", "bondadoso", "reinado"],
+          "siguienteEscena": "narnia_batalla"
+        },
+        {
+          "id": "narnia_batalla",
+          "titulo": "La Gran Batalla",
+          "descripcion": "Edmund es rescatado de la Bruja gracias al sacrificio de Aslan. El león vuelve a la vida por magia antigua y profunda. Se prepara una gran batalla entre las fuerzas de Aslan y el ejército de la Bruja. Peter lidera el ejército de Aslan con valentía, mientras Edmund redime sus errores luchando heroicamente.",
+          "imagen": "⚔️",
+          "pregunta": {
+            "texto": "¿Qué hace Edmund durante la batalla?",
+            "opciones": [
+              {"texto": "Lucha heroicamente y se redime", "correcto": true},
+              {"texto": "Huye del campo de batalla", "correcto": false},
+              {"texto": "Se une a la Bruja Blanca", "correcto": false}
+            ],
+            "explicacion": "Edmund demuestra valor y corrige sus errores previos."
+          },
+          "palabrasNuevas": ["sacrificio", "redime", "heroicamente"],
+          "siguienteEscena": "narnia_final"
+        },
+        {
+          "id": "narnia_final",
+          "titulo": "Los Reyes y Reinas de Narnia",
+          "descripcion": "Después de derrotar a la Bruja Blanca, los cuatro hermanos son coronados como reyes y reinas de Narnia en Cair Paravel. Reinan sabiamente durante muchos años, conocidos como el Rey Peter el Magnífico, la Reina Susan la Benévola, el Rey Edmund el Justo y la Reina Lucy la Valiente. Un día, cazando un ciervo blanco, regresan al armario y a su mundo.",
+          "imagen": "👑",
+          "pregunta": {
+            "texto": "¿Qué títulos reciben los hermanos como reyes y reinas?",
+            "opciones": [
+              {"texto": "El Magnífico, la Benévola, el Justo y la Valiente", "correcto": true},
+              {"texto": "El Fuerte, la Sabia, el Rápido y la Inteligente", "correcto": false},
+              {"texto": "El Grande, la Hermosa, el Sabio y la Poderosa", "correcto": false}
+            ],
+            "explicacion": "Estos títulos reflejan las cualidades especiales de cada hermano."
+          },
+          "palabrasNuevas": ["coronados", "benévola", "magnífico"],
+          "siguienteEscena": null
+        }
+      ]
+    }
+  ]
+}

@@ -29,6 +29,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'portal-magico',
+    titulo: 'Portal Mágico: Oz y Narnia',
+    materia: 'Lengua',
+    descripcion: 'Explora mundos fantásticos y aprende vocabulario en aventuras literarias',
+    icono: '🚪',
+    dificultad: 'Medio',
+    duracion: '40 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'laboratorio-acentuacion',
     titulo: 'Laboratorio de Acentuación',
     materia: 'Lengua',
@@ -99,6 +111,15 @@ const games = ref<Game[]>([
     activo: true,
     completado: false,
     progreso: 0
+  },
+  {
+    id: 'aventura-misiones',
+    titulo: 'Aventura en Misiones',
+    materia: 'Lengua',
+    descripcion: 'Explora los cuentos de Horacio Quiroga en la selva misionera',
+    icono: '🌿',
+    dificultad: 'Medio',
+    duracion: '40 min',
   }
 ])
 
@@ -114,12 +135,14 @@ const handleGameClick = (game: Game) => {
   const routeMap: Record<string, string> = {
     'cazador-caligramas': '/juegos/cazador-caligramas',
     'detectivismo-poetico': '/detectivismo-poetico',
+    'portal-magico': '/juegos/portal-magico',
     'laboratorio-acentuacion': '/laboratorio-acentuacion',
     'autopista-numerica': '/juegos/autopista-numerica',
     'transformador-calculadora': '/juegos/transformador-calculadora',
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
     'ciclo-agua': '/ciclo-agua',
     'defensa-buenosaires': '/juegos/defensa-buenosaires'
+    'aventura-misiones': '/juegos/aventura-misiones'
   }
 
   const route = routeMap[game.id]

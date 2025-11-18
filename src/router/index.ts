@@ -67,6 +67,16 @@ const router = createRouter({
       path: '/juegos/defensa-buenosaires',
       name: 'defensa-buenosaires',
       component: () => import('../games/defensa-buenosaires/DefensaGame.vue')
+    },
+    {
+      path: '/juegos/aventura-misiones',
+      name: 'aventura-misiones',
+      component: () => import('../games/aventura-misiones/MisionesGame.vue')
+    },
+    {
+      path: '/juegos/portal-magico',
+      name: 'portal-magico',
+      component: () => import('../games/portal-magico/PortalGame.vue')
     }
   ]
 })
