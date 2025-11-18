@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import GameLayout from '../../components/game/GameLayout.vue'
 import ScoreBoard from '../../components/game/ScoreBoard.vue'
@@ -9,6 +9,19 @@ import FeedbackModal from '../../components/game/FeedbackModal.vue'
 import * as gameState from '../../../composables/useGameState.js'
 import invasionesData from './invasiones.json'
 import personajesData from './personajes.json'
+import lugaresData from './lugares-historicos.json'
+// @ts-ignore
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
+// Fix Leaflet default icon issue
+// @ts-ignore
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+})
 
 // Types
 interface Opcion {
@@ -55,6 +68,10 @@ interface Enemigo {
 
 // State
 const router = useRouter()
+const mapContainer = ref<HTMLElement | null>(null)
+let map: L.Map | null = null
+const markers: L.Marker[] = []
+
 const invasionSeleccionada = ref<Invasion | null>(null)
 const eventoActual = ref(0)
 const eventoRespondido = ref(false)
@@ -122,6 +139,11 @@ const selectInvasion = (invasion: Invasion) => {
   // Initialize game state
   gameState.loadState('defensa-buenosaires')
   gameState.startGame()
+  
+  // Initialize map after DOM update
+  setTimeout(() => {
+    initializeMap()
+  }, 100)
 }
 
 const backToSelection = () => {
@@ -184,6 +206,95 @@ const finishGame = () => {
   gameState.markCompleted()
   router.push('/juegos')
 }
+
+// Map functions
+const initializeMap = () => {
+  if (!mapContainer.value) return
+
+  // Initialize map without setting view yet
+  map = L.map(mapContainer.value)
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map)
+
+  // Collect all marker coordinates for bounds calculation
+  const bounds = L.latLngBounds([])
+
+  // Add historical places markers
+  lugaresData.lugares.forEach(lugar => {
+    const iconColor = getIconColor(lugar.tipo)
+    const icon = L.divIcon({
+      className: 'custom-marker-defensa',
+      html: `<div class="marker-content" style="background-color: ${iconColor}">${getIconEmoji(lugar.tipo)}</div>`,
+      iconSize: [35, 35],
+      iconAnchor: [17, 17]
+    })
+
+    const latLng = L.latLng(lugar.coordenadas.lat, lugar.coordenadas.lng)
+    const marker = L.marker(latLng, { icon })
+      .addTo(map!)
+      .bindPopup(`
+        <div class="text-sm">
+          <strong>${lugar.nombre}</strong><br>
+          <em class="text-xs">${lugar.descripcion}</em>
+        </div>
+      `)
+    
+    markers.push(marker)
+    bounds.extend(latLng)
+  })
+
+  // Fit map to show all markers with padding
+  if (bounds.isValid()) {
+    map.fitBounds(bounds, { padding: [50, 50] })
+  }
+}
+
+const getIconColor = (tipo: string) => {
+  const colors: Record<string, string> = {
+    'estrategico': '#ef4444',
+    'militar': '#f59e0b',
+    'batalla': '#dc2626',
+    'defensa': '#10b981',
+    'ruta': '#6366f1',
+    'civil': '#8b5cf6',
+    'geografico': '#06b6d4'
+  }
+  return colors[tipo] || '#3b82f6'
+}
+
+const getIconEmoji = (tipo: string) => {
+  const emojis: Record<string, string> = {
+    'estrategico': '⭐',
+    'militar': '⚔️',
+    'batalla': '💥',
+    'defensa': '🛡️',
+    'ruta': '➡️',
+    'civil': '🏛️',
+    'geografico': '🌊'
+  }
+  return emojis[tipo] || '📍'
+}
+
+onMounted(() => {
+  gameState.loadState()
+  gameState.startGame()
+  
+  setTimeout(() => {
+    if (invasionSeleccionada.value) {
+      initializeMap()
+    }
+  }, 100)
+})
+
+onBeforeUnmount(() => {
+  if (map) {
+    map.remove()
+    map = null
+  }
+})
 </script>
 
 <template>
@@ -231,30 +342,42 @@ const finishGame = () => {
         </div>
 
         <div class="mapa-defensa card-edu mb-6 bg-base-100 p-4 rounded-lg shadow-md">
-          <h3 class="font-bold mb-4">Mapa de Buenos Aires Colonial</h3>
+          <h3 class="font-bold mb-4">🗺️ Mapa Histórico de Buenos Aires (1806-1807)</h3>
           
-          <div class="mapa-container relative bg-amber-50 rounded-lg p-4 min-h-96 border-2 border-amber-200">
-            <!-- Simple map representation -->
-            <div class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
-              <div class="text-9xl">🏛️</div>
-            </div>
-            
-            <!-- Defensas colocadas -->
-            <div v-for="defensa in defensasColocadas" :key="defensa.id"
-                 class="defensa-icon absolute text-2xl"
-                 :style="{left: defensa.x+'%', top: defensa.y+'%'}">
-              {{ defensa.tipo === 'milicia' ? '🛡️' : '🧱' }}
-            </div>
+          <div 
+            ref="mapContainer" 
+            class="leaflet-map-container rounded-lg overflow-hidden shadow-lg" 
+            style="height: 500px; width: 100%;"
+          ></div>
 
-            <!-- Enemigos -->
-            <div v-for="enemigo in enemigos" :key="enemigo.id"
-                 class="enemigo-icon absolute text-2xl"
-                 :style="{left: enemigo.x+'%', top: enemigo.y+'%'}">
-              🇬🇧
+          <div class="map-legend mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+            <div class="flex items-center gap-1">
+              <span>⭐</span> <span>Estratégico</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>⚔️</span> <span>Militar</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>💥</span> <span>Batalla</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>🛡️</span> <span>Defensa</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>➡️</span> <span>Ruta</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>🏛️</span> <span>Civil</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>🌊</span> <span>Geográfico</span>
             </div>
           </div>
+        </div>
 
-          <div class="defensa-controls mt-4 flex gap-4">
+        <div class="recursos-info card-edu mb-6 bg-base-100 p-4 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">📦 Recursos Disponibles</h3>
+          <div class="defensa-controls flex gap-4">
             <button @click="colocarDefensa('milicia')" 
                     :disabled="recursosDisponibles.milicias <= 0"
                     class="btn btn-primary btn-sm">
@@ -435,5 +558,35 @@ const finishGame = () => {
 .modal-enter-from .modal-box,
 .modal-leave-to .modal-box {
   transform: scale(0.9);
+}
+
+/* Leaflet custom markers */
+.custom-marker-defensa {
+  background: transparent;
+  border: none;
+}
+
+.custom-marker-defensa .marker-content {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+}
+
+.custom-marker-defensa .marker-content:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-map-container {
+  background: #e0e0e0;
 }
 </style>

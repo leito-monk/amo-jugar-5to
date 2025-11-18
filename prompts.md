@@ -4634,340 +4634,202 @@ Juego independiente, importar en router
 
 ---
 
-## PROMPT-INT01: Sistema de Monetización
+Perfecto, modifico el PROMPT-INT01 para integrar Cafecito.app en lugar de un sistema de monedas virtuales. Aquí está la versión actualizada:
+
+---
+
+## PROMPT-INT01: Sistema de Donaciones con Cafecito.app
 
 ```
-Eres un desarrollador experto en Vue 3. Crea el sistema de monetización con monedas virtuales.
+Eres un desarrollador experto en Vue 3. Integra el sistema de donaciones de Cafecito.app.
 
 CONTEXTO:
-- Economía virtual del juego
-- Monedas: "Estrellas de Aprendizaje" ⭐
-- Ganar monedas jugando
-- Tienda virtual con recompensas
-- Avatares personalizables
+- Modelo de donaciones voluntarias (no monetización forzada)
+- Botón de Cafecito.app visible pero no intrusivo
+- Agradecimientos especiales a donantes
+- Sin funcionalidades bloqueadas (todo gratis)
+- Cafecito.app es una plataforma argentina para recibir donaciones
 
 ESTRUCTURA:
 src/
-├── store/
-│   └── economyStore.js
 ├── components/
-│   ├── CurrencyDisplay.vue
-│   ├── ShopModal.vue
-│   └── AvatarCustomizer.vue
+│   ├── CafecitoButton.vue
+│   ├── DonateModal.vue
+│   └── ThankYouBanner.vue
 └── views/
-    └── TiendaView.vue
+    └── AgradecimientosView.vue
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ARCHIVO: src/store/economyStore.js
-
-import { reactive } from 'vue'
-import { useLocalStorage } from '@/composables/useLocalStorage'
-
-const { save, load } = useLocalStorage()
-
-const STORAGE_KEY = 'economia_usuario'
-
-const defaultState = {
-  estrellas: 0,
-  estrellasGanadasTotal: 0,
-  comprasRealizadas: [],
-  avatarActual: {
-    cabeza: 'default',
-    cuerpo: 'default',
-    accesorio: null,
-    fondo: 'default'
-  },
-  itemsDesbloqueados: ['default']
-}
-
-const state = reactive({ ...defaultState })
-
-// Cargar estado al iniciar
-const loadState = () => {
-  const saved = load(STORAGE_KEY)
-  if (saved) {
-    Object.assign(state, saved)
-  }
-}
-
-const saveState = () => {
-  save(STORAGE_KEY, state)
-}
-
-// Ganar estrellas (llamar desde juegos)
-export const ganarEstrellas = (cantidad) => {
-  state.estrellas += cantidad
-  state.estrellasGanadasTotal += cantidad
-  saveState()
-}
-
-// Gastar estrellas
-export const gastarEstrellas = (cantidad) => {
-  if (state.estrellas >= cantidad) {
-    state.estrellas -= cantidad
-    saveState()
-    return true
-  }
-  return false
-}
-
-// Comprar item
-export const comprarItem = (item) => {
-  if (gastarEstrellas(item.precio)) {
-    state.comprasRealizadas.push({
-      itemId: item.id,
-      fecha: new Date().toISOString()
-    })
-    state.itemsDesbloqueados.push(item.id)
-    saveState()
-    return true
-  }
-  return false
-}
-
-// Actualizar avatar
-export const actualizarAvatar = (parte, itemId) => {
-  if (state.itemsDesbloqueados.includes(itemId)) {
-    state.avatarActual[parte] = itemId
-    saveState()
-    return true
-  }
-  return false
-}
-
-// Verificar si item está desbloqueado
-export const estaDesbloqueado = (itemId) => {
-  return state.itemsDesbloqueados.includes(itemId)
-}
-
-// Obtener estado
-export const getEconomyState = () => state
-
-// Inicializar
-loadState()
-
-export default {
-  state,
-  ganarEstrellas,
-  gastarEstrellas,
-  comprarItem,
-  actualizarAvatar,
-  estaDesbloqueado,
-  getEconomyState
-}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-ARCHIVO: src/components/CurrencyDisplay.vue
+ARCHIVO: src/components/CafecitoButton.vue
 
 <template>
-  <div class="currency-display inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 px-4 py-2 rounded-full shadow-lg">
-    <span class="text-2xl">⭐</span>
-    <span class="text-xl font-bold text-white">{{ estrellas }}</span>
+  <div class="cafecito-button-container">
+    <!-- Botón flotante (versión pequeña) -->
+    <a v-if="variant === 'floating'"
+       :href="cafecitoUrl"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="cafecito-floating"
+       title="Invitame un café">
+      <div class="floating-btn">
+        ☕
+      </div>
+    </a>
+
+    <!-- Botón estándar -->
+    <a v-else-if="variant === 'standard'"
+       :href="cafecitoUrl"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="cafecito-standard btn btn-primary gap-2">
+      <span class="text-2xl">☕</span>
+      <span>{{ buttonText }}</span>
+    </a>
+
+    <!-- Card completa -->
+    <div v-else-if="variant === 'card'" class="cafecito-card card-edu">
+      <div class="text-center">
+        <div class="text-6xl mb-4">☕</div>
+        <h3 class="text-xl font-bold mb-2">¿Te gusta esta plataforma?</h3>
+        <p class="text-gray-600 mb-4">
+          Este proyecto es gratuito y de código abierto. 
+          Si te resulta útil, considerá invitarnos un cafecito.
+        </p>
+        <a :href="cafecitoUrl"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary btn-block">
+          Invitar un café ☕
+        </a>
+        <p class="text-xs text-gray-500 mt-2">
+          Todas las funciones seguirán siendo gratuitas
+        </p>
+      </div>
+    </div>
+
+    <!-- Banner sutil -->
+    <div v-else-if="variant === 'banner'" class="cafecito-banner">
+      <div class="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border-2 border-amber-200">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">☕</span>
+          <div>
+            <p class="font-semibold text-sm">¿Disfrutás de Yo Amo Aprender?</p>
+            <p class="text-xs text-gray-600">Apoyanos con un cafecito</p>
+          </div>
+        </div>
+        <a :href="cafecitoUrl"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-sm btn-primary">
+          Donar
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { getEconomyState } from '@/store/economyStore'
+const props = defineProps({
+  variant: {
+    type: String,
+    default: 'standard',
+    validator: (value) => ['floating', 'standard', 'card', 'banner'].includes(value)
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  buttonText: {
+    type: String,
+    default: 'Invitame un café'
+  }
+})
 
-const economyState = getEconomyState()
-const estrellas = computed(() => economyState.estrellas)
+const cafecitoUrl = `https://cafecito.app/${props.username}`
 </script>
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-ARCHIVO: src/assets/data/tienda-items.json
-
-{
-  "categorias": [
-    {
-      "id": "cabezas",
-      "nombre": "Cabezas",
-      "items": [
-        {
-          "id": "cabeza_astronauta",
-          "nombre": "Astronauta",
-          "precio": 50,
-          "icono": "🚀",
-          "descripcion": "Explora el espacio del conocimiento"
-        },
-        {
-          "id": "cabeza_pirata",
-          "nombre": "Pirata",
-          "precio": 40,
-          "icono": "🏴‍☠️"
-        },
-        {
-          "id": "cabeza_mago",
-          "nombre": "Mago",
-          "precio": 60,
-          "icono": "🧙"
-        }
-      ]
-    },
-    {
-      "id": "accesorios",
-      "nombre": "Accesorios",
-      "items": [
-        {
-          "id": "acc_gafas",
-          "nombre": "Gafas de Estudio",
-          "precio": 30,
-          "icono": "👓"
-        },
-        {
-          "id": "acc_corona",
-          "nombre": "Corona del Saber",
-          "precio": 100,
-          "icono": "👑",
-          "especial": true
-        }
-      ]
-    },
-    {
-      "id": "fondos",
-      "nombre": "Fondos",
-      "items": [
-        {
-          "id": "fondo_espacio",
-          "nombre": "Espacio",
-          "precio": 70,
-          "preview": "/assets/fondos/espacio.svg"
-        },
-        {
-          "id": "fondo_biblioteca",
-          "nombre": "Biblioteca",
-          "precio": 50,
-          "preview": "/assets/fondos/biblioteca.svg"
-        }
-      ]
-    }
-  ],
-  "ofertas_especiales": [
-    {
-      "id": "pack_estudiante",
-      "nombre": "Pack Estudiante Completo",
-      "items": ["cabeza_graduado", "acc_gafas", "fondo_aula"],
-      "precio_normal": 150,
-      "precio_oferta": 100,
-      "descuento": 33
-    }
-  ]
+<style scoped>
+.cafecito-floating {
+  @apply fixed bottom-6 right-6 z-50;
 }
 
+.floating-btn {
+  @apply w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 
+         rounded-full shadow-lg flex items-center justify-center
+         text-2xl hover:scale-110 transition-transform cursor-pointer
+         animate-bounce;
+  animation-duration: 2s;
+}
+
+.cafecito-standard {
+  @apply inline-flex items-center;
+}
+
+.cafecito-card {
+  @apply max-w-md mx-auto;
+}
+
+.cafecito-banner {
+  @apply my-4;
+}
+</style>
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ARCHIVO: src/views/TiendaView.vue
+ARCHIVO: src/components/DonateModal.vue
 
 <template>
-  <div class="tienda-view min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-6">
-    <div class="container mx-auto max-w-6xl">
+  <div v-if="show" class="modal modal-open">
+    <div class="modal-box max-w-2xl">
+      <button @click="$emit('close')" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       
-      <div class="header flex justify-between items-center mb-8">
-        <h1 class="text-4xl font-display font-bold">🛍️ Tienda</h1>
-        <CurrencyDisplay />
-      </div>
+      <div class="text-center">
+        <div class="text-7xl mb-4">☕💙</div>
+        <h2 class="font-display text-3xl font-bold mb-3">
+          ¡Gracias por tu apoyo!
+        </h2>
+        
+        <p class="text-lg mb-6">
+          <strong>Yo Amo Aprender Digital</strong> es un proyecto educativo libre y gratuito 
+          para estudiantes de 5to grado de Argentina.
+        </p>
 
-      <div class="avatar-preview card-edu mb-8 p-6">
-        <h2 class="text-2xl font-bold mb-4 text-center">Tu Avatar</h2>
-        <div class="avatar-display flex justify-center">
-          <div class="avatar-container relative w-64 h-64 rounded-full bg-gradient-to-br from-blue-200 to-purple-200 flex items-center justify-center">
-            <span class="text-8xl">{{ getAvatarEmoji() }}</span>
-            <button @click="showCustomizer = true" class="absolute bottom-0 right-0 btn btn-circle btn-primary">
-              ✏️
+        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+          <h3 class="font-bold mb-3">🎯 ¿Para qué usamos las donaciones?</h3>
+          <ul class="text-left space-y-2 max-w-md mx-auto">
+            <li>✓ Hosting y mantenimiento del sitio</li>
+            <li>✓ Desarrollo de nuevos juegos educativos</li>
+            <li>✓ Creación de contenido pedagógico</li>
+            <li>✓ Mejoras de accesibilidad</li>
+            <li>✓ Soporte y actualizaciones</li>
+          </ul>
+        </div>
+
+        <div class="bg-amber-50 p-4 rounded-lg mb-6 text-sm">
+          <p class="font-semibold mb-2">💡 Recordá:</p>
+          <p>Todas las funcionalidades seguirán siendo 100% gratuitas, 
+          con o sin donación. Tu apoyo nos ayuda a seguir mejorando.</p>
+        </div>
+
+        <a :href="`https://cafecito.app/${username}`"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary btn-lg gap-3 mb-4">
+          <span class="text-3xl">☕</span>
+          <span>Ir a Cafecito.app</span>
+        </a>
+
+        <div class="divider">O</div>
+
+        <div class="other-support">
+          <p class="text-sm text-gray-600 mb-3">También podés ayudar de otras formas:</p>
+          <div class="grid grid-cols-2 gap-3">
+            <button @click="shareProject" class="btn btn-outline btn-sm">
+              📢 Compartir
             </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="categorias">
-        <div v-for="categoria in tiendaData.categorias" :key="categoria.id" class="categoria-section mb-8">
-          <h3 class="text-2xl font-bold mb-4">{{ categoria.nombre }}</h3>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div v-for="item in categoria.items" :key="item.id"
-                 class="item-card card-edu cursor-pointer"
-                 :class="{'opacity-50': !puedeComprar(item)}"
-                 @click="comprarItem(item)">
-              
-              <div class="item-icon text-6xl text-center mb-2">
-                {{ item.icono || '🎁' }}
-              </div>
-              
-              <h4 class="font-bold text-center mb-2">{{ item.nombre }}</h4>
-              
-              <div class="item-precio text-center">
-                <span v-if="!estaDesbloqueado(item.id)" class="flex items-center justify-center gap-1">
-                  <span class="text-xl font-bold">{{ item.precio }}</span>
-                  <span class="text-lg">⭐</span>
-                </span>
-                <span v-else class="badge badge-success">Desbloqueado ✓</span>
-              </div>
-
-              <div v-if="item.especial" class="badge badge-secondary w-full mt-2">
-                ⭐ Especial
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="tiendaData.ofertas_especiales" class="ofertas-section card-edu p-6 mt-8">
-        <h3 class="text-2xl font-bold mb-4">🎉 Ofertas Especiales</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div v-for="oferta in tiendaData.ofertas_especiales" :key="oferta.id"
-               class="oferta-card p-4 bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg">
-            <h4 class="font-bold text-lg mb-2">{{ oferta.nombre }}</h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Incluye: {{ oferta.items.join(', ') }}
-            </p>
-            <div class="flex items-center justify-between">
-              <div>
-                <span class="line-through text-gray-500">{{ oferta.precio_normal }} ⭐</span>
-                <span class="text-2xl font-bold text-green-600 ml-2">{{ oferta.precio_oferta }} ⭐</span>
-                <span class="badge badge-error ml-2">-{{ oferta.descuento }}%</span>
-              </div>
-              <button @click="comprarPack(oferta)" class="btn btn-primary btn-sm">
-                Comprar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal customizador -->
-      <div v-if="showCustomizer" class="modal modal-open">
-        <div class="modal-box max-w-4xl">
-          <h3 class="font-display text-2xl font-bold mb-4">Personaliza tu Avatar</h3>
-          
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="avatar-preview-large">
-              <div class="w-full h-64 rounded-lg bg-gradient-to-br from-blue-200 to-purple-200 flex items-center justify-center">
-                <span class="text-9xl">{{ getAvatarEmoji() }}</span>
-              </div>
-            </div>
-
-            <div class="customizer-options space-y-4">
-              <div v-for="categoria in tiendaData.categorias" :key="categoria.id">
-                <h4 class="font-semibold mb-2">{{ categoria.nombre }}</h4>
-                <div class="flex flex-wrap gap-2">
-                  <button v-for="item in categoria.items.filter(i => estaDesbloqueado(i.id))"
-                          :key="item.id"
-                          @click="aplicarItem(categoria.id, item.id)"
-                          class="btn btn-sm"
-                          :class="avatarActual[categoria.id] === item.id ? 'btn-primary' : 'btn-outline'">
-                    {{ item.icono || item.nombre }}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal-action">
-            <button @click="showCustomizer = false" class="btn btn-primary">
-              Guardar y cerrar
+            <button @click="reportBug" class="btn btn-outline btn-sm">
+              🐛 Reportar errores
             </button>
           </div>
         </div>
@@ -4977,65 +4839,333 @@ ARCHIVO: src/views/TiendaView.vue
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import CurrencyDisplay from '@/components/CurrencyDisplay.vue'
-import { getEconomyState, comprarItem as comprarItemStore, estaDesbloqueado as itemDesbloqueado, actualizarAvatar } from '@/store/economyStore'
-import tiendaData from '@/assets/data/tienda-items.json'
+defineProps({
+  show: {
+    type: Boolean,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true
+  }
+})
 
-const economyState = getEconomyState()
-const showCustomizer = ref(false)
+const emit = defineEmits(['close'])
 
-const avatarActual = computed(() => economyState.avatarActual)
-
-const puedeComprar = (item) => {
-  return economyState.estrellas >= item.precio && !itemDesbloqueado(item.id)
-}
-
-const estaDesbloqueado = (itemId) => {
-  return itemDesbloqueado(itemId)
-}
-
-const comprarItem = (item) => {
-  if (puedeComprar(item)) {
-    if (comprarItemStore(item)) {
-      alert(`¡Compraste ${item.nombre}! 🎉`)
-    }
-  } else if (itemDesbloqueado(item.id)) {
-    alert('Ya tienes este item')
+const shareProject = () => {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Yo Amo Aprender Digital',
+      text: 'Plataforma educativa gratuita para 5to grado',
+      url: window.location.origin
+    })
   } else {
-    alert(`Necesitas ${item.precio - economyState.estrellas} estrellas más`)
+    // Fallback: copiar al portapapeles
+    navigator.clipboard.writeText(window.location.origin)
+    alert('¡Link copiado! Compartilo con otros docentes y estudiantes.')
   }
 }
 
-const aplicarItem = (categoria, itemId) => {
-  actualizarAvatar(categoria, itemId)
-}
-
-const getAvatarEmoji = () => {
-  // Lógica simplificada - en producción usar las partes del avatar
-  return '😊'
+const reportBug = () => {
+  // Abrir formulario de contacto o GitHub issues
+  window.open('https://github.com/tu-repo/issues', '_blank')
 }
 </script>
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-INTEGRACIÓN EN JUEGOS:
-En cada juego, importar y usar:
+ARCHIVO: src/components/ThankYouBanner.vue
 
-import { ganarEstrellas } from '@/store/economyStore'
+<template>
+  <div v-if="showBanner" class="thank-you-banner animate-fade-in">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">💙</span>
+        <div>
+          <p class="font-bold text-sm">¡Gracias a nuestros apoyadores!</p>
+          <p class="text-xs text-gray-600">Este proyecto es posible gracias a la comunidad</p>
+        </div>
+      </div>
+      <button @click="closeBanner" class="btn btn-ghost btn-sm">✕</button>
+    </div>
+  </div>
+</template>
 
-// Al completar nivel/juego:
-ganarEstrellas(puntos / 10) // 1 estrella cada 10 puntos, ajustar según balance
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const showBanner = ref(false)
+
+onMounted(() => {
+  // Mostrar banner solo cada 3 días
+  const lastShown = localStorage.getItem('thank_you_banner_last_shown')
+  const threeDaysAgo = Date.now() - (3 * 24 * 60 * 60 * 1000)
+  
+  if (!lastShown || parseInt(lastShown) < threeDaysAgo) {
+    setTimeout(() => {
+      showBanner.value = true
+    }, 5000) // Mostrar después de 5 segundos
+  }
+})
+
+const closeBanner = () => {
+  showBanner.value = false
+  localStorage.setItem('thank_you_banner_last_shown', Date.now().toString())
+}
+</script>
+
+<style scoped>
+.thank-you-banner {
+  @apply fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-50 to-purple-50 
+         border-b-2 border-blue-200 shadow-md z-40;
+}
+
+.animate-fade-in {
+  animation: fadeInDown 0.5s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ARCHIVO: src/views/AgradecimientosView.vue
+
+<template>
+  <div class="agradecimientos-view min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12 px-4">
+    <div class="container mx-auto max-w-4xl">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-display font-bold mb-4">💙 Agradecimientos</h1>
+        <p class="text-xl text-gray-600">
+          Este proyecto es posible gracias a la comunidad educativa
+        </p>
+      </div>
+
+      <!-- Card de donaciones -->
+      <CafecitoButton variant="card" :username="cafecitoUsername" class="mb-12" />
+
+      <!-- Sección de créditos -->
+      <div class="credits-section card-edu mb-8">
+        <h2 class="text-2xl font-bold mb-6">🏫 Créditos</h2>
+        
+        <div class="space-y-6">
+          <div class="credit-item">
+            <h3 class="font-bold text-lg mb-2">📚 Contenido Educativo</h3>
+            <p class="text-gray-700">
+              Basado en el libro "Yo Amo Aprender 5" del Ministerio de Educación CABA.
+              Todos los contenidos pedagógicos están alineados con los NAP (Núcleos de Aprendizajes Prioritarios).
+            </p>
+          </div>
+
+          <div class="credit-item">
+            <h3 class="font-bold text-lg mb-2">💻 Desarrollo</h3>
+            <p class="text-gray-700">
+              Proyecto de código abierto desarrollado con Vue 3, Tailwind CSS y DaisyUI.
+              <a href="https://github.com/tu-repo" target="_blank" class="link link-primary">
+                Ver en GitHub
+              </a>
+            </p>
+          </div>
+
+          <div class="credit-item">
+            <h3 class="font-bold text-lg mb-2">🎨 Diseño</h3>
+            <p class="text-gray-700">
+              Diseño pensado para estudiantes de 10-11 años, priorizando accesibilidad 
+              y experiencia de usuario adaptada a dispositivos móviles.
+            </p>
+          </div>
+
+          <div class="credit-item">
+            <h3 class="font-bold text-lg mb-2">🌟 Apoyadores</h3>
+            <p class="text-gray-700 mb-3">
+              Gracias especiales a todos los que apoyan este proyecto en Cafecito.app:
+            </p>
+            <div v-if="supporters.length > 0" class="supporters-list flex flex-wrap gap-2">
+              <span v-for="supporter in supporters" :key="supporter"
+                    class="badge badge-lg badge-primary">
+                {{ supporter }}
+              </span>
+            </div>
+            <p v-else class="text-sm text-gray-500 italic">
+              Sé el primero en apoyar este proyecto ☕
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Licencia -->
+      <div class="license-section card-edu">
+        <h2 class="text-2xl font-bold mb-4">📜 Licencia</h2>
+        <p class="text-gray-700 mb-3">
+          Este proyecto está bajo licencia <strong>MIT</strong>. 
+          Es libre y gratuito para uso educativo.
+        </p>
+        <p class="text-sm text-gray-600">
+          Podés usar, modificar y distribuir este código libremente, 
+          siempre manteniendo la atribución original.
+        </p>
+      </div>
+
+      <!-- Contacto -->
+      <div class="contact-section text-center mt-12">
+        <h3 class="text-xl font-bold mb-4">📧 Contacto</h3>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="mailto:contacto@tudominio.com" class="btn btn-outline btn-sm">
+            Email
+          </a>
+          <a href="https://github.com/tu-repo" target="_blank" class="btn btn-outline btn-sm">
+            GitHub
+          </a>
+          <a href="https://twitter.com/tu-cuenta" target="_blank" class="btn btn-outline btn-sm">
+            Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import CafecitoButton from '@/components/CafecitoButton.vue'
+
+// Configuración de Cafecito
+const cafecitoUsername = 'tu-usuario' // CAMBIAR por tu usuario real de Cafecito
+
+// Lista de apoyadores (actualizar manualmente o via API)
+const supporters = ref([
+  // Ejemplo: 'María G.', 'Juan P.', 'Escuela N°123'
+  // Dejar vacío inicialmente
+])
+</script>
+
+<style scoped>
+.credit-item {
+  @apply pb-6 border-b border-gray-200 last:border-b-0 last:pb-0;
+}
+</style>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INTEGRACIÓN EN LA APP:
+
+1. App.vue - Agregar botón flotante:
+
+<template>
+  <div id="app">
+    <OfflineIndicator />
+    <ThankYouBanner />
+    <router-view />
+    <InstallPWA />
+    <CafecitoButton variant="floating" username="tu-usuario" />
+  </div>
+</template>
+
+<script setup>
+import CafecitoButton from '@/components/CafecitoButton.vue'
+import ThankYouBanner from '@/components/ThankYouBanner.vue'
+// ... otros imports
+</script>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. Router - Agregar ruta de agradecimientos:
+
+{
+  path: '/agradecimientos',
+  name: 'Agradecimientos',
+  component: () => import('@/views/AgradecimientosView.vue')
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. Footer - Link a agradecimientos:
+
+<footer class="footer">
+  <div class="container mx-auto px-4 py-6 text-center">
+    <p class="text-sm text-gray-600 mb-2">
+      Yo Amo Aprender Digital - Proyecto Educativo Libre
+    </p>
+    <div class="links flex justify-center gap-4 text-xs">
+      <router-link to="/agradecimientos" class="link link-primary">
+        💙 Agradecimientos
+      </router-link>
+      <a href="https://github.com/tu-repo" target="_blank" class="link link-primary">
+        GitHub
+      </a>
+    </div>
+  </div>
+</footer>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VARIANTES DE USO:
+
+<!-- Botón flotante (siempre visible) -->
+<CafecitoButton variant="floating" username="tu-usuario" />
+
+<!-- Botón estándar -->
+<CafecitoButton variant="standard" username="tu-usuario" button-text="Apoyá el proyecto" />
+
+<!-- Card completa -->
+<CafecitoButton variant="card" username="tu-usuario" />
+
+<!-- Banner sutil -->
+<CafecitoButton variant="banner" username="tu-usuario" />
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONFIGURACIÓN:
+
+1. Crear cuenta en https://cafecito.app/
+2. Obtener tu username
+3. Reemplazar "tu-usuario" en todos los componentes
+4. Personalizar mensajes según tu proyecto
+
+BUENAS PRÁCTICAS:
+
+✓ No forzar donaciones - todo sigue siendo gratis
+✓ Ser transparente sobre el uso de los fondos
+✓ Agradecer públicamente a los donantes (con permiso)
+✓ No mostrar el botón flotante en móviles pequeños (opcional)
+✓ Respetar la privacidad - no guardar información de donantes
+
+MÉTRICAS (opcional):
+
+Si querés trackear clicks al botón de Cafecito:
+
+const trackDonateClick = () => {
+  if (window.gtag) {
+    window.gtag('event', 'donate_click', {
+      'event_category': 'engagement',
+      'event_label': 'cafecito'
+    })
+  }
+}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 VALIDACIÓN:
-✓ Monedas se guardan persistentemente
-✓ Compras funcionan correctamente
-✓ Avatar se puede personalizar
-✓ Tienda muestra items desbloqueados
-✓ Ofertas especiales
+
+✓ Botón de Cafecito visible pero no intrusivo
+✓ Modal de donaciones clara y transparente
+✓ Banner de agradecimientos aparece esporádicamente
+✓ Página de créditos completa
+✓ Links funcionan correctamente
+✓ Todo sigue siendo 100% funcional sin donar
+✓ Responsive en mobile y desktop
 ```
+
 
 ---
 

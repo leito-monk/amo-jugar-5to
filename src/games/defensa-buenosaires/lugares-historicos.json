@@ -1,0 +1,84 @@
+{
+  "lugares": [
+    {
+      "id": "plaza_mayor",
+      "nombre": "Plaza Mayor (Plaza de Mayo)",
+      "coordenadas": { "lat": -34.6083, "lng": -58.3712 },
+      "descripcion": "Centro neurálgico de Buenos Aires colonial. Aquí se encontraba el Cabildo.",
+      "tipo": "estrategico",
+      "relevancia": "primera_invasion"
+    },
+    {
+      "id": "fuerte",
+      "nombre": "Fuerte de Buenos Aires",
+      "coordenadas": { "lat": -34.6076, "lng": -58.3725 },
+      "descripcion": "Sede del gobierno colonial, donde se rindió Beresford en 1806.",
+      "tipo": "militar",
+      "relevancia": "primera_invasion"
+    },
+    {
+      "id": "plaza_defensa",
+      "nombre": "Plaza de la Defensa (Plaza de la Victoria)",
+      "coordenadas": { "lat": -34.6090, "lng": -58.3700 },
+      "descripcion": "Lugar donde Liniers organizó la reconquista en 1806.",
+      "tipo": "estrategico",
+      "relevancia": "primera_invasion"
+    },
+    {
+      "id": "retiro",
+      "nombre": "Retiro",
+      "coordenadas": { "lat": -34.5889, "lng": -58.3747 },
+      "descripcion": "Punto de desembarco de las tropas inglesas en la segunda invasión.",
+      "tipo": "militar",
+      "relevancia": "segunda_invasion"
+    },
+    {
+      "id": "corrientes",
+      "nombre": "Calle de las Corrientes (Av. Corrientes)",
+      "coordenadas": { "lat": -34.6037, "lng": -58.3816 },
+      "descripcion": "Ruta de avance de las tropas inglesas hacia el centro.",
+      "tipo": "ruta",
+      "relevancia": "segunda_invasion"
+    },
+    {
+      "id": "cabildo",
+      "nombre": "Cabildo",
+      "coordenadas": { "lat": -34.6082, "lng": -58.3733 },
+      "descripcion": "Sede del gobierno municipal. Testigo de ambas invasiones.",
+      "tipo": "estrategico",
+      "relevancia": "ambas"
+    },
+    {
+      "id": "santo_domingo",
+      "nombre": "Convento de Santo Domingo",
+      "coordenadas": { "lat": -34.6103, "lng": -58.3742 },
+      "descripcion": "Escenario de la batalla decisiva en 1807. Las marcas de balas aún se conservan.",
+      "tipo": "batalla",
+      "relevancia": "segunda_invasion"
+    },
+    {
+      "id": "casa_virrey",
+      "nombre": "Casa del Virrey Sobremonte",
+      "coordenadas": { "lat": -34.6095, "lng": -58.3820 },
+      "descripcion": "Residencia del virrey que huyó durante la primera invasión.",
+      "tipo": "civil",
+      "relevancia": "primera_invasion"
+    },
+    {
+      "id": "miserere",
+      "nombre": "Miserere (Plaza Once)",
+      "coordenadas": { "lat": -34.6097, "lng": -58.4039 },
+      "descripcion": "Barrio donde se organizaron milicias vecinales.",
+      "tipo": "defensa",
+      "relevancia": "ambas"
+    },
+    {
+      "id": "riachuelo",
+      "nombre": "Riachuelo",
+      "coordenadas": { "lat": -34.6451, "lng": -58.3631 },
+      "descripcion": "Límite sur de Buenos Aires. Ruta de escape de las tropas inglesas.",
+      "tipo": "geografico",
+      "relevancia": "segunda_invasion"
+    }
+  ]
+}

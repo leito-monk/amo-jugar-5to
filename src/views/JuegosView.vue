@@ -120,6 +120,9 @@ const games = ref<Game[]>([
     icono: '🌿',
     dificultad: 'Medio',
     duracion: '40 min',
+    activo: true,
+    completado: false,
+    progreso: 0
   }
 ])
 
