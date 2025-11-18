@@ -29,6 +29,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'viaje-hidrosfera',
+    titulo: 'Viaje por la Hidrosfera',
+    materia: 'Ciencias Naturales',
+    descripcion: 'Explora el agua en el planeta y descubre sus estados y ubicaciones',
+    icono: '🌊',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'suma-rapida',
     titulo: 'Suma Rápida',
     materia: 'Matemáticas',
@@ -106,6 +118,8 @@ const handleGameClick = (game: Game) => {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'viaje-hidrosfera') {
+    router.push(`/juegos/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
     // Otros juegos aún no implementados

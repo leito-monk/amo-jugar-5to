@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/demo',
       name: 'demo',
       component: () => import('../views/GameDemoView.vue')
+    },
+    {
+      path: '/juegos/viaje-hidrosfera',
+      name: 'viaje-hidrosfera',
+      component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')
     }
   ]
 })
