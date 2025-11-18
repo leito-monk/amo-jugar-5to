@@ -17,6 +17,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'detectivismo-poetico',
+    titulo: 'Detectivismo Poético',
+    materia: 'Lengua',
+    descripcion: 'Conviértete en detective literario y resuelve misterios poéticos',
+    icono: '🕵️‍♂️',
+    dificultad: 'Medio',
+    duracion: '45 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'suma-rapida',
     titulo: 'Suma Rápida',
     materia: 'Matemáticas',
@@ -92,6 +104,8 @@ const router = useRouter()
 const handleGameClick = (game: Game) => {
   if (game.activo && game.id === 'cazador-caligramas') {
     router.push(`/juegos/${game.id}`)
+  } else if (game.activo && game.id === 'detectivismo-poetico') {
+    router.push(`/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
     // Otros juegos aún no implementados

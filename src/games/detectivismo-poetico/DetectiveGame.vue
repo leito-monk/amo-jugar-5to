@@ -227,8 +227,44 @@ const resetGame = () => {
   resourceTypeCount.value = {}
 }
 
+const handleSelectionChange = () => {
+  const selection = window.getSelection()
+  console.log('Selection changed:', selection?.toString())
+  
+  if (!selection || selection.toString().trim().length < 3) {
+    showContextMenu.value = false
+    return
+  }
+
+  const selected = selection.toString().trim()
+  
+  // Check if the selection is within the poem container
+  const range = selection.getRangeAt(0)
+  const poemContainer = document.querySelector('.poem-container')
+  if (!poemContainer || !poemContainer.contains(range.commonAncestorContainer)) {
+    console.log('Selection not in poem container')
+    showContextMenu.value = false
+    return
+  }
+
+  console.log('Showing context menu for:', selected)
+  selectedText.value = selected
+  
+  // Position the context menu
+  const rect = range.getBoundingClientRect()
+  const container = poemContainer.getBoundingClientRect()
+  
+  contextMenuPosition.value = {
+    x: rect.left - container.left + rect.width / 2,
+    y: rect.bottom - container.top + 10
+  }
+  
+  showContextMenu.value = true
+}
+
 const closeContextMenu = (event: MouseEvent) => {
   const target = event.target as HTMLElement
+  // Don't close if clicking on the context menu itself or its buttons
   if (!target.closest('.context-menu')) {
     showContextMenu.value = false
   }
@@ -237,10 +273,12 @@ const closeContextMenu = (event: MouseEvent) => {
 // Lifecycle
 onMounted(() => {
   document.addEventListener('click', closeContextMenu)
+  document.addEventListener('selectionchange', handleSelectionChange)
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', closeContextMenu)
+  document.removeEventListener('selectionchange', handleSelectionChange)
 })
 </script>
 
@@ -281,7 +319,6 @@ onUnmounted(() => {
               <div
                 class="poem-container relative bg-base-200 p-6 rounded-lg"
                 :class="{ 'hints-active': showHints }"
-                @mouseup="handleTextSelection"
               >
                 <div class="poem-text text-lg leading-relaxed font-display whitespace-pre-line select-text">
                   {{ poemText }}
@@ -299,10 +336,13 @@ onUnmounted(() => {
                     }"
                   >
                     <div class="flex flex-col gap-1">
+                      <div class="text-xs text-center mb-2 font-semibold text-base-content/70">
+                        "{{ selectedText.substring(0, 30) }}{{ selectedText.length > 30 ? '...' : '' }}"
+                      </div>
                       <button
                         v-for="(label, tipo) in resourceTypeLabels"
                         :key="tipo"
-                        class="btn btn-sm btn-ghost justify-start"
+                        class="btn btn-sm justify-start hover:btn-primary"
                         :class="resourceTypeColors[tipo]"
                         @click="checkResource(tipo)"
                       >
@@ -420,6 +460,20 @@ onUnmounted(() => {
 .context-menu {
   animation: fadeIn 0.2s ease;
   min-width: 180px;
+  pointer-events: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  user-select: none;
+}
+
+.context-menu .btn {
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.context-menu .btn:hover {
+  transform: translateX(4px);
+  background-color: rgba(79, 70, 229, 0.1);
 }
 
 @keyframes fadeIn {
