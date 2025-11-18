@@ -39,6 +39,9 @@ const routes = [
     component: CaligramaGame
   },
   {
+    path: '/juegos/viaje-hidrosfera',
+    name: 'viaje-hidrosfera',
+    component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')
     path: '/laboratorio-acentuacion',
     name: 'laboratorio-acentuacion',
     component: () => import('../games/laboratorio-acentuacion/AcentuacionGame.vue')
