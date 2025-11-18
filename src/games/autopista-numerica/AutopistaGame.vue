@@ -65,7 +65,7 @@ const currentScore = computed(() => gameState.getState().score);
 const correctAnswers = computed(() => gameState.getState().correctAnswers);
 const totalQuestions = computed(() => questions.value.length);
 const progressPercentage = computed(() => 
-  Math.round((currentQuestionIndex.value / totalQuestions.value) * 100)
+  totalQuestions.value > 0 ? Math.round((currentQuestionIndex.value / totalQuestions.value) * 100) : 0
 );
 
 // Métodos
