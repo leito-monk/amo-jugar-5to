@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue'
-
-const title = ref('Yo Amo Aprender Digital')
 </script>
 
 <template>
-  <router-view />
+  <div class="min-h-screen">
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
