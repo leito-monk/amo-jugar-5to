@@ -86,6 +86,11 @@ const routes = [
     path: '/agradecimientos',
     name: 'agradecimientos',
     component: () => import('../views/AgradecimientosView.vue')
+  },
+  {
+    path: '/privacidad',
+    name: 'privacidad',
+    component: () => import('../views/PrivacidadView.vue')
   }
   // More routes will be added here as the application grows
 ]
