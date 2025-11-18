@@ -1,0 +1,220 @@
+{
+  "palabras": [
+    {
+      "palabra": "tornado",
+      "definicion": "Viento muy fuerte que gira en forma de remolino",
+      "ejemplo": "El tornado levantó la casa de Dorothy",
+      "sinonimos": ["remolino", "torbellino"]
+    },
+    {
+      "palabra": "remolino",
+      "definicion": "Movimiento circular rápido del aire o del agua",
+      "ejemplo": "El remolino de viento llevó la casa por los aires",
+      "sinonimos": ["torbellino", "vórtice"]
+    },
+    {
+      "palabra": "fenómeno",
+      "definicion": "Suceso o manifestación que se puede observar",
+      "ejemplo": "El tornado es un fenómeno natural muy poderoso",
+      "sinonimos": ["acontecimiento", "suceso"]
+    },
+    {
+      "palabra": "anhela",
+      "definicion": "Desear algo con mucha intensidad",
+      "ejemplo": "El Hombre de Hojalata anhela tener un corazón",
+      "sinonimos": ["desea", "quiere", "ansía"]
+    },
+    {
+      "palabra": "valentía",
+      "definicion": "Cualidad de ser valiente, tener coraje",
+      "ejemplo": "El León busca valentía para no tener miedo",
+      "sinonimos": ["coraje", "valor", "audacia"]
+    },
+    {
+      "palabra": "cobarde",
+      "definicion": "Persona que no tiene valor o se asusta fácilmente",
+      "ejemplo": "El León se llama cobarde pero en realidad es muy valiente",
+      "sinonimos": ["miedoso", "temeroso"]
+    },
+    {
+      "palabra": "fauno",
+      "definicion": "Criatura mitológica mitad humano, mitad cabra",
+      "ejemplo": "Tumnus es un fauno amigable",
+      "sinonimos": []
+    },
+    {
+      "palabra": "eterno",
+      "definicion": "Que dura para siempre, que no tiene fin",
+      "ejemplo": "La Bruja Blanca creó un invierno eterno en Narnia",
+      "sinonimos": ["perpetuo", "infinito", "permanente"]
+    },
+    {
+      "palabra": "congelado",
+      "definicion": "Convertido en hielo por el frío extremo",
+      "ejemplo": "Narnia estaba congelado en un invierno sin fin",
+      "sinonimos": ["helado", "glacial"]
+    },
+    {
+      "palabra": "explorar",
+      "definicion": "Recorrer un lugar para conocerlo o descubrir cosas",
+      "ejemplo": "Lucy explora la casa y encuentra el armario mágico",
+      "sinonimos": ["investigar", "descubrir", "examinar"]
+    },
+    {
+      "palabra": "armario",
+      "definicion": "Mueble con puertas donde se guarda ropa",
+      "ejemplo": "El armario era el portal hacia Narnia",
+      "sinonimos": ["ropero", "guardarropa"]
+    },
+    {
+      "palabra": "atravesado",
+      "definicion": "Haber pasado de un lado a otro de algo",
+      "ejemplo": "Lucy había atravesado el armario hacia otro mundo",
+      "sinonimos": ["cruzado", "pasado"]
+    },
+    {
+      "palabra": "liberando",
+      "definicion": "Acción de dejar libre a alguien o algo",
+      "ejemplo": "Dorothy liberó a los Munchkins al derrotar a la bruja",
+      "sinonimos": ["libertando", "soltando"]
+    },
+    {
+      "palabra": "pertenecían",
+      "definicion": "Ser propiedad de alguien",
+      "ejemplo": "Los zapatos pertenecían a la Bruja Mala del Este",
+      "sinonimos": ["eran de", "correspondían"]
+    },
+    {
+      "palabra": "mágicos",
+      "definicion": "Que tiene poderes sobrenaturales o encantados",
+      "ejemplo": "Los zapatos mágicos podían llevar a Dorothy a casa",
+      "sinonimos": ["encantados", "hechizados"]
+    },
+    {
+      "palabra": "esmeralda",
+      "definicion": "Piedra preciosa de color verde intenso",
+      "ejemplo": "La ciudad brillaba con color esmeralda",
+      "sinonimos": ["verde brillante"]
+    },
+    {
+      "palabra": "resplandor",
+      "definicion": "Luz muy intensa y brillante",
+      "ejemplo": "El resplandor de la ciudad era cegador",
+      "sinonimos": ["brillo", "fulgor", "destello"]
+    },
+    {
+      "palabra": "guardián",
+      "definicion": "Persona que cuida y protege algo",
+      "ejemplo": "El guardián les dio gafas verdes a los visitantes",
+      "sinonimos": ["protector", "vigilante", "custodio"]
+    },
+    {
+      "palabra": "confrontación",
+      "definicion": "Enfrentamiento entre dos personas o grupos",
+      "ejemplo": "La confrontación con la bruja fue peligrosa",
+      "sinonimos": ["enfrentamiento", "combate", "duelo"]
+    },
+    {
+      "palabra": "derretirse",
+      "definicion": "Convertirse en líquido por el calor",
+      "ejemplo": "La Bruja Mala se derritió con el agua",
+      "sinonimos": ["fundirse", "licuarse"]
+    },
+    {
+      "palabra": "victoriosos",
+      "definicion": "Que han ganado o triunfado",
+      "ejemplo": "Los amigos regresaron victoriosos tras derrotar a la bruja",
+      "sinonimos": ["triunfantes", "ganadores"]
+    },
+    {
+      "palabra": "descubrimiento",
+      "definicion": "Acción de encontrar o conocer algo por primera vez",
+      "ejemplo": "El descubrimiento del verdadero Mago fue sorprendente",
+      "sinonimos": ["hallazgo", "revelación"]
+    },
+    {
+      "palabra": "cualidades",
+      "definicion": "Características positivas de una persona",
+      "ejemplo": "Todos poseían las cualidades que buscaban",
+      "sinonimos": ["virtudes", "atributos", "características"]
+    },
+    {
+      "palabra": "poseían",
+      "definicion": "Tener algo como propio",
+      "ejemplo": "Ellos ya poseían lo que buscaban",
+      "sinonimos": ["tenían", "contaban con"]
+    },
+    {
+      "palabra": "engaña",
+      "definicion": "Hacer creer algo falso a alguien",
+      "ejemplo": "La Bruja Blanca engaña a Edmund con dulces",
+      "sinonimos": ["miente", "estafa", "embustea"]
+    },
+    {
+      "palabra": "delicias",
+      "definicion": "Cosas muy agradables o sabrosas",
+      "ejemplo": "Las delicias turcas eran dulces mágicos",
+      "sinonimos": ["manjares", "golosinas", "exquisiteces"]
+    },
+    {
+      "palabra": "encantadas",
+      "definicion": "Que tienen un hechizo o magia",
+      "ejemplo": "Las delicias turcas estaban encantadas por la bruja",
+      "sinonimos": ["hechizadas", "embrujadas"]
+    },
+    {
+      "palabra": "profecía",
+      "definicion": "Predicción sobre algo que ocurrirá en el futuro",
+      "ejemplo": "La profecía hablaba de cuatro hijos de Adán y Eva",
+      "sinonimos": ["predicción", "vaticinio", "augurio"]
+    },
+    {
+      "palabra": "bondadoso",
+      "definicion": "Que es bueno y amable con los demás",
+      "ejemplo": "Aslan es poderoso pero también bondadoso",
+      "sinonimos": ["amable", "benévolo", "generoso"]
+    },
+    {
+      "palabra": "reinado",
+      "definicion": "Período en que alguien gobierna como rey o reina",
+      "ejemplo": "El reinado de la Bruja Blanca terminaría pronto",
+      "sinonimos": ["gobierno", "mandato"]
+    },
+    {
+      "palabra": "sacrificio",
+      "definicion": "Renunciar a algo valioso por un bien mayor",
+      "ejemplo": "Aslan hizo un sacrificio para salvar a Edmund",
+      "sinonimos": ["ofrenda", "renuncia"]
+    },
+    {
+      "palabra": "redime",
+      "definicion": "Corregir un error o falta anterior",
+      "ejemplo": "Edmund se redime luchando valientemente",
+      "sinonimos": ["compensa", "enmienda", "repara"]
+    },
+    {
+      "palabra": "heroicamente",
+      "definicion": "De manera valiente y admirable",
+      "ejemplo": "Edmund luchó heroicamente en la batalla",
+      "sinonimos": ["valientemente", "audazmente"]
+    },
+    {
+      "palabra": "coronados",
+      "definicion": "Haber recibido una corona como rey o reina",
+      "ejemplo": "Los hermanos fueron coronados en Cair Paravel",
+      "sinonimos": ["entronizados", "nombrados reyes"]
+    },
+    {
+      "palabra": "benévola",
+      "definicion": "Que muestra buena voluntad y amabilidad",
+      "ejemplo": "Susan es conocida como la Reina benévola",
+      "sinonimos": ["bondadosa", "caritativa", "generosa"]
+    },
+    {
+      "palabra": "magnífico",
+      "definicion": "Excelente, espléndido, de gran valor",
+      "ejemplo": "Peter es llamado el Magnífico por su liderazgo",
+      "sinonimos": ["espléndido", "grandioso", "excelente"]
+    }
+  ]
+}
