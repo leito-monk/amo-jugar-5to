@@ -266,7 +266,7 @@ onMounted(() => {
                   <button 
                     class="btn btn-sm"
                     :class="userAnswers.tieneAgua === true ? 'btn-primary' : 'btn-outline'"
-                    @click="userAnswers.tieneAgua = true; resetQuiz()"
+                    @click="userAnswers.tieneAgua = true"
                   >
                     Sí
                   </button>
