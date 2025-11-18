@@ -36,6 +36,20 @@ const games = ref<Game[]>([
     icono: '🏁',
     dificultad: 'Medio',
     duracion: '15 min',
+    id: 'transformador-calculadora',
+    titulo: 'Transformador de Calculadora',
+    materia: 'Matemáticas',
+    descripcion: 'Aprende valor posicional transformando números con suma y resta',
+    icono: '🔢',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    id: 'ciclo-agua',
+    titulo: 'Ciclo del Agua: La Gran Aventura',
+    materia: 'Ciencias Naturales',
+    descripcion: 'Viaja como una gota de agua a través del ciclo del agua',
+    icono: '🌊',
+    dificultad: 'Medio',
+    duracion: '20 min',
     activo: true,
     completado: false,
     progreso: 0
@@ -120,6 +134,9 @@ const handleGameClick = (game: Game) => {
     router.push(`/${game.id}`)
   } else if (game.activo && game.id === 'autopista-numerica') {
     router.push(`/juegos/${game.id}`)
+  } else if (game.activo && game.id === 'transformador-calculadora') {
+  } else if (game.activo && game.id === 'ciclo-agua') {
+    router.push(`/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
     // Otros juegos aún no implementados
