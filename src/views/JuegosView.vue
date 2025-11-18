@@ -101,6 +101,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'defensa-buenosaires',
+    titulo: 'Defensa de Buenos Aires',
+    materia: 'Ciencias Sociales',
+    descripcion: 'Defiende Buenos Aires de las Invasiones Inglesas 1806-1807',
+    icono: '⚔️',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'aventura-misiones',
     titulo: 'Aventura en Misiones',
     materia: 'Lengua',
@@ -108,9 +120,6 @@ const games = ref<Game[]>([
     icono: '🌿',
     dificultad: 'Medio',
     duracion: '40 min',
-    activo: true,
-    completado: false,
-    progreso: 0
   }
 ])
 
@@ -132,6 +141,7 @@ const handleGameClick = (game: Game) => {
     'transformador-calculadora': '/juegos/transformador-calculadora',
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
     'ciclo-agua': '/ciclo-agua',
+    'defensa-buenosaires': '/juegos/defensa-buenosaires'
     'aventura-misiones': '/juegos/aventura-misiones'
   }
 

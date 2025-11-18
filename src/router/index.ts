@@ -64,6 +64,11 @@ const router = createRouter({
       component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
     },
     {
+      path: '/juegos/defensa-buenosaires',
+      name: 'defensa-buenosaires',
+      component: () => import('../games/defensa-buenosaires/DefensaGame.vue')
+    },
+    {
       path: '/juegos/aventura-misiones',
       name: 'aventura-misiones',
       component: () => import('../games/aventura-misiones/MisionesGame.vue')
