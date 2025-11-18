@@ -38,6 +38,9 @@ const routes = [
     component: CaligramaGame
   },
   {
+    path: '/transformador-calculadora',
+    name: 'transformador-calculadora',
+    component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
     path: '/ciclo-agua',
     name: 'ciclo-agua',
     component: () => import('../games/ciclo-agua/CicloAguaGame.vue')

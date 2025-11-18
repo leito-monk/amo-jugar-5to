@@ -29,6 +29,13 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'transformador-calculadora',
+    titulo: 'Transformador de Calculadora',
+    materia: 'Matemáticas',
+    descripcion: 'Aprende valor posicional transformando números con suma y resta',
+    icono: '🔢',
+    dificultad: 'Medio',
+    duracion: '30 min',
     id: 'ciclo-agua',
     titulo: 'Ciclo del Agua: La Gran Aventura',
     materia: 'Ciencias Naturales',
@@ -118,6 +125,7 @@ const handleGameClick = (game: Game) => {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'transformador-calculadora') {
   } else if (game.activo && game.id === 'ciclo-agua') {
     router.push(`/${game.id}`)
   } else {
