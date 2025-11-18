@@ -1,8 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import GameCard, { type Game } from '../components/game/GameCard.vue'
 
 const games = ref<Game[]>([
+  {
+    id: 'cazador-caligramas',
+    titulo: 'Cazador de Caligramas',
+    materia: 'Lengua',
+    descripcion: 'Descubre poemas visuales arrastrando versos a su lugar correcto',
+    icono: '🦋',
+    dificultad: 'Medio',
+    duracion: '60 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
   {
     id: 'suma-rapida',
     titulo: 'Suma Rápida',
@@ -74,9 +87,15 @@ const games = ref<Game[]>([
   }
 ])
 
+const router = useRouter()
+
 const handleGameClick = (game: Game) => {
-  console.log('Juego seleccionado:', game.titulo)
-  // Aquí se navegaría a la vista del juego específico
+  if (game.activo && game.id === 'cazador-caligramas') {
+    router.push(`/juegos/${game.id}`)
+  } else {
+    console.log('Juego seleccionado:', game.titulo)
+    // Otros juegos aún no implementados
+  }
 }
 </script>
 

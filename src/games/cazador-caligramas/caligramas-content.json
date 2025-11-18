@@ -1,0 +1,219 @@
+{
+  "caligramas": [
+    {
+      "id": 1,
+      "nivel": 1,
+      "titulo": "Corazón de Amor",
+      "forma": "corazón",
+      "gridSize": {
+        "rows": 5,
+        "cols": 5
+      },
+      "versos": [
+        {
+          "id": 1,
+          "texto": "Late",
+          "posicion": [0, 2]
+        },
+        {
+          "id": 2,
+          "texto": "mi corazón",
+          "posicion": [1, 1]
+        },
+        {
+          "id": 3,
+          "texto": "con amor y pasión",
+          "posicion": [2, 0]
+        },
+        {
+          "id": 4,
+          "texto": "late fuerte",
+          "posicion": [3, 1]
+        },
+        {
+          "id": 5,
+          "texto": "sin fin",
+          "posicion": [4, 2]
+        }
+      ],
+      "silueta": [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0]
+      ],
+      "pistas": [
+        "Empieza desde arriba con una palabra corta",
+        "El centro tiene el verso más largo",
+        "El último verso es corto y cierra la forma"
+      ]
+    },
+    {
+      "id": 2,
+      "nivel": 2,
+      "titulo": "Mariposa de Libertad",
+      "forma": "mariposa",
+      "gridSize": {
+        "rows": 7,
+        "cols": 7
+      },
+      "versos": [
+        {
+          "id": 1,
+          "texto": "Vuela",
+          "posicion": [0, 3]
+        },
+        {
+          "id": 2,
+          "texto": "la mariposa",
+          "posicion": [1, 1]
+        },
+        {
+          "id": 3,
+          "texto": "con alas",
+          "posicion": [1, 5]
+        },
+        {
+          "id": 4,
+          "texto": "de colores",
+          "posicion": [2, 1]
+        },
+        {
+          "id": 5,
+          "texto": "brillantes",
+          "posicion": [2, 5]
+        },
+        {
+          "id": 6,
+          "texto": "danzando",
+          "posicion": [3, 3]
+        },
+        {
+          "id": 7,
+          "texto": "en el jardín",
+          "posicion": [5, 3]
+        },
+        {
+          "id": 8,
+          "texto": "de libertad",
+          "posicion": [6, 3]
+        }
+      ],
+      "silueta": [
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 1, 0, 1, 0, 1, 0],
+        [0, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0]
+      ],
+      "pistas": [
+        "La cabeza de la mariposa está arriba en el centro",
+        "Las alas se extienden a los lados en la fila 2 y 3",
+        "El cuerpo es el centro vertical, con tres versos al final"
+      ]
+    },
+    {
+      "id": 3,
+      "nivel": 3,
+      "titulo": "Árbol de la Vida",
+      "forma": "árbol",
+      "gridSize": {
+        "rows": 9,
+        "cols": 7
+      },
+      "versos": [
+        {
+          "id": 1,
+          "texto": "En la copa",
+          "posicion": [0, 3]
+        },
+        {
+          "id": 2,
+          "texto": "del árbol",
+          "posicion": [1, 2]
+        },
+        {
+          "id": 3,
+          "texto": "verde",
+          "posicion": [1, 4]
+        },
+        {
+          "id": 4,
+          "texto": "las hojas",
+          "posicion": [2, 1]
+        },
+        {
+          "id": 5,
+          "texto": "bailan",
+          "posicion": [2, 3]
+        },
+        {
+          "id": 6,
+          "texto": "con el viento",
+          "posicion": [2, 5]
+        },
+        {
+          "id": 7,
+          "texto": "susurrando",
+          "posicion": [3, 3]
+        },
+        {
+          "id": 8,
+          "texto": "historias",
+          "posicion": [4, 3]
+        },
+        {
+          "id": 9,
+          "texto": "El tronco",
+          "posicion": [5, 3]
+        },
+        {
+          "id": 10,
+          "texto": "firme",
+          "posicion": [6, 3]
+        },
+        {
+          "id": 11,
+          "texto": "y fuerte",
+          "posicion": [7, 3]
+        },
+        {
+          "id": 12,
+          "texto": "sostiene la vida",
+          "posicion": [8, 3]
+        }
+      ],
+      "silueta": [
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1, 0, 0],
+        [0, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0]
+      ],
+      "pistas": [
+        "La copa del árbol está en las primeras 3 filas, expandiéndose hacia afuera",
+        "El tronco vertical está en la columna central, filas 3-8",
+        "Lee desde la copa hasta las raíces para entender el poema completo"
+      ]
+    }
+  ],
+  "mensajesMotivationales": [
+    "¡Excelente! 🌟",
+    "¡Muy bien! 👏",
+    "¡Perfecto! ✨",
+    "¡Increíble! 🎉",
+    "¡Fantástico! 🌈",
+    "¡Sigue así! 💪",
+    "¡Eres genial! ⭐",
+    "¡Maravilloso! 🎨",
+    "¡Bravo! 👍",
+    "¡Magnífico! 🏆"
+  ]
+}
