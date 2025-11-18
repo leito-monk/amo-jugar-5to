@@ -28,7 +28,7 @@ const score = ref(0)
 const showContextMenu = ref(false)
 const contextMenuPosition = ref({ x: 0, y: 0 })
 const selectedText = ref('')
-const selectedRange = ref<{ start: number; end: number } | null>(null)
+
 const showFeedback = ref(false)
 const feedbackCorrect = ref(false)
 const feedbackMessage = ref('')
@@ -82,61 +82,7 @@ const instructions = `🔍 ¡Bienvenido Detective Poético!
 🎯 Después de 3 errores, aparecerán pistas sutiles`
 
 // Methods
-const handleTextSelection = (event: MouseEvent) => {
-  const selection = window.getSelection()
-  if (!selection || selection.toString().trim().length < 3) {
-    showContextMenu.value = false
-    return
-  }
 
-  const selected = selection.toString().trim()
-  const range = selection.getRangeAt(0)
-  
-  // Get position relative to the poem container
-  const rect = range.getBoundingClientRect()
-  const container = (event.currentTarget as HTMLElement).getBoundingClientRect()
-  
-  selectedText.value = selected
-  
-  // Calculate text position in the full poem text
-  const anchorNode = selection.anchorNode
-  if (anchorNode) {
-    let textBeforeSelection = ''
-    const poemContainer = event.currentTarget as HTMLElement
-    
-    // Walk through text nodes to find position
-    const walker = document.createTreeWalker(
-      poemContainer,
-      NodeFilter.SHOW_TEXT,
-      null
-    )
-    
-    let node
-    let found = false
-    while ((node = walker.nextNode())) {
-      if (node === anchorNode) {
-        textBeforeSelection += selection.anchorOffset
-        found = true
-        break
-      }
-      textBeforeSelection += (node.textContent || '').length
-    }
-    
-    if (found) {
-      selectedRange.value = {
-        start: textBeforeSelection.length,
-        end: textBeforeSelection.length + selected.length
-      }
-    }
-  }
-  
-  contextMenuPosition.value = {
-    x: rect.left - container.left + rect.width / 2,
-    y: rect.bottom - container.top + 10
-  }
-  
-  showContextMenu.value = true
-}
 
 const checkResource = (tipo: string) => {
   showContextMenu.value = false
