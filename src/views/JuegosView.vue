@@ -141,7 +141,7 @@ const handleGameClick = (game: Game) => {
     'transformador-calculadora': '/juegos/transformador-calculadora',
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
     'ciclo-agua': '/ciclo-agua',
-    'defensa-buenosaires': '/juegos/defensa-buenosaires'
+    'defensa-buenosaires': '/juegos/defensa-buenosaires',
     'aventura-misiones': '/juegos/aventura-misiones'
   }
 
