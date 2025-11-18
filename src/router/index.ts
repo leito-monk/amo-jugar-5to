@@ -31,10 +31,37 @@ const router = createRouter({
     {
       path: '/juegos/viaje-hidrosfera',
       name: 'viaje-hidrosfera',
-      component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')
+      component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue'),
+    },
+    {
       path: '/laboratorio-acentuacion',
       name: 'laboratorio-acentuacion',
       component: () => import('../games/laboratorio-acentuacion/AcentuacionGame.vue')
+    },
+    {
+      path: '/juegos/cazador-caligramas',
+      name: 'cazador-caligramas',
+      component: () => import('../games/cazador-caligramas/CaligramaGame.vue')
+    },
+    {
+      path: '/detectivismo-poetico',
+      name: 'detectivismo-poetico',
+      component: () => import('../games/detectivismo-poetico/DetectiveGame.vue')
+    },
+    {
+      path: '/juegos/autopista-numerica',
+      name: 'autopista-numerica',
+      component: () => import('../games/autopista-numerica/AutopistaGame.vue')
+    },
+    {
+      path: '/juegos/transformador-calculadora',
+      name: 'transformador-calculadora',
+      component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
+    },
+    {
+      path: '/ciclo-agua',
+      name: 'ciclo-agua',
+      component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
     }
   ]
 })

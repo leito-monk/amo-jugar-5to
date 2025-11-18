@@ -29,98 +29,6 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
-    id: 'viaje-hidrosfera',
-    titulo: 'Viaje por la Hidrosfera',
-    materia: 'Ciencias Naturales',
-    descripcion: 'Explora el agua en el planeta y descubre sus estados y ubicaciones',
-    icono: '🌊',
-    dificultad: 'Medio',
-    duracion: '30 min',
-    id: 'autopista-numerica',
-    titulo: 'Autopista Numérica',
-    materia: 'Matemáticas',
-    descripcion: 'Compite en una carrera de autos respondiendo preguntas sobre números hasta 9.999.999',
-    icono: '🏁',
-    dificultad: 'Medio',
-    duracion: '15 min',
-    id: 'transformador-calculadora',
-    titulo: 'Transformador de Calculadora',
-    materia: 'Matemáticas',
-    descripcion: 'Aprende valor posicional transformando números con suma y resta',
-    icono: '🔢',
-    dificultad: 'Medio',
-    duracion: '30 min',
-    id: 'ciclo-agua',
-    titulo: 'Ciclo del Agua: La Gran Aventura',
-    materia: 'Ciencias Naturales',
-    descripcion: 'Viaja como una gota de agua a través del ciclo del agua',
-    icono: '🌊',
-    dificultad: 'Medio',
-    duracion: '20 min',
-    activo: true,
-    completado: false,
-    progreso: 0
-  },
-  {
-    id: 'suma-rapida',
-    titulo: 'Suma Rápida',
-    materia: 'Matemáticas',
-    descripcion: 'Practica sumas con tiempo limitado',
-    icono: '➕',
-    dificultad: 'Fácil',
-    duracion: '5 min',
-    activo: true,
-    completado: false,
-    progreso: 0
-  },
-  {
-    id: 'multiplicacion-maestro',
-    titulo: 'Multiplicación Maestro',
-    materia: 'Matemáticas',
-    descripcion: 'Domina las tablas de multiplicar',
-    icono: '✖️',
-    dificultad: 'Medio',
-    duracion: '10 min',
-    activo: true,
-    completado: true
-  },
-  {
-    id: 'fracciones-divertidas',
-    titulo: 'Fracciones Divertidas',
-    materia: 'Matemáticas',
-    descripcion: 'Aprende sobre fracciones de forma visual',
-    icono: '🍕',
-    dificultad: 'Medio',
-    duracion: '8 min',
-    activo: true,
-    completado: false,
-    progreso: 45
-  },
-  {
-    id: 'palabras-misteriosas',
-    titulo: 'Palabras Misteriosas',
-    materia: 'Lengua',
-    descripcion: 'Encuentra las palabras ocultas',
-    icono: '📝',
-    dificultad: 'Fácil',
-    duracion: '7 min',
-    activo: true,
-    completado: false,
-    progreso: 20
-  },
-  {
-    id: 'ortografia-campeones',
-    titulo: 'Ortografía de Campeones',
-    materia: 'Lengua',
-    descripcion: 'Mejora tu ortografía con ejercicios prácticos',
-    icono: '✍️',
-    dificultad: 'Medio',
-    duracion: '10 min',
-    activo: true,
-    completado: false,
-    progreso: 0
-  },
-  {
     id: 'laboratorio-acentuacion',
     titulo: 'Laboratorio de Acentuación',
     materia: 'Lengua',
@@ -133,35 +41,79 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
-    id: 'ecuaciones-avanzadas',
-    titulo: 'Ecuaciones Avanzadas',
+    id: 'autopista-numerica',
+    titulo: 'Autopista Numérica',
     materia: 'Matemáticas',
-    descripcion: 'Resuelve ecuaciones complejas',
-    icono: '🧮',
-    dificultad: 'Difícil',
+    descripcion: 'Compite en una carrera de autos respondiendo preguntas sobre números hasta 9.999.999',
+    icono: '🏁',
+    dificultad: 'Medio',
     duracion: '15 min',
-    activo: false
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
+    id: 'transformador-calculadora',
+    titulo: 'Transformador de Calculadora',
+    materia: 'Matemáticas',
+    descripcion: 'Aprende valor posicional transformando números con suma y resta',
+    icono: '🔢',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
+    id: 'viaje-hidrosfera',
+    titulo: 'Viaje por la Hidrosfera',
+    materia: 'Ciencias Naturales',
+    descripcion: 'Explora el agua en el planeta y descubre sus estados y ubicaciones',
+    icono: '🌊',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
+    id: 'ciclo-agua',
+    titulo: 'Ciclo del Agua: La Gran Aventura',
+    materia: 'Ciencias Naturales',
+    descripcion: 'Viaja como una gota de agua a través del ciclo del agua',
+    icono: '💧',
+    dificultad: 'Medio',
+    duracion: '20 min',
+    activo: true,
+    completado: false,
+    progreso: 0
   }
 ])
 
 const router = useRouter()
 
 const handleGameClick = (game: Game) => {
-  if (game.activo && game.id === 'cazador-caligramas') {
-    router.push(`/juegos/${game.id}`)
-  } else if (game.activo && game.id === 'detectivismo-poetico') {
-    router.push(`/${game.id}`)
-  } else if (game.activo && game.id === 'viaje-hidrosfera') {
-    router.push(`/juegos/${game.id}`)
-  } else if (game.activo && game.id === 'laboratorio-acentuacion') {
-  } else if (game.activo && game.id === 'autopista-numerica') {
-    router.push(`/juegos/${game.id}`)
-  } else if (game.activo && game.id === 'transformador-calculadora') {
-  } else if (game.activo && game.id === 'ciclo-agua') {
-    router.push(`/${game.id}`)
+  if (!game.activo) {
+    console.log('Juego no disponible:', game.titulo)
+    return
+  }
+
+  // Mapa de rutas para cada juego
+  const routeMap: Record<string, string> = {
+    'cazador-caligramas': '/juegos/cazador-caligramas',
+    'detectivismo-poetico': '/detectivismo-poetico',
+    'laboratorio-acentuacion': '/laboratorio-acentuacion',
+    'autopista-numerica': '/juegos/autopista-numerica',
+    'transformador-calculadora': '/juegos/transformador-calculadora',
+    'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
+    'ciclo-agua': '/ciclo-agua'
+  }
+
+  const route = routeMap[game.id]
+  if (route) {
+    router.push(route)
   } else {
-    console.log('Juego seleccionado:', game.titulo)
-    // Otros juegos aún no implementados
+    console.log('Ruta no configurada para:', game.titulo)
   }
 }
 </script>

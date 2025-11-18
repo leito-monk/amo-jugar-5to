@@ -165,16 +165,6 @@ function finishGame() {
   // Podríamos navegar a otra vista o resetear el juego
 }
 
-function resetQuiz() {
-  userAnswers.value = {
-    tieneAgua: null,
-    estado: null,
-    tipo: null
-  }
-  feedbackMessage.value = ''
-  showFeedback.value = false
-}
-
 // Lifecycle
 onMounted(() => {
   loadState('viaje-hidrosfera')
@@ -204,32 +194,37 @@ onMounted(() => {
     </div>
 
     <!-- Map Container -->
-    <div class="map-container relative bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-8 shadow-xl max-w-4xl mx-auto" style="min-height: 600px;">
-      <!-- Decorative map background -->
-      <div class="absolute inset-0 rounded-xl opacity-20 bg-gradient-to-br from-blue-200 via-green-100 to-blue-200"></div>
-      
-      <!-- World map representation (simplified) -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center text-blue-300 text-8xl opacity-30">🌍</div>
-      </div>
+    <div class="map-wrapper max-w-5xl mx-auto">
+      <div class="map-container relative bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-2 shadow-xl">
+        <!-- Aspect ratio box to maintain proportions -->
+        <div class="aspect-ratio-box" style="position: relative; width: 100%; padding-bottom: 56.25%;">
+          <!-- Decorative map background -->
+          <div class="absolute inset-0 rounded-xl opacity-20 bg-gradient-to-br from-blue-200 via-green-100 to-blue-200"></div>
+          
+          <!-- World map representation (simplified) -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="text-center text-blue-300 text-6xl opacity-25">🌍</div>
+          </div>
 
-      <!-- Location Hotspots -->
-      <button
-        v-for="loc in locations"
-        :key="loc.id"
-        class="hotspot absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center text-2xl cursor-pointer transition-all duration-300 shadow-lg z-10"
-        :class="{
-          'bg-primary hover:bg-primary-focus animate-pulse': !loc.visitado,
-          'bg-success': loc.visitado,
-          'ring-4 ring-warning ring-offset-2': loc.esEspecial && !loc.visitado,
-          'ring-4 ring-warning ring-offset-2 glow-gold': loc.esEspecial && loc.visitado
-        }"
-        :style="{ left: loc.coordenadas.x + '%', top: loc.coordenadas.y + '%' }"
-        @click="openLocation(loc)"
-        :title="loc.nombre"
-      >
-        {{ loc.visitado ? '✅' : '❓' }}
-      </button>
+          <!-- Location Hotspots -->
+          <button
+            v-for="loc in locations"
+            :key="loc.id"
+            class="hotspot absolute transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-sm cursor-pointer transition-all duration-300 shadow-md z-10"
+            :class="{
+              'bg-primary hover:bg-primary-focus': !loc.visitado,
+              'bg-success': loc.visitado,
+              'ring-2 ring-warning': loc.esEspecial && !loc.visitado,
+              'ring-2 ring-warning glow-gold': loc.esEspecial && loc.visitado
+            }"
+            :style="{ left: loc.coordenadas.x + '%', top: loc.coordenadas.y + '%' }"
+            @click="openLocation(loc)"
+            :title="loc.nombre"
+          >
+            <span class="text-base">{{ loc.visitado ? '✓' : '?' }}</span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Location Modal -->
@@ -410,6 +405,37 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.map-wrapper {
+  margin: 0 auto;
+}
+
+.map-container {
+  overflow: hidden;
+}
+
+.aspect-ratio-box {
+  position: relative;
+  width: 100%;
+  /* 16:9 aspect ratio for world map */
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio-box > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hotspot {
+  touch-action: manipulation;
+}
+
+.hotspot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 .hotspot:not(.bg-success) {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

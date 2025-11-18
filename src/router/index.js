@@ -42,15 +42,22 @@ const routes = [
     path: '/juegos/viaje-hidrosfera',
     name: 'viaje-hidrosfera',
     component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')
-    path: '/laboratorio-acentuacion',
+  },
+  {  path: '/laboratorio-acentuacion',
     name: 'laboratorio-acentuacion',
     component: () => import('../games/laboratorio-acentuacion/AcentuacionGame.vue')
+  },
+  {
     path: '/juegos/autopista-numerica',
     name: 'autopista-numerica',
     component: AutopistaGame
-    path: '/transformador-calculadora',
+  },
+  { 
+    path: '/juegos/transformador-calculadora',
     name: 'transformador-calculadora',
     component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
+  },
+  { 
     path: '/ciclo-agua',
     name: 'ciclo-agua',
     component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
