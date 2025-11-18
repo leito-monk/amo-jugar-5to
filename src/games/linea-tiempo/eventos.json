@@ -1,0 +1,96 @@
+{
+  "eventos": [
+    {
+      "id": "ilustracion",
+      "titulo": "La Ilustración",
+      "año": 1740,
+      "descripcion": "Movimiento intelectual que promovía la razón, la ciencia y el respeto hacia la humanidad. Pensadores como Voltaire, Rousseau y Montesquieu cuestionaron el poder absoluto y defendieron las libertades individuales.",
+      "imagen": "/placeholder-ilustracion.jpg",
+      "categoria": "revolucion",
+      "relacionadoCon": ["rev_francesa", "indep_eeuu"],
+      "esencia": "causa"
+    },
+    {
+      "id": "rev_industrial",
+      "titulo": "Revolución Industrial",
+      "año": 1760,
+      "descripcion": "Proceso de transformación económica, social y tecnológica que comenzó en Gran Bretaña. La máquina de vapor, las fábricas y la producción en masa cambiaron la sociedad para siempre.",
+      "imagen": "/placeholder-industrial.jpg",
+      "categoria": "revolucion",
+      "relacionadoCon": [],
+      "esencia": "causa"
+    },
+    {
+      "id": "indep_eeuu",
+      "titulo": "Independencia de Estados Unidos",
+      "año": 1776,
+      "descripcion": "Las Trece Colonias se independizaron de Gran Bretaña. La Declaración de Independencia proclamó los derechos naturales del hombre, inspirada en las ideas de la Ilustración.",
+      "imagen": "/placeholder-eeuu.jpg",
+      "categoria": "independencia",
+      "relacionadoCon": ["ilustracion", "rev_francesa"],
+      "esencia": "consecuencia"
+    },
+    {
+      "id": "rev_francesa",
+      "titulo": "Revolución Francesa",
+      "año": 1789,
+      "descripcion": "La toma de la Bastilla marcó el inicio de la revolución que acabó con la monarquía absoluta en Francia. Los ideales de libertad, igualdad y fraternidad se extendieron por Europa.",
+      "imagen": "/placeholder-bastilla.jpg",
+      "categoria": "revolucion",
+      "relacionadoCon": ["ilustracion", "indep_eeuu"],
+      "esencia": "consecuencia"
+    },
+    {
+      "id": "napole_imperio",
+      "titulo": "Imperio Napoleónico",
+      "año": 1804,
+      "descripcion": "Napoleón Bonaparte se coronó emperador de Francia. Sus conquistas expandieron los ideales revolucionarios por Europa y cambiaron el mapa político del continente.",
+      "imagen": "/placeholder-napoleon.jpg",
+      "categoria": "imperio",
+      "relacionadoCon": ["rev_francesa", "invasiones_inglesas"],
+      "esencia": "consecuencia"
+    },
+    {
+      "id": "invasiones_inglesas",
+      "titulo": "Invasiones Inglesas al Río de la Plata",
+      "año": 1806,
+      "descripcion": "Gran Bretaña intentó conquistar Buenos Aires y Montevideo. Aunque fueron derrotados, estos eventos fortalecieron el espíritu independentista en el Río de la Plata.",
+      "imagen": "/placeholder-invasiones.jpg",
+      "categoria": "conflicto",
+      "relacionadoCon": ["napole_imperio"],
+      "esencia": "consecuencia"
+    }
+  ],
+  "quizFinal": [
+    {
+      "pregunta": "¿Qué movimiento intelectual influyó directamente en la Revolución Francesa?",
+      "opciones": ["La Ilustración", "Revolución Industrial", "Imperio Napoleónico"],
+      "correcta": 0,
+      "explicacion": "Las ideas de la Ilustración, como la razón, la libertad y la igualdad, inspiraron a los revolucionarios franceses a luchar contra el absolutismo y los privilegios de la nobleza."
+    },
+    {
+      "pregunta": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+      "opciones": ["1760", "1776", "1789"],
+      "correcta": 1,
+      "explicacion": "La Declaración de Independencia fue firmada el 4 de julio de 1776, proclamando la separación de las Trece Colonias de Gran Bretaña y estableciendo principios de libertad e igualdad."
+    },
+    {
+      "pregunta": "¿Qué evento marcó el inicio de la Revolución Francesa?",
+      "opciones": ["La coronación de Napoleón", "La toma de la Bastilla", "Las Invasiones Inglesas"],
+      "correcta": 1,
+      "explicacion": "La toma de la Bastilla el 14 de julio de 1789 simbolizó el fin del poder absoluto del rey y el inicio de la revolución que transformaría Francia y Europa."
+    },
+    {
+      "pregunta": "¿Cuál fue el impacto de las Invasiones Inglesas en el Río de la Plata?",
+      "opciones": ["Debilitaron el espíritu local", "Fortalecieron el espíritu independentista", "No tuvieron ningún impacto"],
+      "correcta": 1,
+      "explicacion": "Aunque los ingleses fueron derrotados, la defensa organizada por los criollos demostró que podían defenderse sin la ayuda de España, fortaleciendo el sentimiento de autonomía e independencia."
+    },
+    {
+      "pregunta": "¿Qué transformación trajo la Revolución Industrial?",
+      "opciones": ["Solo cambios políticos", "Transformación económica, social y tecnológica", "Solo cambios religiosos"],
+      "correcta": 1,
+      "explicacion": "La Revolución Industrial transformó completamente la sociedad con nuevas tecnologías como la máquina de vapor, el sistema de fábricas y la producción en masa, cambiando la forma de vivir y trabajar."
+    }
+  ]
+}

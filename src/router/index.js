@@ -39,6 +39,9 @@ const routes = [
     component: CaligramaGame
   },
   {
+    path: '/juegos/linea-tiempo',
+    name: 'linea-tiempo',
+    component: () => import('../games/linea-tiempo/LineaTiempoGame.vue')
     path: '/juegos/viaje-hidrosfera',
     name: 'viaje-hidrosfera',
     component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')

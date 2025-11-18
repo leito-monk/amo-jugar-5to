@@ -29,6 +29,13 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'linea-tiempo',
+    titulo: 'Línea del Tiempo Interactiva',
+    materia: 'Ciencias Sociales',
+    descripcion: 'Ordena eventos históricos del Siglo XVIII y descubre sus conexiones',
+    icono: '🕰️',
+    dificultad: 'Medio',
+    duracion: '30 min',
     id: 'viaje-hidrosfera',
     titulo: 'Viaje por la Hidrosfera',
     materia: 'Ciencias Naturales',
@@ -151,6 +158,8 @@ const handleGameClick = (game: Game) => {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'linea-tiempo') {
+    router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'viaje-hidrosfera') {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'laboratorio-acentuacion') {
