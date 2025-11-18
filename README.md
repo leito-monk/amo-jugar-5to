@@ -76,6 +76,30 @@ npm run preview
 
 El servidor de desarrollo estará disponible en `http://localhost:5173/`
 
+## 🚀 Despliegue
+
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages mediante GitHub Actions.
+
+### Despliegue Automático
+
+Cada vez que se hace push a la rama `main`, el workflow de CI/CD:
+1. Instala las dependencias del proyecto
+2. Compila el proyecto con `npm run build`
+3. Despliega automáticamente a GitHub Pages
+
+La aplicación estará disponible en: `https://leito-monk.github.io/amo-jugar-5to/`
+
+### Despliegue Manual
+
+También puedes activar el despliegue manualmente desde la pestaña "Actions" en GitHub.
+
+### Requisitos de GitHub Pages
+
+Para que el despliegue funcione correctamente, asegúrate de que:
+- GitHub Pages esté habilitado en la configuración del repositorio
+- La fuente esté configurada como "GitHub Actions"
+- El workflow tenga los permisos necesarios (`pages: write`, `id-token: write`)
+
 ## 📁 Estructura del Proyecto
 
 ```
