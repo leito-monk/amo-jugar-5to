@@ -36,6 +36,11 @@ const routes = [
     path: '/juegos/cazador-caligramas',
     name: 'cazador-caligramas',
     component: CaligramaGame
+  },
+  {
+    path: '/laboratorio-acentuacion',
+    name: 'laboratorio-acentuacion',
+    component: () => import('../games/laboratorio-acentuacion/AcentuacionGame.vue')
   }
   // More routes will be added here as the application grows
 ]

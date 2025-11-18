@@ -88,6 +88,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'laboratorio-acentuacion',
+    titulo: 'Laboratorio de Acentuación',
+    materia: 'Lengua',
+    descripcion: 'Clasifica palabras según su acentuación: agudas, graves y esdrújulas',
+    icono: '🧪',
+    dificultad: 'Medio',
+    duracion: '10 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'ecuaciones-avanzadas',
     titulo: 'Ecuaciones Avanzadas',
     materia: 'Matemáticas',
@@ -105,6 +117,8 @@ const handleGameClick = (game: Game) => {
   if (game.activo && game.id === 'cazador-caligramas') {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
+    router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'laboratorio-acentuacion') {
     router.push(`/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
