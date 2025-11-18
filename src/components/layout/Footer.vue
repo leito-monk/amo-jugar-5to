@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -17,6 +18,7 @@
     </aside>
     <nav>
       <div class="grid grid-flow-col gap-4">
+        <router-link to="/agradecimientos" class="link link-hover">💙 Agradecimientos</router-link>
         <a href="#" class="link link-hover">Privacidad</a>
         <a href="#" class="link link-hover">Contacto</a>
         <a href="https://github.com/leito-monk/amo-jugar-5to" target="_blank" class="link link-hover flex items-center gap-1">

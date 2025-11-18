@@ -81,6 +81,11 @@ const routes = [
     path: '/juegos/portal-magico',
     name: 'portal-magico',
     component: () => import('../games/portal-magico/PortalGame.vue')
+  },
+  {
+    path: '/agradecimientos',
+    name: 'agradecimientos',
+    component: () => import('../views/AgradecimientosView.vue')
   }
   // More routes will be added here as the application grows
 ]
