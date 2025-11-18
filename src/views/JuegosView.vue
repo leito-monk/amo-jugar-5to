@@ -114,6 +114,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'laboratorio-acentuacion',
+    titulo: 'Laboratorio de Acentuación',
+    materia: 'Lengua',
+    descripcion: 'Clasifica palabras según su acentuación: agudas, graves y esdrújulas',
+    icono: '🧪',
+    dificultad: 'Medio',
+    duracion: '10 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'ecuaciones-avanzadas',
     titulo: 'Ecuaciones Avanzadas',
     materia: 'Matemáticas',
@@ -132,6 +144,7 @@ const handleGameClick = (game: Game) => {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'laboratorio-acentuacion') {
   } else if (game.activo && game.id === 'autopista-numerica') {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'transformador-calculadora') {
