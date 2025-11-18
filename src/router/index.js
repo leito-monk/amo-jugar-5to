@@ -36,6 +36,11 @@ const routes = [
     path: '/juegos/cazador-caligramas',
     name: 'cazador-caligramas',
     component: CaligramaGame
+  },
+  {
+    path: '/transformador-calculadora',
+    name: 'transformador-calculadora',
+    component: () => import('../games/transformador-calculadora/CalculadoraGame.vue')
   }
   // More routes will be added here as the application grows
 ]

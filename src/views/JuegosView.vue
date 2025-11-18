@@ -29,6 +29,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'transformador-calculadora',
+    titulo: 'Transformador de Calculadora',
+    materia: 'Matemáticas',
+    descripcion: 'Aprende valor posicional transformando números con suma y resta',
+    icono: '🔢',
+    dificultad: 'Medio',
+    duracion: '30 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'suma-rapida',
     titulo: 'Suma Rápida',
     materia: 'Matemáticas',
@@ -105,6 +117,8 @@ const handleGameClick = (game: Game) => {
   if (game.activo && game.id === 'cazador-caligramas') {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
+    router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'transformador-calculadora') {
     router.push(`/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
