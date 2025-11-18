@@ -1,0 +1,363 @@
+{
+  "palabras": [
+    {
+      "palabra": "corazón",
+      "tipo": "aguda",
+      "silaba_tonica": "zón",
+      "tiene_tilde": true,
+      "nivel": 1,
+      "explicacion": "Termina en 'n' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "tambor",
+      "tipo": "aguda",
+      "silaba_tonica": "bor",
+      "tiene_tilde": false,
+      "nivel": 1,
+      "explicacion": "Termina en 'r' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "café",
+      "tipo": "aguda",
+      "silaba_tonica": "fé",
+      "tiene_tilde": true,
+      "nivel": 1,
+      "explicacion": "Termina en vocal y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "canción",
+      "tipo": "aguda",
+      "silaba_tonica": "ción",
+      "tiene_tilde": true,
+      "nivel": 1,
+      "explicacion": "Termina en 'n' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "reloj",
+      "tipo": "aguda",
+      "silaba_tonica": "loj",
+      "tiene_tilde": false,
+      "nivel": 1,
+      "explicacion": "Termina en consonante diferente de 'n' o 's'"
+    },
+    {
+      "palabra": "papel",
+      "tipo": "aguda",
+      "silaba_tonica": "pel",
+      "tiene_tilde": false,
+      "nivel": 1,
+      "explicacion": "Termina en 'l' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "sofá",
+      "tipo": "aguda",
+      "silaba_tonica": "fá",
+      "tiene_tilde": true,
+      "nivel": 1,
+      "explicacion": "Termina en vocal y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "pared",
+      "tipo": "aguda",
+      "silaba_tonica": "red",
+      "tiene_tilde": false,
+      "nivel": 1,
+      "explicacion": "Termina en 'd' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "ciudad",
+      "tipo": "aguda",
+      "silaba_tonica": "dad",
+      "tiene_tilde": false,
+      "nivel": 1,
+      "explicacion": "Termina en 'd' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "jamás",
+      "tipo": "aguda",
+      "silaba_tonica": "más",
+      "tiene_tilde": true,
+      "nivel": 1,
+      "explicacion": "Termina en 's' y la fuerza está en la última sílaba"
+    },
+    {
+      "palabra": "árbol",
+      "tipo": "grave",
+      "silaba_tonica": "ár",
+      "tiene_tilde": true,
+      "nivel": 2,
+      "explicacion": "No termina en 'n', 's' o vocal, y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "casa",
+      "tipo": "grave",
+      "silaba_tonica": "ca",
+      "tiene_tilde": false,
+      "nivel": 2,
+      "explicacion": "Termina en vocal y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "lápiz",
+      "tipo": "grave",
+      "silaba_tonica": "lá",
+      "tiene_tilde": true,
+      "nivel": 2,
+      "explicacion": "No termina en 'n', 's' o vocal, y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "amigo",
+      "tipo": "grave",
+      "silaba_tonica": "mi",
+      "tiene_tilde": false,
+      "nivel": 2,
+      "explicacion": "Termina en vocal y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "difícil",
+      "tipo": "grave",
+      "silaba_tonica": "fí",
+      "tiene_tilde": true,
+      "nivel": 2,
+      "explicacion": "No termina en 'n', 's' o vocal, y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "libro",
+      "tipo": "grave",
+      "silaba_tonica": "li",
+      "tiene_tilde": false,
+      "nivel": 2,
+      "explicacion": "Termina en vocal y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "césped",
+      "tipo": "grave",
+      "silaba_tonica": "cés",
+      "tiene_tilde": true,
+      "nivel": 2,
+      "explicacion": "No termina en 'n', 's' o vocal, y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "mesa",
+      "tipo": "grave",
+      "silaba_tonica": "me",
+      "tiene_tilde": false,
+      "nivel": 2,
+      "explicacion": "Termina en vocal y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "ventana",
+      "tipo": "grave",
+      "silaba_tonica": "ta",
+      "tiene_tilde": false,
+      "nivel": 2,
+      "explicacion": "Termina en vocal y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "azúcar",
+      "tipo": "grave",
+      "silaba_tonica": "zú",
+      "tiene_tilde": true,
+      "nivel": 2,
+      "explicacion": "No termina en 'n', 's' o vocal, y la fuerza está en la penúltima sílaba"
+    },
+    {
+      "palabra": "música",
+      "tipo": "esdrujula",
+      "silaba_tonica": "mú",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "pájaro",
+      "tipo": "esdrujula",
+      "silaba_tonica": "pá",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "teléfono",
+      "tipo": "esdrujula",
+      "silaba_tonica": "lé",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "médico",
+      "tipo": "esdrujula",
+      "silaba_tonica": "mé",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "lágrima",
+      "tipo": "esdrujula",
+      "silaba_tonica": "lá",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "sábado",
+      "tipo": "esdrujula",
+      "silaba_tonica": "sá",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "película",
+      "tipo": "esdrujula",
+      "silaba_tonica": "lí",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "rápido",
+      "tipo": "esdrujula",
+      "silaba_tonica": "rá",
+      "tiene_tilde": true,
+      "nivel": 3,
+      "explicacion": "La fuerza está en la antepenúltima sílaba. Las esdrújulas siempre llevan tilde"
+    },
+    {
+      "palabra": "experiencia",
+      "tipo": "grave",
+      "silaba_tonica": "rien",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'ie' en la penúltima sílaba. Es una palabra grave que no lleva tilde porque termina en vocal"
+    },
+    {
+      "palabra": "aire",
+      "tipo": "grave",
+      "silaba_tonica": "ai",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'ai'. Es una palabra grave que termina en vocal"
+    },
+    {
+      "palabra": "estudia",
+      "tipo": "grave",
+      "silaba_tonica": "tu",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'ia'. Es una palabra grave que termina en vocal"
+    },
+    {
+      "palabra": "cuaderno",
+      "tipo": "grave",
+      "silaba_tonica": "der",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'ua'. Es una palabra grave que termina en vocal"
+    },
+    {
+      "palabra": "residuo",
+      "tipo": "grave",
+      "silaba_tonica": "si",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'uo'. Es una palabra grave que termina en vocal"
+    },
+    {
+      "palabra": "causa",
+      "tipo": "grave",
+      "silaba_tonica": "cau",
+      "tiene_tilde": false,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'au'. Es una palabra grave que termina en vocal"
+    },
+    {
+      "palabra": "océano",
+      "tipo": "esdrujula",
+      "silaba_tonica": "cé",
+      "tiene_tilde": true,
+      "nivel": 4,
+      "especial": "diptongo",
+      "explicacion": "Tiene diptongo 'ea'. Es una palabra esdrújula que siempre lleva tilde"
+    },
+    {
+      "palabra": "país",
+      "tipo": "aguda",
+      "silaba_tonica": "ís",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato porque se separan las vocales 'a-í'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "día",
+      "tipo": "aguda",
+      "silaba_tonica": "í",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'í-a'. La vocal cerrada tónica siempre lleva tilde en hiatos"
+    },
+    {
+      "palabra": "caída",
+      "tipo": "grave",
+      "silaba_tonica": "í",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'a-í'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "raíz",
+      "tipo": "aguda",
+      "silaba_tonica": "íz",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'a-í'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "baúl",
+      "tipo": "aguda",
+      "silaba_tonica": "úl",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'a-ú'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "maíz",
+      "tipo": "aguda",
+      "silaba_tonica": "íz",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'a-í'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "continúa",
+      "tipo": "grave",
+      "silaba_tonica": "nú",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'ú-a'. La vocal cerrada tónica lleva tilde"
+    },
+    {
+      "palabra": "reír",
+      "tipo": "aguda",
+      "silaba_tonica": "ír",
+      "tiene_tilde": true,
+      "nivel": 5,
+      "especial": "hiato",
+      "explicacion": "Tiene hiato 'e-í'. La vocal cerrada tónica lleva tilde"
+    }
+  ]
+}

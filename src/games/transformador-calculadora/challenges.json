@@ -1,0 +1,124 @@
+{
+  "desafios": [
+    {
+      "instruccion": "Suma 100.000 seis veces desde 1.500.000",
+      "numeroInicial": 1500000,
+      "numeroObjetivo": 2100000,
+      "operacion": "+",
+      "valor": 100000,
+      "explicacion": "Al sumar 100.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Transforma 967.432 en 907.432",
+      "numeroInicial": 967432,
+      "numeroObjetivo": 907432,
+      "operacion": "-",
+      "valor": 60000,
+      "explicacion": "Al restar 60.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Suma 10.000 al número 345.678",
+      "numeroInicial": 345678,
+      "numeroObjetivo": 355678,
+      "operacion": "+",
+      "valor": 10000,
+      "explicacion": "Al sumar 10.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Resta 1.000 a 892.456",
+      "numeroInicial": 892456,
+      "numeroObjetivo": 891456,
+      "operacion": "-",
+      "valor": 1000,
+      "explicacion": "Al restar 1.000, cambia la cifra de miles"
+    },
+    {
+      "instruccion": "Convierte 2.345.678 en 2.445.678",
+      "numeroInicial": 2345678,
+      "numeroObjetivo": 2445678,
+      "operacion": "+",
+      "valor": 100000,
+      "explicacion": "Al sumar 100.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Transforma 1.234.567 en 1.224.567",
+      "numeroInicial": 1234567,
+      "numeroObjetivo": 1224567,
+      "operacion": "-",
+      "valor": 10000,
+      "explicacion": "Al restar 10.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Suma 500.000 a 1.250.000",
+      "numeroInicial": 1250000,
+      "numeroObjetivo": 1750000,
+      "operacion": "+",
+      "valor": 500000,
+      "explicacion": "Al sumar 500.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Resta 200.000 de 987.654",
+      "numeroInicial": 987654,
+      "numeroObjetivo": 787654,
+      "operacion": "-",
+      "valor": 200000,
+      "explicacion": "Al restar 200.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Convierte 456.789 en 466.789",
+      "numeroInicial": 456789,
+      "numeroObjetivo": 466789,
+      "operacion": "+",
+      "valor": 10000,
+      "explicacion": "Al sumar 10.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Transforma 3.456.789 en 3.356.789",
+      "numeroInicial": 3456789,
+      "numeroObjetivo": 3356789,
+      "operacion": "-",
+      "valor": 100000,
+      "explicacion": "Al restar 100.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Suma 20.000 a 678.901",
+      "numeroInicial": 678901,
+      "numeroObjetivo": 698901,
+      "operacion": "+",
+      "valor": 20000,
+      "explicacion": "Al sumar 20.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Resta 5.000 de 2.125.000",
+      "numeroInicial": 2125000,
+      "numeroObjetivo": 2120000,
+      "operacion": "-",
+      "valor": 5000,
+      "explicacion": "Al restar 5.000, cambia la cifra de miles"
+    },
+    {
+      "instruccion": "Convierte 789.012 en 889.012",
+      "numeroInicial": 789012,
+      "numeroObjetivo": 889012,
+      "operacion": "+",
+      "valor": 100000,
+      "explicacion": "Al sumar 100.000, cambia la cifra de centenas de mil"
+    },
+    {
+      "instruccion": "Transforma 1.500.000 en 1.450.000",
+      "numeroInicial": 1500000,
+      "numeroObjetivo": 1450000,
+      "operacion": "-",
+      "valor": 50000,
+      "explicacion": "Al restar 50.000, cambia la cifra de decenas de mil"
+    },
+    {
+      "instruccion": "Suma 300.000 a 2.700.000",
+      "numeroInicial": 2700000,
+      "numeroObjetivo": 3000000,
+      "operacion": "+",
+      "valor": 300000,
+      "explicacion": "Al sumar 300.000, cambia la cifra de centenas de mil y millones"
+    }
+  ]
+}
