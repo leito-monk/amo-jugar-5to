@@ -40,6 +40,28 @@ const handleClose = () => {
         @click.self="handleClose"
       >
         <div class="modal-box relative max-w-lg scale-in" :class="[bgClass, borderClass, 'border-2']">
+          <!-- Back Button -->
+          <button
+            @click="handleClose"
+            class="btn btn-sm btn-circle btn-ghost absolute left-2 top-2"
+            title="Atrás"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
           <!-- Close Button -->
           <button
             @click="handleClose"
