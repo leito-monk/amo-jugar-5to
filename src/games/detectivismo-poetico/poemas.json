@@ -1,0 +1,405 @@
+[
+  {
+    "id": 1,
+    "titulo": "La Luna Traviesa",
+    "versos": [
+      "La luna es un plato de plata",
+      "que brilla en el cielo profundo,",
+      "el viento susurra secretos",
+      "al árbol dormido del mundo."
+    ],
+    "dificultad": "facil",
+    "recursos": [
+      {
+        "texto": "La luna es un plato de plata",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque se compara la luna con un plato de plata usando la palabra 'es'. Las comparaciones ayudan a imaginar mejor las cosas.",
+        "inicio": 0,
+        "fin": 30
+      },
+      {
+        "texto": "el viento susurra secretos",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el viento (que no es una persona) realiza la acción humana de susurrar. Se le dan características humanas a algo que no lo es.",
+        "inicio": 61,
+        "fin": 88
+      },
+      {
+        "texto": "árbol dormido",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el árbol (que no es una persona) se describe como 'dormido', una acción que realizan los seres vivos. Se le atribuyen cualidades humanas.",
+        "inicio": 92,
+        "fin": 105
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "El Sol Gigante",
+    "versos": [
+      "El sol ríe con mil rayos dorados,",
+      "su calor abraza la tierra entera,",
+      "es más grande que mil elefantes",
+      "y más brillante que todas las estrellas juntas."
+    ],
+    "dificultad": "facil",
+    "recursos": [
+      {
+        "texto": "El sol ríe",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el sol (que no es una persona) realiza la acción de reír, que es algo que hacen las personas. Se le dan características humanas al sol.",
+        "inicio": 0,
+        "fin": 10
+      },
+      {
+        "texto": "su calor abraza la tierra",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el calor del sol 'abraza', una acción humana. Se representa el calor como si pudiera dar abrazos.",
+        "inicio": 30,
+        "fin": 56
+      },
+      {
+        "texto": "es más grande que mil elefantes",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera el tamaño del sol al compararlo con mil elefantes. Es una exageración para destacar su gran tamaño.",
+        "inicio": 65,
+        "fin": 96
+      },
+      {
+        "texto": "más brillante que todas las estrellas juntas",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera el brillo del sol diciendo que brilla más que todas las estrellas juntas. Es una exageración para enfatizar su luminosidad.",
+        "inicio": 99,
+        "fin": 144
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "El Mar Cantante",
+    "versos": [
+      "Las olas bailan como bailarinas",
+      "con vestidos de espuma blanca,",
+      "el mar canta su canción eterna",
+      "mientras la brisa trae sabor a sal."
+    ],
+    "dificultad": "medio",
+    "recursos": [
+      {
+        "texto": "Las olas bailan como bailarinas",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara las olas con bailarinas usando la palabra 'como'. Las comparaciones usan palabras como 'como' o 'parece' para establecer similitudes.",
+        "inicio": 0,
+        "fin": 33
+      },
+      {
+        "texto": "vestidos de espuma blanca",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial visual porque nos ayuda a ver en nuestra mente la espuma blanca como si fueran vestidos. Apela a nuestro sentido de la vista.",
+        "inicio": 38,
+        "fin": 63
+      },
+      {
+        "texto": "el mar canta su canción",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el mar (que no es una persona) realiza la acción de cantar. Se le dan características humanas al mar.",
+        "inicio": 65,
+        "fin": 88
+      },
+      {
+        "texto": "sabor a sal",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial gustativa porque nos hace imaginar el sabor salado del mar. Apela a nuestro sentido del gusto.",
+        "inicio": 119,
+        "fin": 130
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "La Noche Estrellada",
+    "versos": [
+      "El cielo es un manto negro",
+      "bordado con diamantes brillantes,",
+      "la noche guarda sus misterios",
+      "en un cofre de terciopelo oscuro."
+    ],
+    "dificultad": "medio",
+    "recursos": [
+      {
+        "texto": "El cielo es un manto negro",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara el cielo con un manto negro. Usa la palabra 'es' para establecer la similitud.",
+        "inicio": 0,
+        "fin": 26
+      },
+      {
+        "texto": "bordado con diamantes brillantes",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara las estrellas con diamantes brillantes. Se usa la idea de un bordado para crear una imagen visual bella.",
+        "inicio": 27,
+        "fin": 59
+      },
+      {
+        "texto": "la noche guarda sus misterios",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque la noche (que no es una persona) realiza la acción de guardar, como si pudiera proteger secretos.",
+        "inicio": 61,
+        "fin": 90
+      },
+      {
+        "texto": "cofre de terciopelo oscuro",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial táctil y visual porque nos hace imaginar la textura suave del terciopelo y su color oscuro. Apela a nuestros sentidos del tacto y la vista.",
+        "inicio": 97,
+        "fin": 123
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "El Jardín Mágico",
+    "versos": [
+      "Las flores susurran al viento",
+      "con pétalos suaves como seda,",
+      "el perfume flota en el aire",
+      "dulce como miel derretida."
+    ],
+    "dificultad": "medio",
+    "recursos": [
+      {
+        "texto": "Las flores susurran al viento",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque las flores (que no son personas) realizan la acción de susurrar. Se les da una característica humana a las flores.",
+        "inicio": 0,
+        "fin": 29
+      },
+      {
+        "texto": "suaves como seda",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara los pétalos con la seda usando la palabra 'como'. Nos ayuda a imaginar la suavidad de los pétalos.",
+        "inicio": 44,
+        "fin": 60
+      },
+      {
+        "texto": "el perfume flota en el aire",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial olfativa porque nos ayuda a imaginar el aroma de las flores. Apela a nuestro sentido del olfato.",
+        "inicio": 62,
+        "fin": 89
+      },
+      {
+        "texto": "dulce como miel derretida",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial gustativa porque nos hace imaginar un sabor dulce. Combina el sentido del gusto con una comparación.",
+        "inicio": 90,
+        "fin": 115
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "El Viento Juguetón",
+    "versos": [
+      "El viento corre más rápido que un cohete,",
+      "juega con las hojas del jardín,",
+      "su silbido resuena en mis oídos",
+      "como una melodía sin fin."
+    ],
+    "dificultad": "medio",
+    "recursos": [
+      {
+        "texto": "corre más rápido que un cohete",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera la velocidad del viento comparándolo con un cohete. Es una exageración para enfatizar su rapidez.",
+        "inicio": 10,
+        "fin": 40
+      },
+      {
+        "texto": "juega con las hojas",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el viento (que no es una persona) realiza la acción de jugar. Se le da una característica humana al viento.",
+        "inicio": 42,
+        "fin": 61
+      },
+      {
+        "texto": "su silbido resuena en mis oídos",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial auditiva porque nos ayuda a imaginar el sonido del viento. Apela a nuestro sentido del oído.",
+        "inicio": 72,
+        "fin": 104
+      },
+      {
+        "texto": "como una melodía sin fin",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara el silbido del viento con una melodía usando la palabra 'como'.",
+        "inicio": 105,
+        "fin": 129
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "titulo": "La Lluvia Danzarina",
+    "versos": [
+      "La lluvia golpea mi ventana",
+      "con dedos diminutos de cristal,",
+      "baila sobre el techo toda la noche",
+      "en un concierto monumental."
+    ],
+    "dificultad": "dificil",
+    "recursos": [
+      {
+        "texto": "La lluvia golpea mi ventana",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque la lluvia (que no es una persona) realiza la acción de golpear de manera intencional.",
+        "inicio": 0,
+        "fin": 28
+      },
+      {
+        "texto": "dedos diminutos de cristal",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación implícita donde las gotas de lluvia se comparan con dedos de cristal. Crea una imagen visual y táctil.",
+        "inicio": 33,
+        "fin": 59
+      },
+      {
+        "texto": "baila sobre el techo toda la noche",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque la lluvia (que no es una persona) realiza la acción de bailar, una actividad humana.",
+        "inicio": 61,
+        "fin": 95
+      },
+      {
+        "texto": "concierto monumental",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera el sonido de la lluvia llamándolo 'monumental'. Es una exageración para enfatizar lo fuerte o impresionante del sonido.",
+        "inicio": 102,
+        "fin": 122
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "titulo": "El Río Aventurero",
+    "versos": [
+      "El río serpentea como una cinta azul,",
+      "corre mil kilómetros sin cansarse,",
+      "su murmullo fresco calma mi sed",
+      "mientras las piedras cantan al pasar."
+    ],
+    "dificultad": "dificil",
+    "recursos": [
+      {
+        "texto": "serpentea como una cinta azul",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara el movimiento sinuoso del río con una cinta azul usando la palabra 'como'.",
+        "inicio": 8,
+        "fin": 38
+      },
+      {
+        "texto": "corre mil kilómetros sin cansarse",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera la distancia y la resistencia del río. Es imposible que un río se 'canse', pero además se exagera la distancia.",
+        "inicio": 40,
+        "fin": 73
+      },
+      {
+        "texto": "su murmullo fresco",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial auditiva y táctil porque nos ayuda a imaginar el sonido suave del agua y la sensación fresca. Combina dos sentidos.",
+        "inicio": 75,
+        "fin": 93
+      },
+      {
+        "texto": "las piedras cantan",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque las piedras (que no son personas) realizan la acción de cantar. Se les da una característica humana.",
+        "inicio": 118,
+        "fin": 136
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "titulo": "El Bosque Encantado",
+    "versos": [
+      "Los árboles cuchichean entre ellos,",
+      "sus hojas tiemblan como mariposas,",
+      "el musgo aterciopelado cubre el suelo",
+      "y el silencio pesa toneladas."
+    ],
+    "dificultad": "dificil",
+    "recursos": [
+      {
+        "texto": "Los árboles cuchichean entre ellos",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque los árboles (que no son personas) realizan la acción de cuchichear, que es una acción humana de hablar en voz baja.",
+        "inicio": 0,
+        "fin": 34
+      },
+      {
+        "texto": "tiemblan como mariposas",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara el movimiento de las hojas con mariposas usando la palabra 'como'.",
+        "inicio": 47,
+        "fin": 70
+      },
+      {
+        "texto": "musgo aterciopelado",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial táctil porque nos ayuda a imaginar la textura suave del musgo como si fuera terciopelo. Apela al sentido del tacto.",
+        "inicio": 75,
+        "fin": 94
+      },
+      {
+        "texto": "el silencio pesa toneladas",
+        "tipo": "hiperbole",
+        "explicacion": "Esta es una hipérbole porque exagera el silencio diciendo que tiene peso físico de toneladas. Es una exageración para enfatizar lo profundo del silencio.",
+        "inicio": 111,
+        "fin": 137
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "titulo": "La Montaña Sabia",
+    "versos": [
+      "La montaña es un gigante dormido,",
+      "su cabeza toca las nubes del cielo,",
+      "el eco repite mis palabras",
+      "como si quisiera contarme un secreto."
+    ],
+    "dificultad": "facil",
+    "recursos": [
+      {
+        "texto": "La montaña es un gigante dormido",
+        "tipo": "comparacion",
+        "explicacion": "Esta es una comparación porque compara la montaña con un gigante dormido. Usa la palabra 'es' para establecer la similitud.",
+        "inicio": 0,
+        "fin": 33
+      },
+      {
+        "texto": "su cabeza toca las nubes",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque la montaña (que no es una persona) tiene 'cabeza', una parte del cuerpo humano. Se le dan características humanas.",
+        "inicio": 35,
+        "fin": 59
+      },
+      {
+        "texto": "el eco repite mis palabras",
+        "tipo": "imagen_sensorial",
+        "explicacion": "Esta es una imagen sensorial auditiva porque nos ayuda a imaginar el sonido del eco repitiendo. Apela a nuestro sentido del oído.",
+        "inicio": 70,
+        "fin": 96
+      },
+      {
+        "texto": "como si quisiera contarme un secreto",
+        "tipo": "personificacion",
+        "explicacion": "Esta es una personificación porque el eco (o la montaña) se presenta como si tuviera voluntad e intención de contar secretos, características humanas.",
+        "inicio": 97,
+        "fin": 134
+      }
+    ]
+  }
+]

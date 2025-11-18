@@ -8,26 +8,10 @@ const routes = [
     component: () => import('../views/HomeView.vue')
   },
   {
-    path: '/juegos',
-    name: 'juegos',
-    component: () => import('../views/JuegosView.vue')
-  },
-  {
-    path: '/progreso',
-    name: 'progreso',
-    component: () => import('../views/ProgresoView.vue')
-  },
-  {
-    path: '/acerca',
-    name: 'acerca',
-    component: () => import('../views/AcercaView.vue')
-  },
-  {
-    path: '/demo',
-    name: 'demo',
-    component: () => import('../views/GameDemoView.vue')
-  },
-  {
+    path: '/detectivismo-poetico',
+    name: 'detectivismo-poetico',
+    component: () => import('../games/detectivismo-poetico/DetectiveGame.vue')
+  }
     path: '/juegos/cazador-caligramas',
     name: 'cazador-caligramas',
     component: CaligramaGame
