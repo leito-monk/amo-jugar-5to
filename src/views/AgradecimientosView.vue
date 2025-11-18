@@ -65,12 +65,20 @@
       <div class="license-section card bg-base-100 shadow-xl p-6 mb-8">
         <h2 class="text-2xl font-bold mb-4">📜 Licencia</h2>
         <p class="text-base-content/80 mb-3">
-          Este proyecto está bajo licencia <strong>MIT</strong>. 
+          Este proyecto está bajo licencia <strong>GNU Affero General Public License v3.0 (AGPL-3.0)</strong>. 
           Es libre y gratuito para uso educativo.
         </p>
         <p class="text-sm text-base-content/70">
-          Podés usar, modificar y distribuir este código libremente, 
-          siempre manteniendo la atribución original.
+          Podés usar, modificar y distribuir este código libremente. 
+          Si modificás y ofrecés este software a través de una red, 
+          debés compartir el código fuente modificado bajo la misma licencia.
+        </p>
+        <p class="text-sm text-base-content/70 mt-2">
+          <a href="https://github.com/leito-monk/amo-jugar-5to/blob/main/LICENSE" 
+             target="_blank" 
+             class="link link-primary">
+            Ver licencia completa
+          </a>
         </p>
       </div>
 
