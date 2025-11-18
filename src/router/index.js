@@ -46,7 +46,7 @@ const routes = [
   { 
     path: '/juegos/viaje-hidrosfera',
     name: 'viaje-hidrosfera',
-    component: () => import('../games/viaje-hidrosfera/HidrosferaGame.vue')
+    component: () => import('../games/viaje-hidrosfera/HidrosferaGameSimple.vue')
   },
   {  path: '/laboratorio-acentuacion',
     name: 'laboratorio-acentuacion',

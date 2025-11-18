@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import 'leaflet/dist/leaflet.css'
+import { LMap, LTileLayer, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
 import GameLayout from '../../components/game/GameLayout.vue'
 import ProgressTracker from '../../components/game/ProgressTracker.vue'
 import locationsData from './locations.json'
@@ -16,7 +18,7 @@ interface InfoExtra {
 interface Location {
   id: string
   nombre: string
-  coordenadas: { x: number; y: number }
+  coordenadas: { lat: number; lng: number }
   descripcion: string
   tieneAgua: boolean
   estado: 'liquido' | 'solido' | 'gaseoso'
@@ -194,36 +196,28 @@ onMounted(() => {
     </div>
 
     <!-- Map Container -->
-    <div class="map-wrapper max-w-5xl mx-auto">
-      <div class="map-container relative bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-2 shadow-xl">
-        <!-- Aspect ratio box to maintain proportions -->
-        <div class="aspect-ratio-box" style="position: relative; width: 100%; padding-bottom: 56.25%;">
-          <!-- Decorative map background -->
-          <div class="absolute inset-0 rounded-xl opacity-20 bg-gradient-to-br from-blue-200 via-green-100 to-blue-200"></div>
+    <div class="map-wrapper max-w-6xl mx-auto">
+      <div class="map-container rounded-xl overflow-hidden shadow-xl" style="height: 600px;">
+        <l-map
+          :zoom="2"
+          :center="[20, 0]"
+          style="height: 100%; width: 100%;"
+        >
+          <l-tile-layer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
           
-          <!-- World map representation (simplified) -->
-          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div class="text-center text-blue-300 text-6xl opacity-25">🌍</div>
-          </div>
-
-          <!-- Location Hotspots -->
-          <button
+          <!-- Location Markers -->
+          <l-marker
             v-for="loc in locations"
             :key="loc.id"
-            class="hotspot absolute transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-sm cursor-pointer transition-all duration-300 shadow-md z-10"
-            :class="{
-              'bg-primary hover:bg-primary-focus': !loc.visitado,
-              'bg-success': loc.visitado,
-              'ring-2 ring-warning': loc.esEspecial && !loc.visitado,
-              'ring-2 ring-warning glow-gold': loc.esEspecial && loc.visitado
-            }"
-            :style="{ left: loc.coordenadas.x + '%', top: loc.coordenadas.y + '%' }"
+            :lat-lng="[loc.coordenadas.lat, loc.coordenadas.lng]"
             @click="openLocation(loc)"
-            :title="loc.nombre"
           >
-            <span class="text-base">{{ loc.visitado ? '✓' : '?' }}</span>
-          </button>
-        </div>
+            <l-tooltip>{{ loc.nombre }}</l-tooltip>
+          </l-marker>
+        </l-map>
       </div>
     </div>
 
@@ -430,14 +424,16 @@ onMounted(() => {
 
 .hotspot {
   touch-action: manipulation;
+  font-weight: 600;
 }
 
 .hotspot:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 20;
 }
 
 .hotspot:not(.bg-success) {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
@@ -475,5 +471,47 @@ onMounted(() => {
 
 .certificate {
   border: 4px solid #fbbf24;
+}
+
+/* Leaflet marker styles */
+.custom-marker {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.marker-visited {
+  background-color: #10b981;
+  color: white;
+}
+
+.marker-special {
+  background-color: #fbbf24;
+  color: white;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.marker-special-visited {
+  background-color: #059669;
+  color: white;
+}
+
+.custom-marker:not(.marker-visited) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.custom-marker:hover {
+  transform: scale(1.2);
+  z-index: 1000 !important;
 }
 </style>

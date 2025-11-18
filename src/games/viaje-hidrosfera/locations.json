@@ -3,7 +3,7 @@
     {
       "id": "oceano_atlantico",
       "nombre": "Océano Atlántico",
-      "coordenadas": { "x": 30, "y": 50 },
+      "coordenadas": { "lat": 0, "lng": -25 },
       "descripcion": "El segundo océano más grande del mundo, cubre aproximadamente el 20% de la superficie terrestre. Conecta América, Europa y África.",
       "tieneAgua": true,
       "estado": "liquido",
@@ -13,7 +13,7 @@
     {
       "id": "glaciar_perito_moreno",
       "nombre": "Glaciar Perito Moreno",
-      "coordenadas": { "x": 25, "y": 85 },
+      "coordenadas": { "lat": -50.5, "lng": -73.0 },
       "descripcion": "Ubicado en la Patagonia argentina, es uno de los glaciares más imponentes del mundo.",
       "tieneAgua": true,
       "estado": "solido",
@@ -23,7 +23,7 @@
     {
       "id": "acuifero_guarani",
       "nombre": "Acuífero Guaraní",
-      "coordenadas": { "x": 35, "y": 72 },
+      "coordenadas": { "lat": -25, "lng": -55 },
       "descripcion": "Una de las reservas de agua dulce subterránea más grandes del mundo, se encuentra bajo cuatro países de Sudamérica.",
       "esEspecial": true,
       "tieneAgua": true,
@@ -39,7 +39,7 @@
     {
       "id": "rio_amazonas",
       "nombre": "Río Amazonas",
-      "coordenadas": { "x": 38, "y": 60 },
+      "coordenadas": { "lat": -3.5, "lng": -62 },
       "descripcion": "El río más caudaloso del mundo, descarga más agua que los siguientes siete ríos más grandes combinados.",
       "tieneAgua": true,
       "estado": "liquido",
@@ -49,7 +49,7 @@
     {
       "id": "desierto_sahara",
       "nombre": "Desierto del Sahara",
-      "coordenadas": { "x": 52, "y": 40 },
+      "coordenadas": { "lat": 23, "lng": 10 },
       "descripcion": "El desierto cálido más grande del mundo, ubicado en el norte de África. Aunque es extremadamente seco, contiene agua en algunas formas.",
       "tieneAgua": true,
       "estado": "liquido",
@@ -59,7 +59,7 @@
     {
       "id": "cataratas_iguazu",
       "nombre": "Cataratas del Iguazú",
-      "coordenadas": { "x": 33, "y": 75 },
+      "coordenadas": { "lat": -25.7, "lng": -54.4 },
       "descripcion": "Sistema de cataratas en la frontera entre Argentina y Brasil, una de las siete maravillas naturales del mundo.",
       "tieneAgua": true,
       "estado": "liquido",
@@ -69,7 +69,7 @@
     {
       "id": "nubes_atmosfera",
       "nombre": "Nubes en la Atmósfera",
-      "coordenadas": { "x": 45, "y": 30 },
+      "coordenadas": { "lat": 10, "lng": 0 },
       "descripcion": "Las nubes son masas visibles de gotas de agua o cristales de hielo suspendidos en la atmósfera.",
       "tieneAgua": true,
       "estado": "gaseoso",
@@ -79,7 +79,7 @@
     {
       "id": "mar_muerto",
       "nombre": "Mar Muerto",
-      "coordenadas": { "x": 58, "y": 42 },
+      "coordenadas": { "lat": 31.5, "lng": 35.5 },
       "descripcion": "Lago salado situado entre Israel, Jordania y Palestina. Es uno de los cuerpos de agua más salados del mundo.",
       "tieneAgua": true,
       "estado": "liquido",
@@ -89,7 +89,7 @@
     {
       "id": "casquete_antartida",
       "nombre": "Casquete de Hielo Antártico",
-      "coordenadas": { "x": 50, "y": 92 },
+      "coordenadas": { "lat": -75, "lng": 0 },
       "descripcion": "La capa de hielo más grande de la Tierra, contiene aproximadamente el 70% del agua dulce del planeta.",
       "tieneAgua": true,
       "estado": "solido",
@@ -99,7 +99,7 @@
     {
       "id": "lago_titicaca",
       "nombre": "Lago Titicaca",
-      "coordenadas": { "x": 28, "y": 70 },
+      "coordenadas": { "lat": -15.8, "lng": -69.3 },
       "descripcion": "El lago navegable más alto del mundo, ubicado entre Perú y Bolivia a 3.812 metros sobre el nivel del mar.",
       "tieneAgua": true,
       "estado": "liquido",
