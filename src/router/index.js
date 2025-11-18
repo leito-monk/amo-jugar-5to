@@ -66,6 +66,11 @@ const routes = [
     path: '/ciclo-agua',
     name: 'ciclo-agua',
     component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
+  },
+  {
+    path: '/juegos/portal-magico',
+    name: 'portal-magico',
+    component: () => import('../games/portal-magico/PortalGame.vue')
   }
   // More routes will be added here as the application grows
 ]
