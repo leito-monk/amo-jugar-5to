@@ -1,0 +1,218 @@
+{
+  "preguntas": [
+    {
+      "tipo": "lectura",
+      "dificultad": "facil",
+      "pregunta": "¿Cómo se escribe 'Dos millones quinientos mil'?",
+      "opciones": [
+        {"texto": "2.500.000", "correcto": true},
+        {"texto": "2.050.000", "correcto": false},
+        {"texto": "250.000", "correcto": false},
+        {"texto": "2.005.000", "correcto": false}
+      ],
+      "explicacion": "2 millones + 500 mil = 2.500.000"
+    },
+    {
+      "tipo": "lectura",
+      "dificultad": "facil",
+      "pregunta": "¿Cómo se escribe 'Un millón doscientos mil'?",
+      "opciones": [
+        {"texto": "1.200.000", "correcto": true},
+        {"texto": "1.020.000", "correcto": false},
+        {"texto": "120.000", "correcto": false},
+        {"texto": "1.002.000", "correcto": false}
+      ],
+      "explicacion": "1 millón + 200 mil = 1.200.000"
+    },
+    {
+      "tipo": "lectura",
+      "dificultad": "medio",
+      "pregunta": "¿Cómo se escribe 'Cinco millones ochocientos treinta mil'?",
+      "opciones": [
+        {"texto": "5.830.000", "correcto": true},
+        {"texto": "5.083.000", "correcto": false},
+        {"texto": "5.380.000", "correcto": false},
+        {"texto": "5.008.300", "correcto": false}
+      ],
+      "explicacion": "5 millones + 830 mil = 5.830.000"
+    },
+    {
+      "tipo": "escritura",
+      "dificultad": "facil",
+      "pregunta": "¿Cómo se lee el número 3.405.100?",
+      "respuestaCorrecta": "tres millones cuatrocientos cinco mil cien",
+      "explicacion": "Se lee: tres millones cuatrocientos cinco mil cien"
+    },
+    {
+      "tipo": "escritura",
+      "dificultad": "medio",
+      "pregunta": "¿Cómo se lee el número 7.250.300?",
+      "respuestaCorrecta": "siete millones doscientos cincuenta mil trescientos",
+      "explicacion": "Se lee: siete millones doscientos cincuenta mil trescientos"
+    },
+    {
+      "tipo": "escritura",
+      "dificultad": "medio",
+      "pregunta": "¿Cómo se lee el número 4.050.020?",
+      "respuestaCorrecta": "cuatro millones cincuenta mil veinte",
+      "explicacion": "Se lee: cuatro millones cincuenta mil veinte"
+    },
+    {
+      "tipo": "comparacion",
+      "dificultad": "facil",
+      "pregunta": "¿Qué número es MAYOR?",
+      "opciones": [
+        {"texto": "3.500.000", "correcto": true},
+        {"texto": "2.999.999", "correcto": false},
+        {"texto": "3.499.999", "correcto": false},
+        {"texto": "3.050.000", "correcto": false}
+      ],
+      "explicacion": "3.500.000 es mayor que todos los demás"
+    },
+    {
+      "tipo": "comparacion",
+      "dificultad": "medio",
+      "pregunta": "¿Qué número es MENOR?",
+      "opciones": [
+        {"texto": "4.123.456", "correcto": true},
+        {"texto": "4.234.567", "correcto": false},
+        {"texto": "4.567.890", "correcto": false},
+        {"texto": "4.890.123", "correcto": false}
+      ],
+      "explicacion": "4.123.456 es menor que todos los demás"
+    },
+    {
+      "tipo": "comparacion",
+      "dificultad": "dificil",
+      "pregunta": "Ordena de MENOR a MAYOR: ¿Cuál va primero?",
+      "opciones": [
+        {"texto": "6.789.012", "correcto": true},
+        {"texto": "6.890.123", "correcto": false},
+        {"texto": "6.901.234", "correcto": false},
+        {"texto": "7.012.345", "correcto": false}
+      ],
+      "explicacion": "6.789.012 es el menor número de la serie"
+    },
+    {
+      "tipo": "recta",
+      "dificultad": "medio",
+      "pregunta": "Ubica 5.500.000 en esta recta numérica (1.000.000 - 10.000.000)",
+      "rangoMin": 1000000,
+      "rangoMax": 10000000,
+      "valorCorrecto": 5500000,
+      "tolerancia": 500000,
+      "explicacion": "5.500.000 está justo en la mitad entre 1 millón y 10 millones"
+    },
+    {
+      "tipo": "recta",
+      "dificultad": "medio",
+      "pregunta": "Ubica 7.000.000 en esta recta numérica (1.000.000 - 10.000.000)",
+      "rangoMin": 1000000,
+      "rangoMax": 10000000,
+      "valorCorrecto": 7000000,
+      "tolerancia": 500000,
+      "explicacion": "7.000.000 está en el 70% del recorrido entre 1 y 10 millones"
+    },
+    {
+      "tipo": "recta",
+      "dificultad": "dificil",
+      "pregunta": "Ubica 2.750.000 en esta recta numérica (1.000.000 - 5.000.000)",
+      "rangoMin": 1000000,
+      "rangoMax": 5000000,
+      "valorCorrecto": 2750000,
+      "tolerancia": 250000,
+      "explicacion": "2.750.000 está cerca de la mitad entre 1 y 5 millones"
+    },
+    {
+      "tipo": "valor_posicional",
+      "dificultad": "medio",
+      "pregunta": "En el número 4.567.890, ¿qué valor tiene el dígito 5?",
+      "opciones": [
+        {"texto": "500.000", "correcto": true},
+        {"texto": "50.000", "correcto": false},
+        {"texto": "5.000", "correcto": false},
+        {"texto": "5.000.000", "correcto": false}
+      ],
+      "explicacion": "El 5 está en la posición de las centenas de mil: 500.000"
+    },
+    {
+      "tipo": "valor_posicional",
+      "dificultad": "medio",
+      "pregunta": "En el número 8.234.567, ¿qué valor tiene el dígito 2?",
+      "opciones": [
+        {"texto": "200.000", "correcto": true},
+        {"texto": "20.000", "correcto": false},
+        {"texto": "2.000", "correcto": false},
+        {"texto": "2.000.000", "correcto": false}
+      ],
+      "explicacion": "El 2 está en la posición de las centenas de mil: 200.000"
+    },
+    {
+      "tipo": "valor_posicional",
+      "dificultad": "dificil",
+      "pregunta": "En el número 9.876.543, ¿qué valor tiene el dígito 7?",
+      "opciones": [
+        {"texto": "70.000", "correcto": true},
+        {"texto": "700.000", "correcto": false},
+        {"texto": "7.000", "correcto": false},
+        {"texto": "7.000.000", "correcto": false}
+      ],
+      "explicacion": "El 7 está en la posición de las decenas de mil: 70.000"
+    },
+    {
+      "tipo": "lectura",
+      "dificultad": "dificil",
+      "pregunta": "¿Cómo se escribe 'Nueve millones novecientos noventa y nueve mil novecientos noventa y nueve'?",
+      "opciones": [
+        {"texto": "9.999.999", "correcto": true},
+        {"texto": "9.999.900", "correcto": false},
+        {"texto": "9.909.999", "correcto": false},
+        {"texto": "9.099.999", "correcto": false}
+      ],
+      "explicacion": "Es el número más grande con 7 dígitos: 9.999.999"
+    },
+    {
+      "tipo": "comparacion",
+      "dificultad": "facil",
+      "pregunta": "¿Cuál número está más cerca de 5.000.000?",
+      "opciones": [
+        {"texto": "4.900.000", "correcto": true},
+        {"texto": "4.500.000", "correcto": false},
+        {"texto": "5.500.000", "correcto": false},
+        {"texto": "6.000.000", "correcto": false}
+      ],
+      "explicacion": "4.900.000 está a solo 100.000 de 5.000.000"
+    },
+    {
+      "tipo": "escritura",
+      "dificultad": "dificil",
+      "pregunta": "¿Cómo se lee el número 6.006.006?",
+      "respuestaCorrecta": "seis millones seis mil seis",
+      "explicacion": "Se lee: seis millones seis mil seis"
+    },
+    {
+      "tipo": "valor_posicional",
+      "dificultad": "facil",
+      "pregunta": "En el número 3.456.789, ¿cuántos millones hay?",
+      "opciones": [
+        {"texto": "3 millones", "correcto": true},
+        {"texto": "34 millones", "correcto": false},
+        {"texto": "345 millones", "correcto": false},
+        {"texto": "30 millones", "correcto": false}
+      ],
+      "explicacion": "El dígito 3 en la posición de los millones representa 3 millones"
+    },
+    {
+      "tipo": "lectura",
+      "dificultad": "medio",
+      "pregunta": "¿Cómo se escribe 'Ocho millones cuarenta mil quinientos'?",
+      "opciones": [
+        {"texto": "8.040.500", "correcto": true},
+        {"texto": "8.400.500", "correcto": false},
+        {"texto": "8.045.000", "correcto": false},
+        {"texto": "8.004.500", "correcto": false}
+      ],
+      "explicacion": "8 millones + 40 mil + 500 = 8.040.500"
+    }
+  ]
+}

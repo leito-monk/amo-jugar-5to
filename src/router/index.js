@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import CaligramaGame from '../games/cazador-caligramas/CaligramaGame.vue'
+import AutopistaGame from '../games/autopista-numerica/AutopistaGame.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/juegos/cazador-caligramas',
     name: 'cazador-caligramas',
     component: CaligramaGame
+  },
+  {
+    path: '/juegos/autopista-numerica',
+    name: 'autopista-numerica',
+    component: AutopistaGame
   }
   // More routes will be added here as the application grows
 ]

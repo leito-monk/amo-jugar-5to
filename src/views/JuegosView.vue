@@ -29,6 +29,18 @@ const games = ref<Game[]>([
     progreso: 0
   },
   {
+    id: 'autopista-numerica',
+    titulo: 'Autopista Numérica',
+    materia: 'Matemáticas',
+    descripcion: 'Compite en una carrera de autos respondiendo preguntas sobre números hasta 9.999.999',
+    icono: '🏁',
+    dificultad: 'Medio',
+    duracion: '15 min',
+    activo: true,
+    completado: false,
+    progreso: 0
+  },
+  {
     id: 'suma-rapida',
     titulo: 'Suma Rápida',
     materia: 'Matemáticas',
@@ -106,6 +118,8 @@ const handleGameClick = (game: Game) => {
     router.push(`/juegos/${game.id}`)
   } else if (game.activo && game.id === 'detectivismo-poetico') {
     router.push(`/${game.id}`)
+  } else if (game.activo && game.id === 'autopista-numerica') {
+    router.push(`/juegos/${game.id}`)
   } else {
     console.log('Juego seleccionado:', game.titulo)
     // Otros juegos aún no implementados
