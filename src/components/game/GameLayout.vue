@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
-defineProps<{
+const props = defineProps<{
   title: string
   instructions: string
+  autoShowInstructions?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -12,6 +13,7 @@ const emit = defineEmits<{
 }>()
 
 const router = useRouter()
+const route = useRoute()
 const showInstructions = ref(false)
 
 const handleBack = () => {
@@ -22,6 +24,21 @@ const handleBack = () => {
 const toggleInstructions = () => {
   showInstructions.value = !showInstructions.value
 }
+
+onMounted(() => {
+  // Auto-show instructions on first visit if enabled
+  if (props.autoShowInstructions !== false) {
+    const storageKey = `instructions-shown-${String(route.name || route.path)}`
+    const hasSeenInstructions = localStorage.getItem(storageKey)
+    
+    if (!hasSeenInstructions) {
+      setTimeout(() => {
+        showInstructions.value = true
+        localStorage.setItem(storageKey, 'true')
+      }, 500)
+    }
+  }
+})
 </script>
 
 <template>
@@ -54,22 +71,24 @@ const toggleInstructions = () => {
           </h1>
 
           <!-- Help Button -->
-          <button @click="toggleInstructions" class="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </button>
+          <div class="tooltip tooltip-left" data-tip="Ayuda">
+            <button @click="toggleInstructions" class="btn btn-ghost btn-circle hover:btn-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -96,23 +115,30 @@ const toggleInstructions = () => {
           class="modal modal-open"
           @click.self="toggleInstructions"
         >
-          <div class="modal-box relative max-w-2xl">
+          <div class="modal-box relative max-w-2xl bg-gradient-to-br from-base-100 to-base-200">
             <button
               @click="toggleInstructions"
               class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
             >
               ✕
             </button>
-            <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-              <span class="text-2xl">💡</span>
-              Instrucciones
-            </h3>
-            <div class="py-4 text-left">
-              <p class="whitespace-pre-line">{{ instructions }}</p>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-primary/20 p-3 rounded-full">
+                <span class="text-3xl">💡</span>
+              </div>
+              <h3 class="font-bold text-2xl text-primary">
+                Cómo Jugar
+              </h3>
             </div>
-            <div class="modal-action">
-              <button @click="toggleInstructions" class="btn btn-primary">
-                ¡Entendido!
+            <div class="py-2">
+              <div class="prose prose-sm max-w-none">
+                <p class="whitespace-pre-line text-base leading-relaxed">{{ instructions }}</p>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="modal-action justify-center">
+              <button @click="toggleInstructions" class="btn btn-primary btn-wide">
+                ¡Entendido, vamos a jugar!
               </button>
             </div>
           </div>
