@@ -1,0 +1,120 @@
+{
+  "niveles": [
+    {
+      "id": "nivel_1",
+      "titulo": "La casa de Horacio Quiroga",
+      "cuento": "El loro pelado",
+      "escenario": "casa_quiroga",
+      "descripcion": "Conoce a los animales de la selva misionera",
+      "objetosRecolectar": [
+        {
+          "id": "loro",
+          "nombre": "Loro pelado",
+          "posicion": {"x": 300, "y": 200},
+          "descripcion": "Un loro que perdió sus plumas"
+        },
+        {
+          "id": "tigre",
+          "nombre": "Tigre",
+          "posicion": {"x": 500, "y": 180}
+        }
+      ],
+      "pregunta": {
+        "tipo": "descripcion_personaje",
+        "texto": "¿Cómo era el loro?",
+        "fragmento": "Era un loro viejo, que no tenía sino tres o cuatro plumas en el lomo y algunas en la cabeza.",
+        "opciones": [
+          {"texto": "Viejo y casi sin plumas", "correcto": true},
+          {"texto": "Joven y colorido", "correcto": false},
+          {"texto": "Grande y peludo", "correcto": false}
+        ]
+      },
+      "comparacion": {
+        "texto": "El loro estaba tan pelado como una rata",
+        "pregunta": "¿Con qué se compara al loro?",
+        "respuesta": "Con una rata",
+        "explicacion": "Usa 'como' para comparar"
+      }
+    },
+    {
+      "id": "nivel_2",
+      "titulo": "El plan del tigre",
+      "escenario": "selva",
+      "descripcion": "El tigre quiere cazar a los hombres",
+      "pregunta": {
+        "tipo": "comprension",
+        "texto": "¿Qué planeaba el tigre?",
+        "opciones": [
+          {"texto": "Atrapar a los hombres con un plan", "correcto": true},
+          {"texto": "Hacer amigos", "correcto": false}
+        ]
+      }
+    },
+    {
+      "id": "nivel_3",
+      "titulo": "Rikki-Tikki-Tavi aparece",
+      "cuento": "Rikki-Tikki-Tavi",
+      "escenario": "jardin",
+      "descripcion": "Una mangosta valiente llega al jardín",
+      "pregunta": {
+        "tipo": "personaje",
+        "texto": "¿Qué animal es Rikki-Tikki-Tavi?",
+        "opciones": [
+          {"texto": "Una mangosta", "correcto": true},
+          {"texto": "Una serpiente", "correcto": false},
+          {"texto": "Un pájaro", "correcto": false}
+        ]
+      },
+      "comparacion": {
+        "texto": "Sus ojos brillaban como carbones encendidos",
+        "pregunta": "¿Con qué se comparan los ojos de Rikki?",
+        "respuesta": "Con carbones encendidos"
+      }
+    },
+    {
+      "id": "nivel_4",
+      "titulo": "La batalla con las cobras",
+      "escenario": "jardin_noche",
+      "pregunta": {
+        "tipo": "secuencia",
+        "texto": "Ordena los eventos:",
+        "eventos": [
+          "Rikki encuentra los huevos",
+          "Rikki pelea con Nag",
+          "Las cobras planean atacar"
+        ],
+        "orden_correcto": [2, 1, 0]
+      }
+    },
+    {
+      "id": "nivel_5",
+      "titulo": "Mapa de Misiones",
+      "tipo": "geografia",
+      "descripcion": "Aprende sobre la provincia donde vivió Quiroga",
+      "infoMisiones": {
+        "ubicacion": "Noreste de Argentina",
+        "capital": "Posadas",
+        "rios": ["Paraná", "Iguazú"],
+        "atracciones": ["Cataratas del Iguazú", "Ruinas de San Ignacio"],
+        "fauna": ["Tucán", "Mono caí", "Yaguareté", "Coatí"],
+        "curiosidad": "Horacio Quiroga vivió en San Ignacio, Misiones"
+      },
+      "actividad": {
+        "tipo": "mapa_interactivo",
+        "marcadores": [
+          {"nombre": "Cataratas del Iguazú", "x": 70, "y": 30},
+          {"nombre": "San Ignacio", "x": 50, "y": 50},
+          {"nombre": "Posadas", "x": 45, "y": 60}
+        ]
+      }
+    }
+  ],
+  "personajes": {
+    "quiroga": {
+      "nombre": "Horacio Quiroga",
+      "descripcion": "Escritor uruguayo que vivió en la selva misionera",
+      "años": "1878-1937",
+      "obras": ["Cuentos de la selva", "Cuentos de amor, locura y muerte"]
+    }
+  }
+}

@@ -87,6 +87,18 @@ const games = ref<Game[]>([
     activo: true,
     completado: false,
     progreso: 0
+  },
+  {
+    id: 'aventura-misiones',
+    titulo: 'Aventura en Misiones',
+    materia: 'Lengua',
+    descripcion: 'Explora los cuentos de Horacio Quiroga en la selva misionera',
+    icono: '🌿',
+    dificultad: 'Medio',
+    duracion: '40 min',
+    activo: true,
+    completado: false,
+    progreso: 0
   }
 ])
 
@@ -106,7 +118,8 @@ const handleGameClick = (game: Game) => {
     'autopista-numerica': '/juegos/autopista-numerica',
     'transformador-calculadora': '/juegos/transformador-calculadora',
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
-    'ciclo-agua': '/ciclo-agua'
+    'ciclo-agua': '/ciclo-agua',
+    'aventura-misiones': '/juegos/aventura-misiones'
   }
 
   const route = routeMap[game.id]

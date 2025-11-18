@@ -62,6 +62,11 @@ const router = createRouter({
       path: '/ciclo-agua',
       name: 'ciclo-agua',
       component: () => import('../games/ciclo-agua/CicloAguaGame.vue')
+    },
+    {
+      path: '/juegos/aventura-misiones',
+      name: 'aventura-misiones',
+      component: () => import('../games/aventura-misiones/MisionesGame.vue')
     }
   ]
 })
