@@ -123,6 +123,18 @@ const games = ref<Game[]>([
     activo: true,
     completado: false,
     progreso: 0
+  },
+  {
+    id: 'quiz-rapido',
+    titulo: 'Quiz Rápido Unidad 1',
+    materia: 'Transversal',
+    descripcion: 'Repaso rápido con preguntas de todas las materias: Lengua, Matemática, Ciencias Sociales y Naturales',
+    icono: '🎯',
+    dificultad: 'Medio',
+    duracion: '15 min',
+    activo: true,
+    completado: false,
+    progreso: 0
   }
 ])
 
@@ -145,7 +157,8 @@ const handleGameClick = (game: Game) => {
     'viaje-hidrosfera': '/juegos/viaje-hidrosfera',
     'ciclo-agua': '/ciclo-agua',
     'defensa-buenosaires': '/juegos/defensa-buenosaires',
-    'aventura-misiones': '/juegos/aventura-misiones'
+    'aventura-misiones': '/juegos/aventura-misiones',
+    'quiz-rapido': '/juegos/quiz-rapido'
   }
 
   const route = routeMap[game.id]

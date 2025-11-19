@@ -1,0 +1,757 @@
+{
+  "preguntas": [
+    {
+      "id": "L1",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "¿Qué es un caligrama?",
+      "opciones": [
+        {"texto": "Un poema con forma visual", "correcto": true},
+        {"texto": "Un tipo de narración", "correcto": false},
+        {"texto": "Una figura retórica", "correcto": false},
+        {"texto": "Un instrumento musical", "correcto": false}
+      ],
+      "explicacion": "Los caligramas son poemas cuyas palabras forman una figura relacionada con el tema"
+    },
+    {
+      "id": "L2",
+      "materia": "Lengua",
+      "dificultad": "medio",
+      "pregunta": "Identifica el recurso: 'El río canta melodías'",
+      "opciones": [
+        {"texto": "Personificación", "correcto": true},
+        {"texto": "Comparación", "correcto": false},
+        {"texto": "Hipérbole", "correcto": false},
+        {"texto": "Imagen sensorial", "correcto": false}
+      ],
+      "explicacion": "Es personificación porque el río (objeto) realiza una acción humana: cantar"
+    },
+    {
+      "id": "L3",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "La palabra 'corazón' es:",
+      "opciones": [
+        {"texto": "Aguda", "correcto": true},
+        {"texto": "Grave", "correcto": false},
+        {"texto": "Esdrújula", "correcto": false}
+      ],
+      "explicacion": "Es aguda porque la sílaba tónica es la última: co-ra-ZÓN"
+    },
+    {
+      "id": "L4",
+      "materia": "Lengua",
+      "dificultad": "medio",
+      "pregunta": "¿Qué tipo de palabra es 'árbol'?",
+      "opciones": [
+        {"texto": "Grave", "correcto": true},
+        {"texto": "Aguda", "correcto": false},
+        {"texto": "Esdrújula", "correcto": false}
+      ],
+      "explicacion": "Es grave porque la sílaba tónica es la penúltima: ÁR-bol"
+    },
+    {
+      "id": "L5",
+      "materia": "Lengua",
+      "dificultad": "dificil",
+      "pregunta": "'Sus ojos eran dos luceros' es un ejemplo de:",
+      "opciones": [
+        {"texto": "Comparación", "correcto": true},
+        {"texto": "Personificación", "correcto": false},
+        {"texto": "Hipérbole", "correcto": false},
+        {"texto": "Onomatopeya", "correcto": false}
+      ],
+      "explicacion": "Es una comparación porque relaciona los ojos con luceros usando 'eran'"
+    },
+    {
+      "id": "L6",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "¿Qué es una hipérbole?",
+      "opciones": [
+        {"texto": "Una exageración", "correcto": true},
+        {"texto": "Una comparación", "correcto": false},
+        {"texto": "Un sonido", "correcto": false},
+        {"texto": "Una repetición", "correcto": false}
+      ],
+      "explicacion": "La hipérbole es exagerar algo para dar énfasis: 'Te lo dije mil veces'"
+    },
+    {
+      "id": "L7",
+      "materia": "Lengua",
+      "dificultad": "medio",
+      "pregunta": "La palabra 'pájaros' es:",
+      "opciones": [
+        {"texto": "Esdrújula", "correcto": true},
+        {"texto": "Grave", "correcto": false},
+        {"texto": "Aguda", "correcto": false}
+      ],
+      "explicacion": "Es esdrújula porque la sílaba tónica es la antepenúltima: PÁ-ja-ros"
+    },
+    {
+      "id": "L8",
+      "materia": "Lengua",
+      "dificultad": "dificil",
+      "pregunta": "'El viento susurra secretos' contiene:",
+      "opciones": [
+        {"texto": "Personificación", "correcto": true},
+        {"texto": "Comparación", "correcto": false},
+        {"texto": "Metáfora", "correcto": false},
+        {"texto": "Hipérbole", "correcto": false}
+      ],
+      "explicacion": "Es personificación porque el viento realiza la acción humana de susurrar"
+    },
+    {
+      "id": "L9",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "¿Cuántas sílabas tiene 'mariposa'?",
+      "opciones": [
+        {"texto": "4 sílabas", "correcto": true},
+        {"texto": "3 sílabas", "correcto": false},
+        {"texto": "5 sílabas", "correcto": false}
+      ],
+      "explicacion": "Ma-ri-po-sa tiene 4 sílabas"
+    },
+    {
+      "id": "L10",
+      "materia": "Lengua",
+      "dificultad": "medio",
+      "pregunta": "Una imagen sensorial apela a:",
+      "opciones": [
+        {"texto": "Los cinco sentidos", "correcto": true},
+        {"texto": "La lógica", "correcto": false},
+        {"texto": "Las matemáticas", "correcto": false},
+        {"texto": "La historia", "correcto": false}
+      ],
+      "explicacion": "Las imágenes sensoriales apelan a vista, oído, tacto, olfato y gusto"
+    },
+    {
+      "id": "L11",
+      "materia": "Lengua",
+      "dificultad": "dificil",
+      "pregunta": "'Llueve a cántaros' es:",
+      "opciones": [
+        {"texto": "Una expresión coloquial", "correcto": true},
+        {"texto": "Una comparación", "correcto": false},
+        {"texto": "Una personificación", "correcto": false},
+        {"texto": "Un caligrama", "correcto": false}
+      ],
+      "explicacion": "Es una expresión coloquial que significa que llueve mucho"
+    },
+    {
+      "id": "L12",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "¿Qué palabra lleva tilde?",
+      "opciones": [
+        {"texto": "Matemática", "correcto": true},
+        {"texto": "Perro", "correcto": false},
+        {"texto": "Casa", "correcto": false},
+        {"texto": "Libro", "correcto": false}
+      ],
+      "explicacion": "Matemática es esdrújula y todas las esdrújulas llevan tilde"
+    },
+    {
+      "id": "L13",
+      "materia": "Lengua",
+      "dificultad": "medio",
+      "pregunta": "'El sol sonríe' es un ejemplo de:",
+      "opciones": [
+        {"texto": "Personificación", "correcto": true},
+        {"texto": "Comparación", "correcto": false},
+        {"texto": "Hipérbole", "correcto": false},
+        {"texto": "Metáfora", "correcto": false}
+      ],
+      "explicacion": "Es personificación porque el sol realiza una acción humana: sonreír"
+    },
+    {
+      "id": "L14",
+      "materia": "Lengua",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué recurso usa 'Blanco como la nieve'?",
+      "opciones": [
+        {"texto": "Comparación", "correcto": true},
+        {"texto": "Personificación", "correcto": false},
+        {"texto": "Hipérbole", "correcto": false},
+        {"texto": "Onomatopeya", "correcto": false}
+      ],
+      "explicacion": "Es comparación porque usa la palabra 'como' para relacionar dos elementos"
+    },
+    {
+      "id": "L15",
+      "materia": "Lengua",
+      "dificultad": "facil",
+      "pregunta": "Un verso es:",
+      "opciones": [
+        {"texto": "Una línea de un poema", "correcto": true},
+        {"texto": "Un capítulo de un libro", "correcto": false},
+        {"texto": "Una palabra inventada", "correcto": false},
+        {"texto": "Un tipo de narración", "correcto": false}
+      ],
+      "explicacion": "Un verso es cada línea que forma parte de un poema"
+    },
+    {
+      "id": "M1",
+      "materia": "Matemática",
+      "dificultad": "facil",
+      "pregunta": "¿Cómo se lee 3.500.000?",
+      "opciones": [
+        {"texto": "Tres millones quinientos mil", "correcto": true},
+        {"texto": "Tres mil quinientos", "correcto": false},
+        {"texto": "Treinta y cinco mil", "correcto": false},
+        {"texto": "Trescientos cincuenta mil", "correcto": false}
+      ]
+    },
+    {
+      "id": "M2",
+      "materia": "Matemática",
+      "dificultad": "medio",
+      "pregunta": "En el número 4.567.890, ¿qué valor tiene el 5?",
+      "opciones": [
+        {"texto": "500.000 (quinientos mil)", "correcto": true},
+        {"texto": "50.000 (cincuenta mil)", "correcto": false},
+        {"texto": "5.000 (cinco mil)", "correcto": false},
+        {"texto": "5 (cinco)", "correcto": false}
+      ],
+      "explicacion": "El 5 está en la posición de las centenas de mil"
+    },
+    {
+      "id": "M3",
+      "materia": "Matemática",
+      "dificultad": "dificil",
+      "pregunta": "Si sumo 100.000 cinco veces a 2.300.000, obtengo:",
+      "opciones": [
+        {"texto": "2.800.000", "correcto": true},
+        {"texto": "2.400.000", "correcto": false},
+        {"texto": "3.300.000", "correcto": false},
+        {"texto": "2.350.000", "correcto": false}
+      ],
+      "explicacion": "100.000 x 5 = 500.000, entonces 2.300.000 + 500.000 = 2.800.000"
+    },
+    {
+      "id": "M4",
+      "materia": "Matemática",
+      "dificultad": "facil",
+      "pregunta": "¿Cuánto es 1.000 + 1.000?",
+      "opciones": [
+        {"texto": "2.000", "correcto": true},
+        {"texto": "1.100", "correcto": false},
+        {"texto": "10.000", "correcto": false},
+        {"texto": "200", "correcto": false}
+      ]
+    },
+    {
+      "id": "M5",
+      "materia": "Matemática",
+      "dificultad": "medio",
+      "pregunta": "¿Qué número sigue? 1.000, 2.000, 3.000, ___",
+      "opciones": [
+        {"texto": "4.000", "correcto": true},
+        {"texto": "3.100", "correcto": false},
+        {"texto": "5.000", "correcto": false},
+        {"texto": "3.500", "correcto": false}
+      ],
+      "explicacion": "La secuencia aumenta de mil en mil"
+    },
+    {
+      "id": "M6",
+      "materia": "Matemática",
+      "dificultad": "dificil",
+      "pregunta": "¿Cuál es el valor del 8 en 8.234.567?",
+      "opciones": [
+        {"texto": "8.000.000 (ocho millones)", "correcto": true},
+        {"texto": "800.000 (ochocientos mil)", "correcto": false},
+        {"texto": "80.000 (ochenta mil)", "correcto": false},
+        {"texto": "8.000 (ocho mil)", "correcto": false}
+      ],
+      "explicacion": "El 8 está en la posición de los millones"
+    },
+    {
+      "id": "M7",
+      "materia": "Matemática",
+      "dificultad": "facil",
+      "pregunta": "¿Cómo se escribe 'dos mil' en números?",
+      "opciones": [
+        {"texto": "2.000", "correcto": true},
+        {"texto": "200", "correcto": false},
+        {"texto": "20.000", "correcto": false},
+        {"texto": "20", "correcto": false}
+      ]
+    },
+    {
+      "id": "M8",
+      "materia": "Matemática",
+      "dificultad": "medio",
+      "pregunta": "¿Qué número es mayor: 5.432.100 o 5.423.100?",
+      "opciones": [
+        {"texto": "5.432.100", "correcto": true},
+        {"texto": "5.423.100", "correcto": false},
+        {"texto": "Son iguales", "correcto": false}
+      ],
+      "explicacion": "5.432.100 es mayor porque tiene 32 mil, mientras que el otro tiene 23 mil"
+    },
+    {
+      "id": "M9",
+      "materia": "Matemática",
+      "dificultad": "dificil",
+      "pregunta": "¿Cuánto es 9.999.999 + 1?",
+      "opciones": [
+        {"texto": "10.000.000", "correcto": true},
+        {"texto": "9.999.990", "correcto": false},
+        {"texto": "10.999.999", "correcto": false},
+        {"texto": "9.000.000", "correcto": false}
+      ],
+      "explicacion": "Al sumar 1 a 9.999.999 obtenemos diez millones"
+    },
+    {
+      "id": "M10",
+      "materia": "Matemática",
+      "dificultad": "facil",
+      "pregunta": "¿Cuántos millares hay en 5.000?",
+      "opciones": [
+        {"texto": "5 millares", "correcto": true},
+        {"texto": "50 millares", "correcto": false},
+        {"texto": "500 millares", "correcto": false},
+        {"texto": "5.000 millares", "correcto": false}
+      ],
+      "explicacion": "5.000 = 5 x 1.000, entonces hay 5 millares"
+    },
+    {
+      "id": "M11",
+      "materia": "Matemática",
+      "dificultad": "medio",
+      "pregunta": "Si resto 500.000 a 1.000.000 obtengo:",
+      "opciones": [
+        {"texto": "500.000", "correcto": true},
+        {"texto": "1.500.000", "correcto": false},
+        {"texto": "50.000", "correcto": false},
+        {"texto": "5.000", "correcto": false}
+      ]
+    },
+    {
+      "id": "M12",
+      "materia": "Matemática",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué número está entre 3.456.000 y 3.458.000?",
+      "opciones": [
+        {"texto": "3.457.000", "correcto": true},
+        {"texto": "3.459.000", "correcto": false},
+        {"texto": "3.455.000", "correcto": false},
+        {"texto": "3.460.000", "correcto": false}
+      ],
+      "explicacion": "3.457.000 está entre 3.456.000 y 3.458.000"
+    },
+    {
+      "id": "M13",
+      "materia": "Matemática",
+      "dificultad": "facil",
+      "pregunta": "¿Cuántos ceros tiene un millón?",
+      "opciones": [
+        {"texto": "6 ceros", "correcto": true},
+        {"texto": "5 ceros", "correcto": false},
+        {"texto": "7 ceros", "correcto": false},
+        {"texto": "3 ceros", "correcto": false}
+      ],
+      "explicacion": "Un millón se escribe 1.000.000 y tiene 6 ceros"
+    },
+    {
+      "id": "M14",
+      "materia": "Matemática",
+      "dificultad": "medio",
+      "pregunta": "¿Cómo se lee 7.005.000?",
+      "opciones": [
+        {"texto": "Siete millones cinco mil", "correcto": true},
+        {"texto": "Setenta mil cinco", "correcto": false},
+        {"texto": "Siete mil cinco", "correcto": false},
+        {"texto": "Setenta millones cinco mil", "correcto": false}
+      ],
+      "explicacion": "El 7 representa millones y el 5 representa miles"
+    },
+    {
+      "id": "M15",
+      "materia": "Matemática",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué operación da 1.000.000?",
+      "opciones": [
+        {"texto": "100 x 10.000", "correcto": true},
+        {"texto": "100 x 1.000", "correcto": false},
+        {"texto": "10 x 10.000", "correcto": false},
+        {"texto": "1.000 x 100", "correcto": false}
+      ],
+      "explicacion": "100 x 10.000 = 1.000.000 (un millón)"
+    },
+    {
+      "id": "CS1",
+      "materia": "Ciencias Sociales",
+      "dificultad": "facil",
+      "pregunta": "¿En qué año fue la Primera Invasión Inglesa?",
+      "opciones": [
+        {"texto": "1806", "correcto": true},
+        {"texto": "1807", "correcto": false},
+        {"texto": "1810", "correcto": false},
+        {"texto": "1816", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS2",
+      "materia": "Ciencias Sociales",
+      "dificultad": "medio",
+      "pregunta": "¿Quién lideró la Reconquista de Buenos Aires?",
+      "opciones": [
+        {"texto": "Santiago de Liniers", "correcto": true},
+        {"texto": "Manuel Belgrano", "correcto": false},
+        {"texto": "José de San Martín", "correcto": false},
+        {"texto": "Rafael de Sobremonte", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS3",
+      "materia": "Ciencias Sociales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué consecuencia tuvieron las Invasiones Inglesas?",
+      "opciones": [
+        {"texto": "Formación de milicias criollas y aumento de confianza", "correcto": true},
+        {"texto": "Argentina se independizó inmediatamente", "correcto": false},
+        {"texto": "Buenos Aires fue destruida", "correcto": false},
+        {"texto": "Llegaron más españoles", "correcto": false}
+      ],
+      "explicacion": "Las milicias criollas adquirieron poder militar y aumentó el sentimiento de independencia"
+    },
+    {
+      "id": "CS4",
+      "materia": "Ciencias Sociales",
+      "dificultad": "facil",
+      "pregunta": "¿Qué ciudad atacaron los ingleses en 1806?",
+      "opciones": [
+        {"texto": "Buenos Aires", "correcto": true},
+        {"texto": "Córdoba", "correcto": false},
+        {"texto": "Mendoza", "correcto": false},
+        {"texto": "Rosario", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS5",
+      "materia": "Ciencias Sociales",
+      "dificultad": "medio",
+      "pregunta": "¿En qué año fue la Segunda Invasión Inglesa?",
+      "opciones": [
+        {"texto": "1807", "correcto": true},
+        {"texto": "1806", "correcto": false},
+        {"texto": "1808", "correcto": false},
+        {"texto": "1810", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS6",
+      "materia": "Ciencias Sociales",
+      "dificultad": "dificil",
+      "pregunta": "¿Quién era el virrey durante la Primera Invasión que huyó a Córdoba?",
+      "opciones": [
+        {"texto": "Rafael de Sobremonte", "correcto": true},
+        {"texto": "Santiago de Liniers", "correcto": false},
+        {"texto": "Manuel Belgrano", "correcto": false},
+        {"texto": "Cornelio Saavedra", "correcto": false}
+      ],
+      "explicacion": "Sobremonte huyó con el tesoro real, lo que causó descontento"
+    },
+    {
+      "id": "CS7",
+      "materia": "Ciencias Sociales",
+      "dificultad": "facil",
+      "pregunta": "Las milicias criollas fueron grupos de:",
+      "opciones": [
+        {"texto": "Ciudadanos que defendieron Buenos Aires", "correcto": true},
+        {"texto": "Soldados ingleses", "correcto": false},
+        {"texto": "Comerciantes españoles", "correcto": false},
+        {"texto": "Exploradores franceses", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS8",
+      "materia": "Ciencias Sociales",
+      "dificultad": "medio",
+      "pregunta": "¿Qué país intentó invadir Buenos Aires en 1806-1807?",
+      "opciones": [
+        {"texto": "Inglaterra", "correcto": true},
+        {"texto": "Francia", "correcto": false},
+        {"texto": "Portugal", "correcto": false},
+        {"texto": "Brasil", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS9",
+      "materia": "Ciencias Sociales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué usaron los porteños para defenderse desde los techos?",
+      "opciones": [
+        {"texto": "Aceite hirviendo y agua caliente", "correcto": true},
+        {"texto": "Piedras y flechas", "correcto": false},
+        {"texto": "Cañones pequeños", "correcto": false},
+        {"texto": "Arena y cal", "correcto": false}
+      ],
+      "explicacion": "Desde las azoteas arrojaban aceite hirviendo y agua caliente"
+    },
+    {
+      "id": "CS10",
+      "materia": "Ciencias Sociales",
+      "dificultad": "facil",
+      "pregunta": "¿Cuántas invasiones inglesas hubo?",
+      "opciones": [
+        {"texto": "Dos invasiones", "correcto": true},
+        {"texto": "Una invasión", "correcto": false},
+        {"texto": "Tres invasiones", "correcto": false},
+        {"texto": "Cuatro invasiones", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS11",
+      "materia": "Ciencias Sociales",
+      "dificultad": "medio",
+      "pregunta": "La Reconquista fue:",
+      "opciones": [
+        {"texto": "Recuperar Buenos Aires de los ingleses", "correcto": true},
+        {"texto": "La conquista de América", "correcto": false},
+        {"texto": "La independencia argentina", "correcto": false},
+        {"texto": "Una batalla contra España", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS12",
+      "materia": "Ciencias Sociales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué líder criollo se destacó en la defensa?",
+      "opciones": [
+        {"texto": "Cornelio Saavedra", "correcto": true},
+        {"texto": "Simón Bolívar", "correcto": false},
+        {"texto": "Bernardo O'Higgins", "correcto": false},
+        {"texto": "Antonio José de Sucre", "correcto": false}
+      ],
+      "explicacion": "Saavedra lideró el Regimiento de Patricios"
+    },
+    {
+      "id": "CS13",
+      "materia": "Ciencias Sociales",
+      "dificultad": "facil",
+      "pregunta": "Buenos Aires estaba bajo control de:",
+      "opciones": [
+        {"texto": "España", "correcto": true},
+        {"texto": "Inglaterra", "correcto": false},
+        {"texto": "Francia", "correcto": false},
+        {"texto": "Portugal", "correcto": false}
+      ]
+    },
+    {
+      "id": "CS14",
+      "materia": "Ciencias Sociales",
+      "dificultad": "medio",
+      "pregunta": "Las invasiones ocurrieron antes de:",
+      "opciones": [
+        {"texto": "La Revolución de Mayo", "correcto": true},
+        {"texto": "La independencia", "correcto": false},
+        {"texto": "La época colonial", "correcto": false}
+      ],
+      "explicacion": "Fueron en 1806-1807, antes de la Revolución de Mayo de 1810"
+    },
+    {
+      "id": "CS15",
+      "materia": "Ciencias Sociales",
+      "dificultad": "dificil",
+      "pregunta": "¿Por qué querían los ingleses tomar Buenos Aires?",
+      "opciones": [
+        {"texto": "Para comerciar y obtener recursos del Río de la Plata", "correcto": true},
+        {"texto": "Para conquistar toda América del Sur", "correcto": false},
+        {"texto": "Para fundar una nueva ciudad", "correcto": false},
+        {"texto": "Para destruir el virreinato", "correcto": false}
+      ],
+      "explicacion": "Buscaban expandir su comercio y acceder a las riquezas de la región"
+    },
+    {
+      "id": "CN1",
+      "materia": "Ciencias Naturales",
+      "dificultad": "facil",
+      "pregunta": "¿Qué porcentaje de la superficie terrestre es agua?",
+      "opciones": [
+        {"texto": "Aproximadamente 71%", "correcto": true},
+        {"texto": "50%", "correcto": false},
+        {"texto": "90%", "correcto": false},
+        {"texto": "30%", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN2",
+      "materia": "Ciencias Naturales",
+      "dificultad": "medio",
+      "pregunta": "¿Qué es la evaporación?",
+      "opciones": [
+        {"texto": "Cambio de agua líquida a vapor", "correcto": true},
+        {"texto": "Cambio de vapor a agua líquida", "correcto": false},
+        {"texto": "Cambio de hielo a agua", "correcto": false},
+        {"texto": "Caída de lluvia", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN3",
+      "materia": "Ciencias Naturales",
+      "dificultad": "dificil",
+      "pregunta": "¿Las nubes están hechas de vapor de agua?",
+      "opciones": [
+        {"texto": "No, son gotitas de agua líquida o cristales de hielo", "correcto": true},
+        {"texto": "Sí, son vapor de agua puro", "correcto": false},
+        {"texto": "Son aire comprimido", "correcto": false},
+        {"texto": "Son polvo atmosférico", "correcto": false}
+      ],
+      "explicacion": "El vapor de agua es invisible. Las nubes son gotitas líquidas suspendidas"
+    },
+    {
+      "id": "CN4",
+      "materia": "Ciencias Naturales",
+      "dificultad": "facil",
+      "pregunta": "¿Cuál es el estado del agua en los océanos?",
+      "opciones": [
+        {"texto": "Líquido", "correcto": true},
+        {"texto": "Sólido", "correcto": false},
+        {"texto": "Gaseoso", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN5",
+      "materia": "Ciencias Naturales",
+      "dificultad": "medio",
+      "pregunta": "¿Qué es la condensación?",
+      "opciones": [
+        {"texto": "Cambio de vapor a agua líquida", "correcto": true},
+        {"texto": "Cambio de agua líquida a vapor", "correcto": false},
+        {"texto": "Cambio de hielo a agua", "correcto": false},
+        {"texto": "Filtración del agua", "correcto": false}
+      ],
+      "explicacion": "La condensación es cuando el vapor se enfría y vuelve a ser líquido"
+    },
+    {
+      "id": "CN6",
+      "materia": "Ciencias Naturales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué es la precipitación en el ciclo del agua?",
+      "opciones": [
+        {"texto": "Caída de lluvia, nieve o granizo", "correcto": true},
+        {"texto": "Evaporación del agua", "correcto": false},
+        {"texto": "Formación de nubes", "correcto": false},
+        {"texto": "Derretimiento del hielo", "correcto": false}
+      ],
+      "explicacion": "La precipitación es cuando el agua cae desde las nubes"
+    },
+    {
+      "id": "CN7",
+      "materia": "Ciencias Naturales",
+      "dificultad": "facil",
+      "pregunta": "¿Dónde está la mayor cantidad de agua dulce?",
+      "opciones": [
+        {"texto": "En los glaciares", "correcto": true},
+        {"texto": "En los ríos", "correcto": false},
+        {"texto": "En los lagos", "correcto": false},
+        {"texto": "En las nubes", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN8",
+      "materia": "Ciencias Naturales",
+      "dificultad": "medio",
+      "pregunta": "¿Qué es la hidrosfera?",
+      "opciones": [
+        {"texto": "Toda el agua del planeta", "correcto": true},
+        {"texto": "Solo el agua de los océanos", "correcto": false},
+        {"texto": "Solo el agua dulce", "correcto": false},
+        {"texto": "El aire húmedo", "correcto": false}
+      ],
+      "explicacion": "La hidrosfera incluye toda el agua: océanos, ríos, lagos, glaciares, etc."
+    },
+    {
+      "id": "CN9",
+      "materia": "Ciencias Naturales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué proceso permite que las plantas devuelvan agua a la atmósfera?",
+      "opciones": [
+        {"texto": "Transpiración", "correcto": true},
+        {"texto": "Fotosíntesis", "correcto": false},
+        {"texto": "Respiración", "correcto": false},
+        {"texto": "Germinación", "correcto": false}
+      ],
+      "explicacion": "Las plantas liberan vapor de agua por sus hojas mediante la transpiración"
+    },
+    {
+      "id": "CN10",
+      "materia": "Ciencias Naturales",
+      "dificultad": "facil",
+      "pregunta": "El agua salada se encuentra en:",
+      "opciones": [
+        {"texto": "Los océanos y mares", "correcto": true},
+        {"texto": "Los ríos", "correcto": false},
+        {"texto": "Los lagos dulces", "correcto": false},
+        {"texto": "Las lagunas", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN11",
+      "materia": "Ciencias Naturales",
+      "dificultad": "medio",
+      "pregunta": "¿Cuántos estados tiene el agua?",
+      "opciones": [
+        {"texto": "Tres: sólido, líquido y gaseoso", "correcto": true},
+        {"texto": "Dos: líquido y sólido", "correcto": false},
+        {"texto": "Cuatro: incluye el plasma", "correcto": false},
+        {"texto": "Solo uno: líquido", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN12",
+      "materia": "Ciencias Naturales",
+      "dificultad": "dificil",
+      "pregunta": "¿A qué temperatura se congela el agua?",
+      "opciones": [
+        {"texto": "0°C", "correcto": true},
+        {"texto": "100°C", "correcto": false},
+        {"texto": "-10°C", "correcto": false},
+        {"texto": "32°C", "correcto": false}
+      ],
+      "explicacion": "El agua se congela (se vuelve hielo) a 0 grados Celsius"
+    },
+    {
+      "id": "CN13",
+      "materia": "Ciencias Naturales",
+      "dificultad": "facil",
+      "pregunta": "¿Qué forma el ciclo del agua?",
+      "opciones": [
+        {"texto": "El movimiento continuo del agua en la Tierra", "correcto": true},
+        {"texto": "La creación de agua nueva", "correcto": false},
+        {"texto": "La destrucción del agua", "correcto": false},
+        {"texto": "El agua que desaparece", "correcto": false}
+      ]
+    },
+    {
+      "id": "CN14",
+      "materia": "Ciencias Naturales",
+      "dificultad": "medio",
+      "pregunta": "¿Qué necesita el agua para evaporarse?",
+      "opciones": [
+        {"texto": "Calor del sol", "correcto": true},
+        {"texto": "Frío", "correcto": false},
+        {"texto": "Viento solamente", "correcto": false},
+        {"texto": "Oscuridad", "correcto": false}
+      ],
+      "explicacion": "El calor del sol proporciona la energía para que el agua se evapore"
+    },
+    {
+      "id": "CN15",
+      "materia": "Ciencias Naturales",
+      "dificultad": "dificil",
+      "pregunta": "¿Qué son las aguas subterráneas?",
+      "opciones": [
+        {"texto": "Agua que se filtra bajo la superficie terrestre", "correcto": true},
+        {"texto": "Agua de los océanos profundos", "correcto": false},
+        {"texto": "Agua de las nubes bajas", "correcto": false},
+        {"texto": "Agua congelada en el subsuelo", "correcto": false}
+      ],
+      "explicacion": "Las aguas subterráneas se infiltran y almacenan bajo tierra"
+    }
+  ]
+}
