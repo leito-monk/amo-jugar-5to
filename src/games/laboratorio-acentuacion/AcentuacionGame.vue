@@ -4,6 +4,7 @@ import GameLayout from '../../components/game/GameLayout.vue'
 import ScoreBoard from '../../components/game/ScoreBoard.vue'
 import FeedbackModal from '../../components/game/FeedbackModal.vue'
 import palabrasData from './palabras.json'
+import { selectRandomItems } from '../../utils/randomizer.js'
 
 // Types
 interface Palabra {
@@ -102,12 +103,11 @@ const startGame = () => {
 }
 
 const loadLevel = () => {
-  // Get 10 random words for current level
-  const shuffled = [...levelWords.value].sort(() => Math.random() - 0.5)
-  const selected = shuffled.slice(0, 10)
+  // Get 10 random words for current level using the randomizer utility
+  const selected = selectRandomItems(levelWords.value, 10)
   
   // Position words randomly
-  words.value = selected.map(word => ({
+  words.value = selected.map((word: Palabra) => ({
     ...word,
     x: Math.random() * 70 + 5, // 5% to 75% of container width
     y: Math.random() * 60 + 10 // 10% to 70% of container height

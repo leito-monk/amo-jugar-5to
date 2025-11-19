@@ -3,6 +3,8 @@
  * Funciones de lógica del juego Autopista Numérica
  */
 
+import { selectByDifficulty } from '../../utils/randomizer.js';
+
 /**
  * Formatea un número con separadores de miles
  * @param {number} num - Número a formatear
@@ -153,21 +155,14 @@ export function wordsToNumber(str) {
  * @returns {Array} - Array de preguntas seleccionadas
  */
 export function selectRandomQuestions(pool, total = 10) {
-  const faciles = pool.filter(p => p.dificultad === 'facil');
-  const medias = pool.filter(p => p.dificultad === 'medio');
-  const dificiles = pool.filter(p => p.dificultad === 'dificil');
+  // Distribución: 3 fáciles, 4 medias, 3 difíciles
+  const distribution = {
+    facil: 3,
+    medio: 4,
+    dificil: 3
+  };
   
-  const seleccion = [];
-  
-  // Seleccionar 3 fáciles, 4 medias, 3 difíciles
-  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
-  
-  seleccion.push(...shuffle(faciles).slice(0, 3));
-  seleccion.push(...shuffle(medias).slice(0, 4));
-  seleccion.push(...shuffle(dificiles).slice(0, 3));
-  
-  // Mezclar el orden final
-  return shuffle(seleccion);
+  return selectByDifficulty(pool, distribution);
 }
 
 /**

@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import GameLayout from '../../components/game/GameLayout.vue'
 import FeedbackModal from '../../components/game/FeedbackModal.vue'
 import poemasData from './poemas.json'
+import { shuffleArray } from '../../utils/randomizer.js'
 
 // Types
 interface Recurso {
@@ -22,6 +23,7 @@ interface Poema {
 }
 
 // State
+const shuffledPoemas = ref<Poema[]>([])
 const currentPoemIndex = ref(0)
 const foundResources = ref<Recurso[]>([])
 const score = ref(0)
@@ -36,8 +38,11 @@ const errorCount = ref(0)
 const showHints = ref(false)
 const resourceTypeCount = ref<Record<string, number>>({})
 
+// Initialize shuffled poems
+shuffledPoemas.value = shuffleArray(poemasData as Poema[])
+
 // Computed
-const poemas = computed(() => poemasData as Poema[])
+const poemas = computed(() => shuffledPoemas.value)
 const currentPoem = computed(() => poemas.value[currentPoemIndex.value])
 const totalResources = computed(() => currentPoem.value?.recursos.length || 0)
 const allFound = computed(() => foundResources.value.length === totalResources.value)
@@ -163,6 +168,7 @@ const nextPoem = () => {
 }
 
 const resetGame = () => {
+  shuffledPoemas.value = shuffleArray(poemasData as Poema[])
   currentPoemIndex.value = 0
   foundResources.value = []
   score.value = 0
