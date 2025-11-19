@@ -4,11 +4,11 @@
       <div class="flex items-center gap-3">
         <span class="text-3xl">💙</span>
         <div>
-          <p class="font-bold text-sm">¡Gracias a nuestros apoyadores!</p>
-          <p class="text-xs text-base-content/70">Este proyecto es posible gracias a la comunidad</p>
+          <p class="font-bold text-sm text-gray-800">¡Gracias a nuestros apoyadores!</p>
+          <p class="text-xs text-gray-600">Este proyecto es posible gracias a la comunidad</p>
         </div>
       </div>
-      <button @click="closeBanner" class="btn btn-ghost btn-sm">✕</button>
+      <button @click="closeBanner" class="btn btn-ghost btn-sm text-gray-700 hover:text-gray-900">✕</button>
     </div>
   </div>
 </template>
