@@ -60,6 +60,38 @@ const currentScore = computed(() => gameState.getState().score);
 const totalPlaced = computed(() => placedVerses.value.length);
 const totalVerses = computed(() => currentCaligrama.value.versos.length);
 
+// Grid aplanado con información adicional para mejor performance y UX
+const flattenedGrid = computed(() => {
+  const result = [];
+  const { silueta, versos } = currentCaligrama.value;
+  
+  silueta.forEach((row, rowIndex) => {
+    row.forEach((cell, colIndex) => {
+      const isActive = cell === 1;
+      const placedVerse = placedVerses.value.find(v => v.posicion[0] === rowIndex && v.posicion[1] === colIndex);
+      
+      // Encontrar el número de orden del verso correcto para esta casilla
+      let orderNumber = null;
+      if (isActive) {
+        const correctVerse = versos.find(v => v.posicion[0] === rowIndex && v.posicion[1] === colIndex);
+        if (correctVerse) {
+          orderNumber = correctVerse.id;
+        }
+      }
+      
+      result.push({
+        row: rowIndex,
+        col: colIndex,
+        isActive,
+        placedVerse,
+        orderNumber
+      });
+    });
+  });
+  
+  return result;
+});
+
 // Métodos
 function initLevel() {
   const caligrama = currentCaligrama.value;
@@ -130,6 +162,9 @@ function handleDragEnter(event) {
   event.preventDefault();
 }
 
+// Estado para animaciones
+const cellAnimations = ref({});
+
 function handleDrop(event, row, col) {
   event.preventDefault();
   
@@ -138,17 +173,27 @@ function handleDrop(event, row, col) {
   // Verificar si la celda es parte de la silueta
   if (!isSilhouetteActive(row, col)) {
     draggedVerse.value = null;
+    motivationalMessage.value = '⚠️ Fuera del caligrama';
+    setTimeout(() => {
+      motivationalMessage.value = '';
+    }, 2000);
     return;
   }
   
   // Verificar si ya hay un verso en esta posición
   if (hasVerseAt(row, col)) {
     draggedVerse.value = null;
+    motivationalMessage.value = '⚠️ Ya hay un verso ahí';
+    setTimeout(() => {
+      motivationalMessage.value = '';
+    }, 2000);
     return;
   }
   
   // Verificar posición correcta
   const isCorrect = checkPosition([row, col], draggedVerse.value.posicion);
+  
+  const cellKey = `${row}-${col}`;
   
   if (isCorrect) {
     // Posición correcta
@@ -157,6 +202,12 @@ function handleDrop(event, row, col) {
     
     // Agregar puntos
     gameState.addScore(15);
+    
+    // Animación de éxito
+    cellAnimations.value[cellKey] = 'success';
+    setTimeout(() => {
+      delete cellAnimations.value[cellKey];
+    }, 600);
     
     // Mostrar mensaje motivacional
     motivationalMessage.value = getRandomMotivationalMessage(caligramasData.mensajesMotivationales);
@@ -174,6 +225,13 @@ function handleDrop(event, row, col) {
     // Posición incorrecta
     errorCount.value++;
     sound.playWrong();
+    
+    // Animación de error
+    cellAnimations.value[cellKey] = 'error';
+    setTimeout(() => {
+      delete cellAnimations.value[cellKey];
+    }, 600);
+    
     motivationalMessage.value = '¡Intenta de nuevo! 🤔';
     
     setTimeout(() => {
@@ -295,7 +353,7 @@ onUnmounted(() => {
 <template>
   <GameLayout 
     title="Cazador de Caligramas"
-    instructions="Arrastra cada verso a su posición correcta en la figura. Los versos forman un caligrama (poema con forma visual). Puedes usar hasta 3 pistas si necesitas ayuda."
+    instructions="Arrastra cada verso a su posición correcta en la figura. Las casillas AZULES son donde van los versos. Los numeritos te guían. ¡Completa el caligrama!"
   >
     <!-- Header con ScoreBoard y ProgressTracker -->
     <div class="mb-6 space-y-4">
@@ -322,6 +380,25 @@ onUnmounted(() => {
       </div>
     </div>
 
+    <!-- Leyenda visual -->
+    <div class="mb-4 p-4 bg-base-200 rounded-lg">
+      <h4 class="font-bold mb-2">📖 Guía de Colores:</h4>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-gray-200 rounded border-2 border-gray-300"></div>
+          <span>Casilla inactiva (no va nada)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-blue-100 rounded border-2 border-blue-400 border-dashed"></div>
+          <span>Casilla activa (pon un verso aquí)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-green-200 rounded border-2 border-green-500"></div>
+          <span>Verso colocado correctamente</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Layout principal: Grid + Banco de versos -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- Grid del caligrama (izquierda) -->
@@ -331,31 +408,38 @@ onUnmounted(() => {
           class="caligrama-grid w-full max-w-md"
           :style="gridStyle"
         >
-          <template
-            v-for="(row, rowIndex) in currentCaligrama.silueta"
-            :key="`row-${rowIndex}`"
+          <div
+            v-for="gridCell in flattenedGrid"
+            :key="`cell-${gridCell.row}-${gridCell.col}`"
+            :class="[
+              'grid-cell',
+              {
+                'cell-inactive': !gridCell.isActive,
+                'cell-active': gridCell.isActive && !gridCell.placedVerse,
+                'cell-completed': gridCell.isActive && gridCell.placedVerse,
+                'animate-success': cellAnimations[`${gridCell.row}-${gridCell.col}`] === 'success',
+                'animate-error': cellAnimations[`${gridCell.row}-${gridCell.col}`] === 'error'
+              }
+            ]"
+            :data-row="gridCell.row"
+            :data-col="gridCell.col"
+            @dragover="handleDragOver"
+            @dragenter="handleDragEnter"
+            @drop="handleDrop($event, gridCell.row, gridCell.col)"
           >
-            <div
-              v-for="(cell, colIndex) in row"
-              :key="`cell-${rowIndex}-${colIndex}`"
-              :class="[
-                'grid-cell',
-                {
-                  'silhouette-active': isSilhouetteActive(rowIndex, colIndex),
-                  'has-verse': hasVerseAt(rowIndex, colIndex)
-                }
-              ]"
-              :data-row="rowIndex"
-              :data-col="colIndex"
-              @dragover="handleDragOver"
-              @dragenter="handleDragEnter"
-              @drop="handleDrop($event, rowIndex, colIndex)"
+            <!-- Número de orden en casillas activas sin verso -->
+            <span 
+              v-if="gridCell.isActive && !gridCell.placedVerse && gridCell.orderNumber" 
+              class="order-number"
             >
-              <span v-if="hasVerseAt(rowIndex, colIndex)" class="verse-text">
-                {{ getVerseAt(rowIndex, colIndex) }}
-              </span>
-            </div>
-          </template>
+              {{ gridCell.orderNumber }}
+            </span>
+            
+            <!-- Texto del verso colocado -->
+            <span v-if="gridCell.placedVerse" class="verse-text">
+              {{ gridCell.placedVerse.texto }}
+            </span>
+          </div>
         </div>
 
         <!-- Botón de pistas -->
@@ -501,16 +585,64 @@ onUnmounted(() => {
   justify-content: center;
   padding: 0.25rem;
   transition: all 0.3s ease;
+  position: relative;
 }
 
-.silhouette-active {
-  background-color: rgba(156, 163, 175, 0.2);
-  border-color: rgba(156, 163, 175, 0.3);
+/* Casilla inactiva - gris claro */
+.cell-inactive {
+  background-color: rgba(229, 231, 235, 0.5);
+  border-color: rgba(209, 213, 219, 0.3);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-.has-verse {
-  background-color: rgba(79, 70, 229, 0.2);
-  border-color: rgba(79, 70, 229, 0.5);
+/* Casilla activa - azul claro con borde punteado */
+.cell-active {
+  background-color: rgba(147, 197, 253, 0.3);
+  border: 2px dashed rgba(59, 130, 246, 0.6);
+  cursor: pointer;
+}
+
+.cell-active:hover {
+  background-color: rgba(147, 197, 253, 0.5);
+  border-color: rgba(59, 130, 246, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Efecto drag-over */
+.cell-active:active,
+.cell-active.drag-over {
+  background-color: rgba(59, 130, 246, 0.4);
+  border-color: rgba(37, 99, 235, 0.8);
+  transform: scale(1.08);
+  animation: pulse 0.5s infinite;
+}
+
+/* Casilla completada - verde/azul con borde sólido */
+.cell-completed {
+  background-color: rgba(167, 243, 208, 0.4);
+  border: 2px solid rgba(34, 197, 94, 0.7);
+  cursor: default;
+}
+
+/* Numerito en casillas activas */
+.order-number {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: white;
+  color: rgba(59, 130, 246, 1);
+  font-size: 0.6rem;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  z-index: 10;
 }
 
 .verse-text {
@@ -518,7 +650,8 @@ onUnmounted(() => {
   font-weight: 600;
   text-align: center;
   line-height: 1.2;
-  color: rgba(79, 70, 229, 1);
+  color: rgba(22, 101, 52, 1);
+  z-index: 5;
 }
 
 .verse-card {
@@ -586,6 +719,52 @@ onUnmounted(() => {
   transform: scale(0.9);
 }
 
+/* Animación de éxito - brillo verde */
+@keyframes success-glow {
+  0% {
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+    background-color: rgba(167, 243, 208, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+    background-color: rgba(134, 239, 172, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+    background-color: rgba(167, 243, 208, 0.4);
+  }
+}
+
+.animate-success {
+  animation: success-glow 0.6s ease-in-out;
+}
+
+/* Animación de error - sacudida */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+}
+
+.animate-error {
+  animation: shake 0.4s ease-in-out;
+  border-color: rgba(239, 68, 68, 0.8) !important;
+  background-color: rgba(254, 202, 202, 0.5) !important;
+}
+
+/* Animación de pulso para drag-over */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.9;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .verse-text {
@@ -598,6 +777,12 @@ onUnmounted(() => {
   
   .caligrama-grid {
     max-width: 100%;
+  }
+  
+  .order-number {
+    width: 14px;
+    height: 14px;
+    font-size: 0.55rem;
   }
 }
 </style>
