@@ -83,6 +83,11 @@ const routes = [
     component: () => import('../games/portal-magico/PortalGame.vue')
   },
   {
+    path: '/juegos/quiz-rapido',
+    name: 'quiz-rapido',
+    component: () => import('../games/quiz-rapido/QuizGame.vue')
+  },
+  {
     path: '/agradecimientos',
     name: 'agradecimientos',
     component: () => import('../views/AgradecimientosView.vue')

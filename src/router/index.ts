@@ -87,6 +87,11 @@ const router = createRouter({
       path: '/juegos/portal-magico',
       name: 'portal-magico',
       component: () => import('../games/portal-magico/PortalGame.vue')
+    },
+    {
+      path: '/juegos/quiz-rapido',
+      name: 'quiz-rapido',
+      component: () => import('../games/quiz-rapido/QuizGame.vue')
     }
   ]
 })
