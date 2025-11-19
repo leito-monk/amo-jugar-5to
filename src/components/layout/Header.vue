@@ -20,7 +20,7 @@ const goBack = () => {
 
 <template>
   <header class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto">
+    <div class="container mx-auto flex items-center">
       <!-- Back Button -->
       <div class="flex-none">
         <button @click="goBack" class="btn btn-ghost btn-circle" title="Atrás">
@@ -44,12 +44,12 @@ const goBack = () => {
       <div class="flex-1">
         <RouterLink to="/" class="btn btn-ghost text-xl gap-2" @click="closeMenu">
           <span class="text-2xl">🎮</span>
-          <span class="font-bold">Amo Jugar 5to</span>
+          <span class="font-bold hidden sm:inline">Amo Jugar 5to</span>
         </RouterLink>
       </div>
       
-      <!-- Desktop Navigation -->
-      <div class="flex-none hidden lg:flex">
+      <!-- Desktop Navigation - Moved to the right -->
+      <div class="flex-none hidden lg:flex ml-auto">
         <ul class="menu menu-horizontal px-1">
           <li><RouterLink to="/" class="btn btn-ghost">Home</RouterLink></li>
           <li><RouterLink to="/juegos" class="btn btn-ghost">Juegos</RouterLink></li>
